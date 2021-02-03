@@ -1,25 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Layout from './components/Layout/Layout';
+import {BrowserRouter as Router} from 'react-router-dom';
+import {GlobalStyle} from './GlobalStyles'
+import Cover from './components/pages/Homepage/Cover';
 
-function App() {
+import Navbar from './components/Navbar';
+
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <GlobalStyle />
+    <Layout>
+      <Cover/>
+    </Layout>
+    </Router>
   );
 }
 
