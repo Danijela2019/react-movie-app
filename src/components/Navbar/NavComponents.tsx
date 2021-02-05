@@ -5,20 +5,20 @@ import {FaBars} from 'react-icons/fa'
 
 export const Nav = styled.nav`
 background:transparent;
-height:80px;
+height:50px;
 display:flex;
-justify-content:center;
+justify-content:flex-end;
 font-weight:700;
 `;
  
 export const NavLink = styled(Link)`
-color: white;
 font-size: 1.5rem;
 display:flex;
 background:transparent;
 text-decoration:none;
 align-items:center;
 cursor:pointer;
+margin:0 2.5rem;
 
 @media screen and (max-width:400px){
     position:absolute;
@@ -32,9 +32,12 @@ position:absolute;
 top:0;
 right:0;
 cursor:pointer;
-color:white;`
+color: #cacad4;`
 
 export const Bars = styled(FaBars)`
 font-size:2rem;
 transform:translate(-50%,-15%)
+`
+export const searchContainer = styled.div`
+
 `

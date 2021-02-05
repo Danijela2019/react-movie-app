@@ -6,10 +6,13 @@ const Navbar = () => {
         <React.Fragment>
         <Nav>
             <NavLink to ='/'>Home</NavLink>
-            <NavIcon>
+            <NavLink to ='/'>Login</NavLink>
+            <NavLink to ='/'>Favorites</NavLink>
+           {/* <NavIcon>
              <p>MENU</p> 
              <Bars/>  
             </NavIcon>
+            */}
         </Nav>  
         </React.Fragment>
     )
