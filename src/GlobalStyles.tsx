@@ -6,6 +6,6 @@ export const GlobalStyle = createGlobalStyle`
     margin:0;
     padding:0;
     font-family: 'Hind Siliguri', sans-serif;
-    background:#04000a;
-
+    background: black;
+    color:#cacad4;
 }`
