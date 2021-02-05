@@ -1,11 +1,12 @@
+// @ts-nocheck
 import React from 'react';
 import { CardContainer } from './CardElements';
 
 
-const Card = (props: any) => {
+const Card = ({children, width, height,margin}) => {
     return (
-        <CardContainer>
-            {props.children}
+        <CardContainer width={width} height={height} margin={margin}>
+            {children}
         </CardContainer>
     )
 }

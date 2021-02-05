@@ -19,6 +19,7 @@ text-decoration:none;
 align-items:center;
 cursor:pointer;
 margin:0 2.5rem;
+color:white;
 
 @media screen and (max-width:400px){
     position:absolute;
