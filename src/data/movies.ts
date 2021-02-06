@@ -65,16 +65,7 @@ const imageData = [
         src: mongoDB,
         alt: 'MongoDB logo'
     },
-    {
-        id: 15,
-        src: reactBootstrap,
-        alt: 'React bootstrap logo'
-    },
-    {
-        id: 16,
-        src: styledComponents,
-        alt: 'Styled componenets logo'
-    }
+    
 ];
 
 export default imageData;

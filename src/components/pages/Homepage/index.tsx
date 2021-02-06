@@ -9,6 +9,7 @@ import Card from '../../Card'
 import movieData from '../../../data/movies';
 import cover from '../../../assets/it.png'
 import InfoCardsBoard from './InfoCardsBoard'
+import Footer from '../../Footer'
 
 const MovieCard = (props:any) => {
     return (
@@ -19,15 +20,6 @@ const MovieCard = (props:any) => {
 };
 const movieCards = movieData.map((data, index) => <MovieCard data={data} key={index} />);
 
-/*const TextCard = (props:any) => {
-    return (
-        <Card>
-            <p>Hello</p>
-            <p>Hello</p>
-            <p>Hello</p>
-        </Card>
-    )
-}; */
 
 const Home = () => {
     return (
@@ -53,6 +45,7 @@ const Home = () => {
             <CardBoard>
                 {movieCards}
             </CardBoard>
+            <Footer/>
         </React.Fragment>
     )
 }
