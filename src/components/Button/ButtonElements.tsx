@@ -11,7 +11,7 @@ export const StyledButton = styled.button`
   border:none;
   padding:0;
 @media (max-width: 370px) {
-    width: 6rem;
+    width: 12rem;
     height: 3rem;
   }`;
 

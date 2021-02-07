@@ -10,9 +10,9 @@ width: ${(props) => props.width};
 height: ${(props) => props.height};
 box-shadow: 0px 0px 10px 10px  #1f1d1d;
 @media (max-width: 376px) {
-margin: 1rem;
+margin: 8rem auto;
 max-width:18rem;
-max-height:27rem;
+height:fit-content;
 }
 `
 
