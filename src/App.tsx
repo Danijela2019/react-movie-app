@@ -3,6 +3,7 @@ import Layout from './components/Layout/Layout';
 import {BrowserRouter as Router} from 'react-router-dom';
 import {GlobalStyle} from './GlobalStyles'
 import Home from './components/pages/Homepage';
+import { MoviePage } from './components/pages/Moviepage';
 
 
 const App = () => {
@@ -10,7 +11,7 @@ const App = () => {
     <Router>
     <GlobalStyle />
       <Layout>
-        <Home/>
+        <MoviePage/>
       </Layout>
     </Router>
   );
