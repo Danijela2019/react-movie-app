@@ -29,6 +29,7 @@ export const Img = styled.div`
         max-height: 100%;
         display: block;  
 `
+
 export const  CardContent = styled.div`
 display:flex;
 flex-direction:column;

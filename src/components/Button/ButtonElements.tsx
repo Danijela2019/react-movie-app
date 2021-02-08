@@ -10,9 +10,11 @@ export const StyledButton = styled.button`
   cursor:pointer;
   border:none;
   padding:0;
-@media (max-width: 370px) {
-    width: 12rem;
-    height: 3rem;
+@media (max-width: 540px) {
+    width: 250px;
+    height: 50px;
+    margin:0.5rem;
+    font-size:25px;
   }`;
 
   export const ButtonWrapper = styled.div`

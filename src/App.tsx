@@ -4,6 +4,7 @@ import {BrowserRouter as Router} from 'react-router-dom';
 import {GlobalStyle} from './GlobalStyles'
 import Home from './components/pages/Homepage';
 import { MoviePage } from './components/pages/Moviepage';
+import SearchedItems from './components/pages/SearchedItems';
 
 
 const App = () => {
@@ -11,7 +12,8 @@ const App = () => {
     <Router>
     <GlobalStyle />
       <Layout>
-        <MoviePage/>
+        <Home/>
+
       </Layout>
     </Router>
   );

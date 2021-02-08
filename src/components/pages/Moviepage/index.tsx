@@ -1,7 +1,8 @@
 //@ts-nocheck
 import React from 'react'
 import Background from '../../Background/Index'
-import { Background1, MovieImage, ButtonContainer, ContentTextWrapper, MovieDataColumn,Wrapper,MovieInfo} from './MoviepageComponents'
+import { Background1, MovieImage, TitleContainer, ContentTextWrapper, MovieDataColumn,Wrapper,MovieInfo,PText} from './MoviepageComponents'
+import {Trend} from '../../pages/Homepage/HomepageComponents'
 import joker from './../../../assets/movies/joker.jpg'
 import Navbar from '../../Navbar'
 import Button from '../../Button'
@@ -16,19 +17,11 @@ export const MoviePage = () => {
             <Background1 cover ={joker}>
             <Navbar/>
             <MovieImage as='img' src={joker} width="200px" height="auto" alt="Joker"/>
-            <ButtonContainer>
-                <Button 
-                        margin='auto 3rem'
-                        bg="#13b300"
-                        fontSize='20px'
-                        width='15rem'
-                        height='3rem'
-                        >
-                        Add to favorites
-                </Button>
-             </ButtonContainer>
+            <TitleContainer>
+                <Trend>Joker</Trend>
+             </TitleContainer>
             </Background1>
-            <Card width='100%' height='16rem' margin='1rem 0'>
+            <Card width='100%' height='fit-content' margin='1rem 0'>
                 <ContentTextWrapper>
                     <MovieDataColumn>
                         <Wrapper>
@@ -37,15 +30,7 @@ export const MoviePage = () => {
                         
                         </Wrapper>
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores, quidem? Quasi similique vitae quam laboriosam?</p>
-                    <Button 
-                        margin='auto 3rem'
-                        bg="#e24d61"
-                        fontSize='20px'
-                        width='10rem'
-                        height='3rem'
-                        >
-                        Close
-                </Button>
+                    
                     </MovieDataColumn>
                     <MovieDataColumn>
                     <p>Lorem ipsum dolor sit amet consectetur</p>
@@ -53,7 +38,26 @@ export const MoviePage = () => {
                     <p>Lorem ipsum dolor sit amet consectetur</p>
                     <p>Lorem ipsum dolor sit amet consectetur</p>
                     </MovieDataColumn>
-            
+                    <MovieDataColumn>
+                    <Button 
+                        margin='1rem 3rem'
+                        bg="#13b300"
+                        fontSize='15px'
+                        width='8rem'
+                        height='2rem'
+                        >
+                        Add to favorites
+                </Button>
+                    <Button 
+                        margin='1rem 3rem'
+                        bg="#b93232"
+                        fontSize='15px'
+                        width='8rem'
+                        height='2rem'
+                        >
+                        Close
+                </Button>
+                </MovieDataColumn>
                 </ContentTextWrapper>
              </Card>
              <Footer/>
