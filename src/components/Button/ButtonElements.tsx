@@ -10,12 +10,15 @@ export const StyledButton = styled.button`
   cursor:pointer;
   border:none;
   padding:0;
+  &:hover {
+    background-color:#f3f8e6;
+    transition: 0.5s;
 @media (max-width: 540px) {
     width: 250px;
     height: 50px;
     margin:0.5rem;
     font-size:25px;
-  }`;
+  }`
 
   export const ButtonWrapper = styled.div`
   margin: ${(props) => props.margin ? props.margin : null};

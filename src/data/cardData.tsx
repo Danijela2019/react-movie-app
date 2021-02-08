@@ -2,7 +2,7 @@ import { ImFilm } from "react-icons/im";
 import { ImRocket } from "react-icons/im";
 import {SiThemoviedatabase} from "react-icons/si";
 
-const cardData = [
+export const cardData = [
 {
     id:1,
     title:'Easy to use',
@@ -26,4 +26,3 @@ const cardData = [
 }
 ]
 
-export default cardData;

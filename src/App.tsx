@@ -5,6 +5,7 @@ import {GlobalStyle} from './GlobalStyles'
 import Home from './components/pages/Homepage';
 import { MoviePage } from './components/pages/Moviepage';
 import SearchedItems from './components/pages/SearchedItems';
+import Login from './components/pages/Login'
 
 
 const App = () => {
@@ -12,7 +13,7 @@ const App = () => {
     <Router>
     <GlobalStyle />
       <Layout>
-        <SearchedItems/>
+        <Login/>
 
       </Layout>
     </Router>
