@@ -1,24 +1,14 @@
 //@ts-nocheck
-import styled ,{css} from 'styled-components';
+import styled from 'styled-components';
 
-
-export const PageContentWrapper = styled.div`
-display:flex;
-flex-direction:column;
-align-items:center;
-`
-
-export const Div1 = styled.div`
+export const SearchedContainer = styled.div`
 background:black;
 `
-
-export const Card1 = styled.div`
+export const SearchedCardContainer= styled.div`
 width:85%;
 margin:1rem auto;
-
 border-radius:5px;
 box-shadow: 0 70px 63px -60px #000000;
-
 @media (max-width: 600px) {
   margin:1rem auto;
   padding:0; 
@@ -26,7 +16,7 @@ box-shadow: 0 70px 63px -60px #000000;
   width:100%    
 };
 `
-export const Container = styled.div`
+export const SearchedCardBoardContainer = styled.div`
 background-color:#bcbcc0;
 padding:.5rem;
 @media (max-width: 710px) {
@@ -44,9 +34,16 @@ width:auto;
 };` 
 
 
-
-export const MovieText = styled.p`
-font-size:.7rem;
-@media (max-width: 710px) {
-  font-size: 1rem; 
-};` 
+export const SearchedContentWrapper = styled.div`
+display:flex;
+justify-content:space-evenly;
+align-items:center;
+color:white;
+background-color:black;
+padding:.5rem;
+@media (max-width: 780px) {  
+  flex-direction:column; 
+  align-items:center;
+  padding:0;
+  };
+`

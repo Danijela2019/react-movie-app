@@ -1,33 +1,26 @@
-//@ ts-nocheck
+//@ts-nocheck
 import React from 'react'
-import Background from '../../Background/Index'
 import Navbar from '../../Navbar'
-import {Text, Paragraph, Img,Trend} from './HomepageComponents'
+import {Title} from '../../Shared/TextElements'
 import CardBoard from '../../CardBoard'
 import Button from '../../Button'
-import Card from '../../Card'
-import movieData from '../../../data/movies';
 import cover from '../../../assets/it.png'
 import InfoCardsBoard from './InfoCardsBoard'
+import TrendingMovies from './TrendingMovies'
 import Footer from '../../Footer'
+import { HeroTitle, HeroParagraph, HeroCoverContainer,HeroCover } from './HomepageElements'
 
-const MovieCard = (props:any) => {
-    return (
-        <Card width='auto' height='16rem' margin='1rem 0.5rem'>
-             <Img as='img' src={props.data.src} alt={props.data.alt}></Img>
-        </Card>
-    )
-};
 
-const movieCards = movieData.map((data, index) => <MovieCard data={data} key={index} />);
+
 
 const Home = () => {
     return (
         <React.Fragment>
-            <Background cover={cover}>
+            <HeroCoverContainer>
+                <HeroCover cover={cover}>
                 <Navbar/>
-                <Text>The movie app </Text>
-                <Paragraph>For all the movie lovers to enjoy</Paragraph>
+                <HeroTitle>The movie app </HeroTitle>
+                <HeroParagraph>For all the movie lovers to enjoy</HeroParagraph>
                 <Button 
                     margin='auto 3rem'
                     bg="#13b300"
@@ -37,18 +30,14 @@ const Home = () => {
                     >
                     Trending
                 </Button>
-            </Background>
-            
+                </HeroCover>
+            </HeroCoverContainer>
             <CardBoard>
                 <InfoCardsBoard/>
             </CardBoard>
-            <Trend>TRENDING</Trend>
-            <CardBoard>
-                {movieCards}
-            </CardBoard>
-            
-           
-            <Footer/>
+            <Title>TRENDING</Title>
+            <TrendingMovies/>
+           <Footer/>
         </React.Fragment>
     )
 }

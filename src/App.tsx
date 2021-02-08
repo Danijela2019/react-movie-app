@@ -12,7 +12,7 @@ const App = () => {
     <Router>
     <GlobalStyle />
       <Layout>
-        <Home/>
+        <SearchedItems/>
 
       </Layout>
     </Router>
