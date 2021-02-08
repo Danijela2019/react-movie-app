@@ -21,7 +21,9 @@ export const MoviePage = () => {
                 <Trend>Joker</Trend>
              </TitleContainer>
             </Background1>
-            <Card width='100%' height='fit-content' margin='1rem 0'>
+            <Wrapper>
+            <Card width='100%' height='fit-content' margin='2rem 1rem'>
+           
                 <ContentTextWrapper>
                     <MovieDataColumn>
                         <Wrapper>
@@ -60,6 +62,7 @@ export const MoviePage = () => {
                 </MovieDataColumn>
                 </ContentTextWrapper>
              </Card>
+             </Wrapper>
              <Footer/>
         </React.Fragment>
     )

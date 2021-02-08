@@ -15,7 +15,7 @@ background:black;
 export const Card1 = styled.div`
 width:85%;
 margin:1rem auto;
-padding:1rem;
+
 border-radius:5px;
 box-shadow: 0 70px 63px -60px #000000;
 
