@@ -36,8 +36,10 @@ color:white;
 flex-wrap:wrap;
 background-color:black;
 @media (max-width: 650px) {
-  flex-wrap: nowrap;    
+  flex-wrap: nowrap;   
+  
   flex-direction:column; 
+  align-items:center;
   };
 `
 export const MovieDataColumn = styled.div`
@@ -57,7 +59,6 @@ export const Wrapper = styled.div`
 display:flex;
 justify-content:center;
 align-items:center;
-justify-content:center;
 `
 export const MovieInfo= styled.p`
 margin: .5rem;
