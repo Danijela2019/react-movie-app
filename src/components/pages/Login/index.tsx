@@ -1,11 +1,18 @@
 import React from 'react';
-
+import {  LoginBackground} from './LoginElements';
+import Navbar from '../../Navbar'
+import Footer from '../../Footer';
+import LoginForm from './LoginForm';
 
 const Login = (props: any) => {
     return (
-        <div>
-            Login
-        </div>
+        <React.Fragment>
+        <LoginBackground>
+            <Navbar/>
+            <LoginForm/>
+        </LoginBackground>
+        <Footer/>
+        </React.Fragment>
     )
 }
 

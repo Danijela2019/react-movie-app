@@ -3,7 +3,7 @@ import {Title} from '../../Shared/TextElements'
 import {HomeCardText,HomeCardContent} from './HomepageElements'
 import Card from '../../Card'
 import Icon from '../../Icon'
-import cardData from '../../../data/cardData';
+import {cardData} from '../../../data/cardData';
 
 
 const InfoCard = (props:any) => {
