@@ -18,8 +18,8 @@ const MovieCard = (props:any) => {
         </Card>
     )
 };
-const movieCards = movieData.map((data, index) => <MovieCard data={data} key={index} />);
 
+const movieCards = movieData.map((data, index) => <MovieCard data={data} key={index} />);
 
 const Home = () => {
     return (
@@ -38,6 +38,7 @@ const Home = () => {
                     Trending
                 </Button>
             </Background>
+            
             <CardBoard>
                 <InfoCardsBoard/>
             </CardBoard>
@@ -45,6 +46,8 @@ const Home = () => {
             <CardBoard>
                 {movieCards}
             </CardBoard>
+            
+           
             <Footer/>
         </React.Fragment>
     )

@@ -1,5 +1,6 @@
 //@ts-nocheck
 import styled from 'styled-components';
+import cover from '../../../assets/it.png'
 
 export const MovieImage = styled.div`
 position: absolute; 
@@ -17,34 +18,38 @@ box-shadow: 40px 40px 210px 130px black  inset;
 position: relative; 
 `;
 
-export const ButtonContainer = styled.div`
+export const TitleContainer = styled.div`
 background:transparent;
 position:absolute;
 bottom: 120px;
 left:200px;
 @media (max-width: 370px) {
   bottom:-80px;  
-  left:30px; 
+  left:100px; 
 };`
 
 export const ContentTextWrapper = styled.div`
 display:flex;
-justify-content:space-around;
+justify-content:space-evenly;
+align-items:center;
 color:white;
-margin:2rem;
-@media (max-width: 370px) {
-  flex-direction:column;
-  margin-top:3rem;
-};`
-
+flex-wrap:wrap;
+background-color:black;
+@media (max-width: 650px) {
+  flex-wrap: nowrap;    
+  flex-direction:column; 
+  };
+`
 export const MovieDataColumn = styled.div`
 display:flex;
 flex-direction:column;
 align-items:center;
 max-width:30%;
 margin:1rem;
-@media (max-width: 370px) {
+padding:1rem;
+@media (max-width: 650px) {
  max-width:100%;
+ width:100%;
  margin:1rem .2rem;
 };`
 
@@ -57,3 +62,4 @@ justify-content:center;
 export const MovieInfo= styled.p`
 margin: .5rem;
 `
+
