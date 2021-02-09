@@ -6,6 +6,8 @@ import Home from './components/pages/Homepage';
 import { MoviePage } from './components/pages/Moviepage';
 import SearchedItems from './components/pages/SearchedItems';
 import Login from './components/pages/Login'
+import Navbar from './components/Navbar';
+import Routes from './components/pages';
 
 
 const App = () => {
@@ -13,8 +15,10 @@ const App = () => {
     <Router>
     <GlobalStyle />
       <Layout>
-        <Login/>
-
+        <Router>
+          <Navbar />
+          <Routes />
+        </Router>
       </Layout>
     </Router>
   );
