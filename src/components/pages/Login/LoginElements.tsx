@@ -19,7 +19,7 @@ box-shadow: 40px 40px 210px 130px black inset;
     width: 100%;
     background: rgba(0,0,0,0.1);
   }
-`
+` 
 
 export const LoginContainer = styled.section`
  border-radius: 8px;
@@ -100,4 +100,5 @@ margin:0 1rem;
 `
 export const LoginTextWrapper = styled.div`
 display:flex;
-align-items:baseline;`
+align-items:baseline;
+margin:auto;`
