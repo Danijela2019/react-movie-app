@@ -12,7 +12,7 @@ const Routes = (): React.ReactElement => {
     <Switch>
       <Route exact path="/" component={Homepage} />
       <Route path="/login" component={Login} />
-      <Route path="/favorites" component={SearchedItems}/>
+      <Route path="/favorites" component={Favorites}/>
     </Switch>
   );
 };

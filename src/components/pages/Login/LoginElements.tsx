@@ -9,17 +9,7 @@ height: 100vh;
 background-position: center;
 background-repeat: no-repeat;
 background-size: cover;
-box-shadow: 40px 40px 210px 130px black inset; 
-&:after{
-    position: absolute;
-    content: '';
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background: rgba(0,0,0,0.1);
-  }
-` 
+box-shadow: 40px 40px 210px 130px black inset;`
 
 export const LoginContainer = styled.section`
  border-radius: 8px;
