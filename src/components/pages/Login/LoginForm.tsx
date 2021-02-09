@@ -1,9 +1,10 @@
 //@ts-nocheck
 import React from 'react'
-import {FormContainer,FormField,LoginContainer,LoginButton,FormControl,FormIcons} from './LoginElements'
+import {FormContainer,FormField,LoginContainer,FormControl,FormIcons, LoginText,LoginAnchor,LoginTextWrapper} from './LoginElements'
 import Icon from '../../Icon'
-import { RiLockPasswordFill } from "react-icons/ri";
+import { AiOutlineLock,AiOutlineUser } from "react-icons/ai";
 import Button from '../../Button'
+
 
 
 export const LoginForm = () => {
@@ -13,7 +14,7 @@ export const LoginForm = () => {
                 <FormField>
                     <FormIcons>
                         <Icon size='20px' color='black'>
-                            <RiLockPasswordFill/>
+                            <AiOutlineUser/>
                         </Icon>
                     </FormIcons>
                     <FormControl
@@ -27,7 +28,7 @@ export const LoginForm = () => {
                 <FormField>
                     <FormIcons>
                         <Icon size='20px' color='black'>
-                            <RiLockPasswordFill/>
+                            <AiOutlineLock/>
                         </Icon>
                     </FormIcons>
                     <FormControl
@@ -44,17 +45,14 @@ export const LoginForm = () => {
                 fontSize='16px'
                 width='100%'
                 height='50px'> LOG IN </Button>
-                <p>Dont have an account? Sign Up</p>
+                <LoginTextWrapper>
+                <LoginText>Dont have an account?</LoginText>
+                <LoginAnchor>Sign up</LoginAnchor> 
+                </LoginTextWrapper>
             </FormContainer>
         </LoginContainer>
 
     )
 }
-
- 
-    
-   
-    
-
 
 export default LoginForm;
