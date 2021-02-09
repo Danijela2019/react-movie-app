@@ -11,6 +11,7 @@ const imageData = [
         src: git,
         alt: 'Git logo'
     },
+    
     {
         id: 3,
         src: mongoDB,

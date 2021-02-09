@@ -8,6 +8,7 @@ import SearchedItems from './components/pages/SearchedItems';
 import Login from './components/pages/Login'
 import Navbar from './components/Navbar';
 import Routes from './components/pages';
+import Footer from './components/Footer';
 
 
 const App = () => {
@@ -20,6 +21,7 @@ const App = () => {
           <Routes />
         </Router>
       </Layout>
+      <Footer/>
     </Router>
   );
 }

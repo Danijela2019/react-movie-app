@@ -6,7 +6,7 @@ background:black;
   position: relative;
   bottom: 0;
   width: 100%;
-  margin-top:2rem;
+  padding-top:2rem;
   `;
 
 export const FooterLine = styled.div`

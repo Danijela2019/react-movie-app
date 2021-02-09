@@ -25,7 +25,7 @@ const NavItems = (props:any) => {
           FAVORITES{' '}
         </NavLink>
       </NavbarLink>
-      {/*<SearchBox>
+      <SearchBox>
         <SearchForm>
           <SearchInput as='input'
               type="text"
@@ -36,7 +36,7 @@ const NavItems = (props:any) => {
               </Icon>
           </SearchButton>
         </SearchForm>
-      </SearchBox> */}
+      </SearchBox> 
     </React.Fragment>
   );
 

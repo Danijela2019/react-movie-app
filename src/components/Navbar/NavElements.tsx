@@ -8,7 +8,6 @@ background:transparent;
 text-decoration:none;
 align-items:center;
 cursor:pointer;
-margin:0 2.5rem;
 color:#cacad4;
 &:hover,
 &:active {
@@ -93,6 +92,9 @@ export const MobileNavbar = styled.ul`
 export const SearchBox = styled.div`
 width: 30%;
 background:transparent;
+@media (max-width: 767px) {
+    width:80%;
+  }
 `
 
 export const SearchInput = styled.input`
