@@ -1,15 +1,13 @@
 import React from 'react'
 import {Title} from '../../Shared/TextElements'
-import {HomeCardText,HomeCardContent} from './HomepageElements'
-import Card from '../../Card'
+import {HomeCardText,HomeCardContent, InfoCardContainer} from './HomepageElements'
 import Icon from '../../Icon'
 import {cardData} from '../../../data/cardData';
 
 
 const InfoCard = (props:any) => {
-    console.log(props.data.icon)
     return (
-        <Card width='19rem' height='25rem' margin='4rem 0'>
+        <InfoCardContainer>
             <HomeCardContent>
                 <Title>{props.data.title}</Title>
                 <Icon color="#00b371" size="50px">
@@ -17,7 +15,7 @@ const InfoCard = (props:any) => {
                 </Icon>
                 <HomeCardText>{props.data.text}</HomeCardText>
             </HomeCardContent>
-        </Card>
+        </InfoCardContainer>
     )
 }
 

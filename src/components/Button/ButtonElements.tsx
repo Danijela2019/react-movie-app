@@ -10,13 +10,7 @@ export const StyledButton = styled.button`
   cursor:pointer;
   border:none;
   padding:0;
-  &:hover {
-    background-color:#f3f8e6;
-    transition: 0.5s;
-  }
-  @media (max-width: 600px) {
-    width:80%;
-  }
+ 
 @media (max-width: 540px) {
     max-width: 80%;
     height: 50px;

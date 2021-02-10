@@ -47,3 +47,11 @@ background-position: center;
 export const HeroCoverContainer = styled.div`
 height:100vh;
 `;
+
+export const InfoCardContainer = styled.div`
+background-color: black;
+margin:4rem 0;
+border-radius:10px;
+width: 19rem;
+height: 25rem;
+box-shadow: 0px 0px 10px 10px  #1f1d1d;`
