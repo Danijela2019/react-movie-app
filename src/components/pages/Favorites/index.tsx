@@ -1,13 +1,33 @@
 import React from 'react'
+import { CenterElements } from '../../Shared/CenterElements';
+import { Title } from '../../Shared/TextElements';
 import SearchedMovieCards from '../SearchedItems/SearchedMovieCard';
-import { FavoritesBackground } from './FavortiesElements';
+import FavoritesCardBoard from './FavoritesCardBoard';
+import { NoFavoritesBackground, FavoritesBackground, MovieTitle} from './FavortiesElements';
 
 const Favorites = () => {
-    return (
+
+    const condition= false;
+
+    const noFavorites = (
+        <NoFavoritesBackground>
+        <CenterElements>
+        <Title>You do not have any favorites yet.</Title>
+        <Title>Let's add some🙂</Title>
+        </CenterElements>
+        </NoFavoritesBackground>
+    )
+
+    const showFavorites = (
         <FavoritesBackground>
-            hello
-            {/*<SearchedMovieCards/> */}
+            <FavoritesCardBoard/>
         </FavoritesBackground>
+    )
+
+    return (
+        <React.Fragment>
+       {condition ? noFavorites : showFavorites}
+       </React.Fragment>
     )
 }
 

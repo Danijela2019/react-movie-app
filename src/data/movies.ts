@@ -9,7 +9,7 @@ const imageData = [
     {
         id: 1,
         src: git,
-        alt: 'Git logo'
+        alt: 'Git logo sds sdsd ss ds adn it is going on agai'
     },
     
     {

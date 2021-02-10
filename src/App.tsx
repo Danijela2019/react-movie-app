@@ -10,19 +10,38 @@ import Navbar from './components/Navbar';
 import Routes from './components/pages';
 import Footer from './components/Footer';
 
+import styled from 'styled-components'
+
+
+
+
+const PageContainer = styled.main`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+`;
+
+const ContentWraper = styled.div`
+  flex: 1;
+`;
 
 const App = () => {
   return (
-    <Router>
-    <GlobalStyle />
-      <Layout>
-        <Router>
-          <Navbar />
-          <Routes />
-        </Router>
-      </Layout>
-      <Footer/>
-    </Router>
+    <React.Fragment>
+      <GlobalStyle />
+      <PageContainer>
+
+          <Layout>
+          <Router>
+            <Navbar />
+            <Routes />
+          </Router>
+        </Layout>
+      
+        <Footer/>
+      </PageContainer>
+    </React.Fragment>
+    
   );
 }
 
