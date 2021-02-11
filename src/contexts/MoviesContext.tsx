@@ -7,7 +7,7 @@ export const MoviesContext = createContext<MoviesContextType | null>(null);
     const [movies, setMovies] = useState([]);
     const[loading,setLoading] = useState(true)
 
-    const apikey = '***';
+    const apikey = process.env.REACT_APP_API_KEY;
 
     useEffect(() => {
         const apiUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${apikey}&language=en-US&page=1`;

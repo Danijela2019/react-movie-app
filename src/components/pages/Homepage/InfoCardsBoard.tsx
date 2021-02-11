@@ -10,7 +10,7 @@ const InfoCard = (props:any) => {
         <InfoCardContainer>
             <HomeCardContent>
                 <Title>{props.data.title}</Title>
-                <Icon color="#00b371" size="50px">
+                <Icon color='var(--color-primary)' size="50px">
                     {props.data.icon}
                 </Icon>
                 <HomeCardText>{props.data.text}</HomeCardText>

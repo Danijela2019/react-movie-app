@@ -16,11 +16,8 @@ const PageContainer = styled.main`
   min-height: 100vh;
 `;
 
-
-
 const App = () => {
   return (
-    <React.Fragment>
       <MoviesContextProvider>
       <GlobalStyle />
       <PageContainer>
@@ -33,7 +30,6 @@ const App = () => {
         <Footer/>
       </PageContainer>
       </MoviesContextProvider>
-    </React.Fragment>
   );
 }
 

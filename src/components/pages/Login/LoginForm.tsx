@@ -13,7 +13,7 @@ export const LoginForm = () => {
             <FormContainer>
                 <FormField>
                     <FormIcons>
-                        <Icon size='20px' color='black'>
+                        <Icon size='20px' color='var(--color-background)'>
                             <AiOutlineUser/>
                         </Icon>
                     </FormIcons>
@@ -27,7 +27,7 @@ export const LoginForm = () => {
                 </FormField>
                 <FormField>
                     <FormIcons>
-                        <Icon size='20px' color='black'>
+                        <Icon size='20px' color='var(--color-background)'>
                             <AiOutlineLock/>
                         </Icon>
                     </FormIcons>
@@ -41,7 +41,7 @@ export const LoginForm = () => {
                 </FormField>
                 <Button
                 margin='1rem 0 0 0'
-                bg='#13b300'
+                bg='var(--color-primary)'
                 fontSize='16px'
                 width='100%'
                 height='50px'> LOG IN </Button>

@@ -8,11 +8,11 @@ background:transparent;
 text-decoration:none;
 align-items:center;
 cursor:pointer;
-color:#cacad4;
+color:var(--color-text);
 &:hover,
 &:active {
-  border-bottom: 3px solid  #13b300;
-  color: #13b300;
+  border-bottom: 3px solid  var(--color-primary);
+  color: var(--color-primary);
 }`
    
 export const NavImage = styled.img`
@@ -64,6 +64,7 @@ export const NavbarLink = styled.li`
 `;
 
 export const NavbarLinks = styled.ul`
+background:transparent;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -82,7 +83,7 @@ export const MobileNavbar = styled.ul`
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  background:#00000057;
+  background:var(--color-background);
   list-style-type: none;
   text-transform: uppercase;
   transition: 0.2s;
@@ -102,7 +103,7 @@ export const SearchInput = styled.input`
   font-size: 17px;
   border: none;
   color:black;
-  background:#cacad4;
+  background:whitesmoke;
   cursor:pointer;
   border-radius:5px 0 0 5px ;
   border-right: none;
@@ -122,7 +123,7 @@ text-align: center;
  cursor: pointer;
   margin-top: 0.5rem;
   margin-right: 16px;
-  background: #13b300;
+  background: var(--color-primary);
   border: none;
   cursor: pointer;
   width:30px;

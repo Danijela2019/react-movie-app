@@ -34,7 +34,7 @@ const MovieInfoCard = (props:any) => {
                     </Button>
                     <Button 
                         margin='1rem 3rem'
-                        bg="#b93232"
+                        bg="var(--color-danger)"
                         fontSize='15px'
                         width='130px'
                         height='2rem'

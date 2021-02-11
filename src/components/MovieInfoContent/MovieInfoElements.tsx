@@ -20,8 +20,8 @@ export const MovieContentWrapper = styled.div`
 display:flex;
 justify-content:space-evenly;
 align-items:center;
-color:white;
-background-color:black;
+color:var(--color-text);
+background-color:var(--color-background);
 @media (max-width: 780px) {  
   flex-direction:column; 
   align-items:center;

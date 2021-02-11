@@ -11,11 +11,8 @@ import Spinner from '../../Spinner'
 import { HeroTitle, HeroParagraph, HeroCoverContainer,HeroCover } from './HomepageElements'
 import { MoviesContext } from '../../../contexts/MoviesContext';
 
-
-
-
 const Home = () => {
-    const {movies, loading} = useContext(MoviesContext);
+    const {loading} = useContext(MoviesContext);
     
     return (
         <React.Fragment>
@@ -39,7 +36,7 @@ const Home = () => {
             </CardBoard>
             <Title>TRENDING</Title>
                 {loading && <Spinner/>}
-            <TrendingMovies movies={movies}/>
+            <TrendingMovies/>
         </React.Fragment>
     )
 }
