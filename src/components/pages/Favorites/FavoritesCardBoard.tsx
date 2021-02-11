@@ -1,13 +1,16 @@
 
 //@ts-nocheck
 import React, {useState} from 'react'
+import { AiFillDelete} from "react-icons/ai";
+import { useHistory } from 'react-router-dom';
+
 import Card from '../../Card';
 import CardBoard from '../../CardBoard';
 import movieData from '../../../data/movies';
 import {Img} from '../../Shared/ImageElements'
 import {FavoritesBackground,FavoritesTrashcan, MovieTitle, RemoveButton} from './FavortiesElements'
 import Icon from '../../Icon';
-import { AiTwotoneDelete} from "react-icons/ai";
+
 
 
 const FavoriteCard = (props:any) => {
@@ -34,7 +37,7 @@ const FavoriteCard = (props:any) => {
                 <FavoritesTrashcan  isVisible={active} onClick={RemoveCardHandler} >
                         <RemoveButton>  
                             <Icon color='white' size='30px'>
-                                <AiTwotoneDelete/>
+                                <AiFillDelete/>
                             </Icon>
                         </RemoveButton>
                 </FavoritesTrashcan>

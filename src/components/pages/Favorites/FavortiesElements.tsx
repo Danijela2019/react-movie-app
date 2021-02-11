@@ -19,7 +19,8 @@ background-color:#bcbcc0;
 export const MovieTitle = styled.h3` 
 color:#bcbcc0;
 margin:1rem;
-text-align:center;`
+text-align:center;
+`
 
 export const Image = styled.img`
 height:400px;
@@ -40,7 +41,6 @@ export const RemoveButton = styled.button`
 background:transparent;
 border:none;
 outline:none;
-
 `
 
 

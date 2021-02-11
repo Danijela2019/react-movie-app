@@ -5,6 +5,7 @@ import Homepage from './Homepage';
 import Login from './Login';
 import Favorites from './Favorites';
 import SearchedItems from './SearchedItems';
+import MoviePage from './MoviePage'
 
 
 const Routes = (): React.ReactElement => {
@@ -13,6 +14,7 @@ const Routes = (): React.ReactElement => {
       <Route exact path="/" component={Homepage} />
       <Route path="/login" component={Login} />
       <Route path="/favorites" component={Favorites}/>
+      <Route path="/movie" component={MoviePage} />
     </Switch>
   );
 };

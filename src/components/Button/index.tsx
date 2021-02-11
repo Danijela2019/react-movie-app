@@ -11,6 +11,7 @@ const Button = (props:any) => {
         fontSize={props.fontSize}
         width={props.width}
         height={props.height}
+        onClick={props.clicked}
       >
         {props.children}
       </StyledButton>
