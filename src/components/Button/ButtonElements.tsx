@@ -6,12 +6,12 @@ export const StyledButton = styled.button`
   font-size: ${(props) => props.fontSize};
   width: ${(props) => props.width};
   height: ${(props) => props.height};
+  outline:none;
   border-radius: 10px;
   cursor:pointer;
   border:none;
   padding:0;
- 
-@media (max-width: 540px) {
+ @media (max-width: 540px) {
     max-width: 80%;
     height: 50px;
     margin:0.5rem;
