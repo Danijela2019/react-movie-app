@@ -22,7 +22,7 @@ const Navbar = (): React.ReactElement => {
           <Logo />
         </NavbarLogo>
         <NavbarToggle onClick={handleClick}>
-          <Icon size="40px" color="white">
+          <Icon size="40px" color="var(--color-text)">
             <AiOutlineMenu />
           </Icon>
         </NavbarToggle>

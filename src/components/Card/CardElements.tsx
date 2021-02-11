@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 
 export const CardContainer = styled.div`
-background-color: black;
+background-color:var(--color-background);
 margin: ${(props) => props.margin};
 border-radius:10px;
 width: ${(props) => props.width};

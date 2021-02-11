@@ -9,7 +9,7 @@ height: 100vh;
 background-position: center;
 background-repeat: no-repeat;
 background-size: cover;
-box-shadow: 40px 40px 210px 130px black inset;`
+box-shadow: 40px 40px 210px 130px var(--color-background) inset;`
 
 export const LoginContainer = styled.section`
  border-radius: 8px;
@@ -56,13 +56,13 @@ export const FormControl =  styled.input`
     height:50px;
     border:none;
     padding:5px 7px 5px 15px;
-    background:#fff;
+    background:var(--color-text);
     color:#585353;
     font-size:15px;
-    border:2px solid #ddd;
+    border:2px solidvar(--color-text);
     &:focus, &:focus {
-        border-color:#13b300;
-        color:#13b300}
+        border-color:var(--color-primary);
+        color:var(--color-primary)}
     @media (max-width: 600px) {
         width: 80%;
         font-size:20px;
@@ -80,12 +80,12 @@ position: absolute;
 
       
 export const LoginText = styled.p`
-color:white;
+color:var(--color-text);
 margin-top:10px;
 `
 export const LoginAnchor = styled.a`
 text-decoration: none;
-color:white;
+color:var(--color-text);
 margin:0 1rem;
 `
 export const LoginTextWrapper = styled.div`

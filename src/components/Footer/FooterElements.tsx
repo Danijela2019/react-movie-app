@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const FooterContainer = styled.div`
-background:black;
-  color:#cacad4;
+background:var(--color-background);
+  color:var(--color-text);
   position: relative;
   bottom: 0;
   width: 100%;
@@ -16,7 +16,7 @@ export const FooterLine = styled.div`
 `;
 
 export const Anchor = styled.a`
-  color: white;
+  color: var(--color-text);
   text-decoration: none;
   font-size:2rem;
 `;

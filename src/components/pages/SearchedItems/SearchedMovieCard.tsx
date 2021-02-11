@@ -14,7 +14,7 @@ const SearchedMovieCard = (props:any) => {
                 <MovieInfoContent/>
                 <Button 
                     margin='1rem 3rem'
-                    bg="#13b300"
+                    bg="var(--color-primary)"
                     fontSize='15px'
                     width='8rem'
                     height='2rem'

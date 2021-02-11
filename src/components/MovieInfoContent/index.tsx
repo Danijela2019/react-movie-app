@@ -9,7 +9,7 @@ const MovieInfoContent = () => {
         <MovieContentWrapper>
         <MovieDataColumn>
             <CenterElements>
-            <Icon color='white' size='30px'>< SiImdb/></Icon>
+            <Icon color='var(--color-text)' size='30px'>< SiImdb/></Icon>
             <MovieInfo>7.3 | type | 2020 | 2h 30min</MovieInfo>
             </CenterElements>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores, quidem? Quasi similique vitae quam laboriosam?</p>

@@ -3,7 +3,7 @@ import {IPropsChildren} from '../../Types';
 import styled from 'styled-components';
 
 const Main = styled.div`
-background:black;
+background:var(--color-background);
 flex:1`
 
 const Layout = (props: any) => {

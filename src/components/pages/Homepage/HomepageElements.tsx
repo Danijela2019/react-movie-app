@@ -6,7 +6,7 @@ export const HeroTitle = styled.h1`
 background:transparent;
 margin:4rem 0 0 3rem;
 font-size:3.5rem;
-color:#cacad4;
+color:var(--color-text);
 @media (max-width: 370px) {
   font-size:2.5rem;
   margin:1rem 0 0 1rem;      
@@ -19,7 +19,7 @@ margin-bottom:auto;
 `
 export const HomeCardText = styled.p`
 text-align:justify;
-color:#cacad4;
+color:var(--color-text);
 `
 export const  HomeCardContent = styled.div`
 display:flex;
@@ -28,7 +28,7 @@ justify-content: space-around;
 align-items:center;
 text-align:center;
 padding:1rem;
-border:solid 2px green;
+border:solid 2px var(--color-primary);
 height:100%;
 border-radius:10px;
 `
@@ -49,7 +49,7 @@ height:100vh;
 `;
 
 export const InfoCardContainer = styled.div`
-background-color: black;
+background-color: var(--color-backgrouns);
 margin:4rem 0;
 border-radius:10px;
 width: 19rem;
