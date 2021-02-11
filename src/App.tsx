@@ -7,6 +7,7 @@ import Navbar from './components/Navbar';
 import Routes from './components/pages';
 import Footer from './components/Footer';
 import Layout from './components/Layout/Layout';
+import MoviesContextProvider from './contexts/MoviesContext';
 import styled from 'styled-components'
 
 const PageContainer = styled.main`
@@ -20,6 +21,7 @@ const PageContainer = styled.main`
 const App = () => {
   return (
     <React.Fragment>
+      <MoviesContextProvider>
       <GlobalStyle />
       <PageContainer>
         <Layout>
@@ -30,7 +32,8 @@ const App = () => {
         </Layout>
         <Footer/>
       </PageContainer>
-      </React.Fragment>
+      </MoviesContextProvider>
+    </React.Fragment>
   );
 }
 
