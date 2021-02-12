@@ -4,24 +4,18 @@ import Icon from '../Icon';
 import { CenterElements } from '../Shared/CenterElements';
 import { MovieContentWrapper, MovieDataColumn, MovieInfo } from './MovieInfoElements';
 
-const MovieInfoContent = () => {
+const MovieInfoContent = ({data}:any) => {
     return (
         <MovieContentWrapper>
         <MovieDataColumn>
             <CenterElements>
             <Icon color='var(--color-text)' size='30px'>< SiImdb/></Icon>
-            <MovieInfo>7.3 | type | 2020 | 2h 30min</MovieInfo>
+            <MovieInfo>|{data.vote_average} | {data.release_date}</MovieInfo>
             </CenterElements>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores, quidem? Quasi similique vitae quam laboriosam?</p>
+            <h3>{data.title}</h3>
+            <p>{data.overview}</p>
         </MovieDataColumn>
-        <MovieDataColumn>
-            <p>Lorem ipsum dolor sit amet consectetur</p>
-            <p>Lorem ipsum dolor sit amet consectetur</p>
-            <p>Lorem ipsum dolor sit amet consectetur</p>
-            <p>Lorem ipsum dolor sit amet consectetur</p>
-        </MovieDataColumn>
-        
-</MovieContentWrapper>
+    </MovieContentWrapper>
     )
 }
 

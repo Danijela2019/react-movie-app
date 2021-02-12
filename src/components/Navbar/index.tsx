@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import Icon from '../Icon'
 import {AiOutlineSearch} from 'react-icons/ai';
-import {SearchBox,SearchInput, SearchButton, SearchForm, NavImage,NavbarContainer, NavbarWrapper,NavbarLogo,NavbarToggle} from './NavElements'
+import { NavImage,NavbarContainer, NavbarWrapper,NavbarLogo,NavbarToggle} from './NavElements'
 import logo from '../../assets/tv.png';
 import { AiOutlineMenu } from 'react-icons/ai';
 import NavItems from './NavItems';

@@ -7,7 +7,6 @@ export const MovieDataColumn = styled.div`
 display:flex;
 flex-direction:column;
 align-items:center;
-max-width:30%;
 margin:1rem;
 padding:1rem;
 @media (max-width: 780px) {
