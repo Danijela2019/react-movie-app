@@ -1,17 +1,17 @@
+//@ts-nocheck
 import React from 'react'
 
 import Button from '../../Button'
-import movieData from '../../../data/movies';
 import MovieInfoContent from '../../MovieInfoContent';
 import {Image, SearchedCardBoardContainer, SearchedCardContainer, SearchedContentWrapper} from './SearchedItemsComponents'
 
 
-const SearchedMovieCard = (props:any) => {
+const SearchedMovieCard = ({data}:any) => {
     return (
         <SearchedCardContainer>
             <SearchedContentWrapper>
-                <Image as='img'  src={props.data.src} alt={props.data.alt}></Image>
-                <MovieInfoContent/>
+                <Image as='img' src={`https://image.tmdb.org/t/p/w200/${data.poster_path}`} alt={data.title}></Image>
+                <MovieInfoContent data={data}/>
                 <Button 
                     margin='1rem 3rem'
                     bg="var(--color-primary)"
@@ -26,13 +26,12 @@ const SearchedMovieCard = (props:any) => {
     )
 };
 
-const searchedMovieCards = movieData.map((data, index) => <SearchedMovieCard data={data} key={index} />);
 
-
-const SearchedMovieCards = () =>{
+const SearchedMovieCards = (props:any) =>{
+    console.log('Inside SearchedMovieCards', props)
     return (
-        <SearchedCardBoardContainer>
-            {searchedMovieCards}
+        <SearchedCardBoardContainer movieData={props.movies}>
+            { props.movies.map((data, index) => <SearchedMovieCard data={data} key={index} />)}
         </SearchedCardBoardContainer>
     )
 }

@@ -1,7 +1,8 @@
 import React from 'react';
 import { AiOutlineSearch } from 'react-icons/ai';
 import Icon from '../Icon';
-import { NavbarLink, NavbarLinks,NavLink, MobileNavbar, SearchBox, SearchButton, SearchForm, SearchInput } from './NavElements'
+import Search from './search'
+import { NavbarLink, NavbarLinks,NavLink, MobileNavbar} from './NavElements'
 
 const NavItems = (props:any) => {
   const { sidebar, closeMenu } = props;
@@ -25,18 +26,7 @@ const NavItems = (props:any) => {
           FAVORITES{' '}
         </NavLink>
       </NavbarLink>
-      <SearchBox>
-        <SearchForm>
-          <SearchInput as='input'
-              type="text"
-          />
-          <SearchButton>
-              <Icon color='black' size='18px'>
-                <AiOutlineSearch/>
-              </Icon>
-          </SearchButton>
-        </SearchForm>
-      </SearchBox> 
+     <Search/>
     </React.Fragment>
   );
 
