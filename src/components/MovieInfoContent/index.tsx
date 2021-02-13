@@ -10,10 +10,10 @@ const MovieInfoContent = ({data}:any) => {
         <MovieDataColumn>
             <CenterElements>
             <Icon color='var(--color-text)' size='30px'>< SiImdb/></Icon>
-            <MovieInfo>|{data.vote_average} | {data.release_date}</MovieInfo>
+            <MovieInfo>{data.rating} | {data.date}</MovieInfo>
             </CenterElements>
             <h3>{data.title}</h3>
-            <p>{data.overview}</p>
+            <p>{data.resume}</p>
         </MovieDataColumn>
     </MovieContentWrapper>
     )

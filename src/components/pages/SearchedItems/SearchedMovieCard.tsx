@@ -1,16 +1,15 @@
 //@ts-nocheck
-import React from 'react'
-
+import React,{useContext} from 'react'
+import MoviesContext from '../../../contexts/MoviesContext'
 import Button from '../../Button'
 import MovieInfoContent from '../../MovieInfoContent';
 import {Image, SearchedCardBoardContainer, SearchedCardContainer, SearchedContentWrapper} from './SearchedItemsComponents'
 
-
-const SearchedMovieCard = ({data}:any) => {
+const SearchedMovieCard = ({data}) => {
     return (
         <SearchedCardContainer>
             <SearchedContentWrapper>
-                <Image as='img' src={`https://image.tmdb.org/t/p/w200/${data.poster_path}`} alt={data.title}></Image>
+                <Image as='img' src={data.picture} alt={data.title}></Image>
                 <MovieInfoContent data={data}/>
                 <Button 
                     margin='1rem 3rem'
@@ -27,11 +26,11 @@ const SearchedMovieCard = ({data}:any) => {
 };
 
 
-const SearchedMovieCards = (props:any) =>{
-    console.log('Inside SearchedMovieCards', props)
+const SearchedMovieCards = () =>{
+    const { movies } = useContext(MoviesContext);
     return (
-        <SearchedCardBoardContainer movieData={props.movies}>
-            { props.movies.map((data, index) => <SearchedMovieCard data={data} key={index} />)}
+        <SearchedCardBoardContainer>
+            {movies.map((data) => <SearchedMovieCard data={data} key={data.id} />)}
         </SearchedCardBoardContainer>
     )
 }
