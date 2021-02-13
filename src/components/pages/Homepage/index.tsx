@@ -9,13 +9,16 @@ import InfoCardsBoard from './InfoCardsBoard'
 import TrendingMovies from './TrendingMovies'
 import Spinner from '../../Spinner'
 import { HeroTitle, HeroParagraph, HeroCoverContainer,HeroCover } from './HomepageElements'
-import { MoviesContext } from '../../../contexts/MoviesContext';
+import  MoviesContext  from '../../../contexts/MoviesContext';
+import SearchedItems from '../SearchedItems'
 
 const Home = () => {
-    const {loading} = useContext(MoviesContext);
+    
     
     return (
         <React.Fragment>
+            {false ?<SearchedItems/>:(
+               <React.Fragment>
             <HeroCoverContainer>
                 <HeroCover cover={cover}>
                 <HeroTitle>The movie app </HeroTitle>
@@ -35,8 +38,10 @@ const Home = () => {
                 <InfoCardsBoard/>
             </CardBoard>
             <Title>TRENDING</Title>
-                {loading && <Spinner/>}
-            <TrendingMovies/>
+                {/*{loading && <Spinner/>}*/}
+            <TrendingMovies/> 
+           </React.Fragment>)
+        }
         </React.Fragment>
     )
 }

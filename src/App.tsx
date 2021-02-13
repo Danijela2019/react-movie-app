@@ -7,12 +7,13 @@ import Navbar from './components/Navbar';
 import Routes from './components/pages';
 import Footer from './components/Footer';
 import Layout from './components/Layout/Layout';
-import MoviesContextProvider from './contexts/MoviesContext';
+import MoviesContext from './contexts/MoviesContext';
 import styled from 'styled-components'
 import SearchMovieCard from './components/pages/SearchedItems/SearchedMovieCard'
 import SearchedMovieCards from './components/pages/SearchedItems/SearchedMovieCard';
 import Search from './components/Navbar/search'
 import {Title} from './components/Shared/TextElements'
+import {getPopularMovies} from './contexts/moviesUtility'
 
 
 const PageContainer = styled.main`
@@ -22,7 +23,10 @@ const PageContainer = styled.main`
 `;
 
 const App = () => {
-  const [searchValue, setSearchValue] = useState('');
+  const [movies, setMovies] = useState([]);
+
+
+  /*const [searchValue, setSearchValue] = useState('');
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
@@ -47,30 +51,40 @@ const App = () => {
 
   useEffect(() => {
 		search(searchValue);
-	}, [searchValue]);
+	}, [searchValue]);*/
+
+
+
+  useEffect(() => {
+    getPopularMovies()
+      .then(data => {
+        //console.log('Inside use effect',data)
+        setMovies(data)
+    })
+      .catch((_) => setMovies([]));
+  }, []);
+  
 
 return (
-      <MoviesContextProvider>
+      <MoviesContext.Provider value={{ movies, updateMovies: setMovies }}>
       <GlobalStyle />
       <PageContainer>
         <Layout>
-        {loading && !errorMessage ? (
-         <span>loading...</span>
-         ) : errorMessage ? (
-          <Title>{errorMessage}</Title>
-        ) :(<SearchedMovieCards movies={movies}/> ) }
-        
-        <Search search={search}/>
-      
-          <Router>
+            <Router>
             <Navbar />
             <Routes />
           </Router>
         </Layout>
         <Footer/>
       </PageContainer>
-      </MoviesContextProvider>
+      </MoviesContext.Provider>
   );
 }
 
 export default App;
+
+/*  {loading && !errorMessage ? (
+         <span>loading...</span>
+         ) : errorMessage ? (
+          <Title>{errorMessage}</Title>
+        ) :(<SearchedMovieCards movies={movies}/> ) } */
