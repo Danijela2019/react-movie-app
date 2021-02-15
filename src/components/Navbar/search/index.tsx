@@ -1,16 +1,19 @@
 //@ts-nocheck
-import React,{useState, useContext} from 'react'
-import { AiOutlineSearch } from 'react-icons/ai';
-import Icon from '../../Icon';
+import React,{useState, useContext} from 'react';
 import { SearchBox, SearchButton, SearchForm, SearchInput } from './SearchElements'
-import MoviesContext from '../../../contexts/MoviesContext'
-import { getSearchedMovies} from '../../../contexts/moviesUtility';
-import { HeroCover } from '../../pages/Homepage/HomepageElements';
+import {MoviesContext} from '../../../contexts/MoviesContext'
+import { useHistory } from 'react-router-dom';
 
 const Search = () => {
   const [searchValue, setSearchValue] = useState("");
-  const { updateMovies } = useContext(MoviesContext); 
+  const [movies, setMovies] = useState([]);
+  const { getSearchedMovies} = useContext(MoviesContext); 
 
+  let history = useHistory();
+  const redirectToSearchedItems = () => { 
+    history.push('/searched-items')
+}
+  
   const handleSearchInputChanges = (event:React.FormEvent) => {
     setSearchValue(event.target.value);
   }
@@ -22,13 +25,13 @@ const Search = () => {
   const callSearchFunction = async (event:React.FormEvent) => {
     event.preventDefault();
     if (searchValue) {
-      const movies = await getSearchedMovies(searchValue)
-      updateMovies(movies);
+      const movieResults = await getSearchedMovies(searchValue)
+      setMovies(movieResults);
       };
       resetInputField();
+      redirectToSearchedItems();
     }
 
-  
   return (
      <React.Fragment>
       <SearchBox>
@@ -44,6 +47,5 @@ const Search = () => {
     </React.Fragment>
   )
 }
-
 
 export default Search;

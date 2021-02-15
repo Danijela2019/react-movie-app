@@ -15,6 +15,7 @@ const Routes = (): React.ReactElement => {
       <Route path="/login" component={Login} />
       <Route path="/favorites" component={Favorites}/>
       <Route path="/movie" component={MoviePage} />
+      <Route path= "/searched-items" component={SearchedItems}/>
     </Switch>
   );
 };
