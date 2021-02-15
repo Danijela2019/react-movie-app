@@ -1,14 +1,14 @@
-import React from 'react'
+//@ts-nocheck
+import React, { useContext } from 'react'
 import { CenterElements } from '../../Shared/CenterElements';
 import { Title } from '../../Shared/TextElements';
 import SearchedMovieCards from '../SearchedItems/SearchedMovieCard';
 import FavoritesCardBoard from './FavoritesCardBoard';
 import { NoFavoritesBackground, FavoritesBackground, MovieTitle} from './FavortiesElements';
+import {MoviesContext} from '../../../contexts/MoviesContext'
 
 const Favorites = () => {
-
-    const condition= false;
-
+const {favoriteMovies} = useContext(MoviesContext)
     const noFavorites = (
         <NoFavoritesBackground>
         <CenterElements>
@@ -26,7 +26,7 @@ const Favorites = () => {
 
     return (
         <React.Fragment>
-       {condition ? noFavorites : showFavorites}
+       {favoriteMovies.length === 0? noFavorites : showFavorites}
        </React.Fragment>
     )
 }

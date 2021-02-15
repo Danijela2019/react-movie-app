@@ -6,6 +6,7 @@ import MovieInfoContent from '../../MovieInfoContent';
 import {Image, SearchedCardBoardContainer, SearchedCardContainer, SearchedContentWrapper} from './SearchedItemsComponents'
 
 const SearchedMovieCard = ({data}) => {
+    const {addToFavorites}= useContext(MoviesContext);
     return (
         <SearchedCardContainer>
             <SearchedContentWrapper>
@@ -17,6 +18,7 @@ const SearchedMovieCard = ({data}) => {
                     fontSize='15px'
                     width='8rem'
                     height='2rem'
+                    clicked ={() => addToFavorites(data.id)}
                 >
                     Add to favorites
                 </Button>
@@ -28,13 +30,11 @@ const SearchedMovieCard = ({data}) => {
 
 const SearchedMovieCards = () =>{
     const { searchedMovies } = useContext(MoviesContext);
-    console.log('here',searchedMovies)
     return (
         <SearchedCardBoardContainer>
             {searchedMovies.map((data) => <SearchedMovieCard data={data} key={data.id} />)}
         </SearchedCardBoardContainer>
     )
 }
-
 
 export default SearchedMovieCards;

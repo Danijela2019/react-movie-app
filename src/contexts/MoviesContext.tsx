@@ -1,17 +1,19 @@
 // @ts-nocheck
-import React, { createContext,useState, useEffect } from 'react';
+import React, { createContext,useState, useEffect, useContext } from 'react';
 
 const baseUrl = "https://api.themoviedb.org/3";
 const posterBaseUrl = "https://image.tmdb.org/t/p/w300";
 const apiKey = process.env.REACT_APP_API_KEY;
 
 export const MoviesContext = createContext();
+
   const MoviesContextProvider = ({ children }: any): React.ReactElement => {
   const [popularMovies,setPopularMovies] = useState([]);
   const [searchedMovies, setSearchedMovies] = useState([])
+  const [favoriteMovies, setFavoriteMovies] = useState([]);
 
   const getPopularMovies= () => {
-    const popularUrl = `${baseUrl}/discover/movie?sort_by=popularity.desc&api_key=${apiKey}`;
+    const popularUrl = `${baseUrl}/discover/movie?sort_by=popularity.desc&api_key=1`;
     return fetch(popularUrl)
       .then((res) => res.json())
       .then((response) => mapData(response.results))
@@ -62,9 +64,17 @@ export const MoviesContext = createContext();
     });
   }
 
+  const addToFavorites = (movieId) => {
+    const movie = searchedMovies.filter((item) =>  item.id === movieId)[0]
+    const copyFavoriteMovies= [...favoriteMovies];
+      copyFavoriteMovies.push(movie);
+      setFavoriteMovies(copyFavoriteMovies);
+      
+    
+  };
 
-  return <MoviesContext.Provider value={{ popularMovies,getSearchedMovies, searchedMovies }}>
-        {children}
+return <MoviesContext.Provider value={{ popularMovies,getSearchedMovies, searchedMovies, addToFavorites ,favoriteMovies}}>
+    {children}
     </MoviesContext.Provider>;
 };
   
