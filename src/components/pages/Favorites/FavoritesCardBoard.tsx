@@ -1,6 +1,6 @@
 
 //@ts-nocheck
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
 import { AiFillDelete} from "react-icons/ai";
 import { useHistory } from 'react-router-dom';
 
@@ -8,12 +8,13 @@ import Card from '../../Card';
 import CardBoard from '../../CardBoard';
 import movieData from '../../../data/movies';
 import {Img} from '../../Shared/ImageElements'
-import {FavoritesBackground,FavoritesTrashcan, MovieTitle, RemoveButton} from './FavortiesElements'
+import {FavoritesTrashcan, MovieTitle, RemoveButton} from './FavortiesElements'
 import Icon from '../../Icon';
+import {MoviesContext} from '../../../contexts/MoviesContext'
 
 
 
-const FavoriteCard = (props:any) => {
+const FavoriteCard = ({data}) => {
     const [active, setActive] = useState(false);
 
     const RemoveCardHandler = () => {
@@ -41,18 +42,18 @@ const FavoriteCard = (props:any) => {
                             </Icon>
                         </RemoveButton>
                 </FavoritesTrashcan>
-                <Img as='img' src={props.data.src} alt={props.data.alt}></Img>
-                <MovieTitle>{props.data.alt}</MovieTitle>
+                <Img as='img' src={data.picture} alt={data.title}></Img>
+                <MovieTitle>{data.title}</MovieTitle>
             </Card>
         </div>
     )
 }
-const favoritesMovieCards = movieData.map((data, index) => <FavoriteCard data={data} key={index} />);
 
 const FavoritesCardBoard = () => {
+    const { favoriteMovies } = useContext(MoviesContext);
     return (
         <CardBoard>
-           {favoritesMovieCards}
+            {favoriteMovies.map((data) => <FavoriteCard data={data} key={data.id} />)}
         </CardBoard>
     )
 }
