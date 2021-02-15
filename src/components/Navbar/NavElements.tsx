@@ -90,6 +90,9 @@ export const MobileNavbar = styled.ul`
   padding: 1rem;
 `;
 
-
-
-
+export const RedirectToHomeButton = styled.button`
+height: 90%;
+background: transparent;
+outline:none;
+border:none;
+`;

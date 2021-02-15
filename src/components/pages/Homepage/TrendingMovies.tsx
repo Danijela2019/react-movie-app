@@ -5,7 +5,7 @@ import { useHistory } from 'react-router-dom';
 import {Img} from '../../Shared/ImageElements'
 import Card from '../../Card'
 import CardBoard from '../../CardBoard'
-import  MoviesContext  from '../../../contexts/MoviesContext';
+import  {MoviesContext}  from '../../../contexts/MoviesContext';
 
 const TrendingMovieCard = ({data}:any) => {
     let history = useHistory();
@@ -23,12 +23,11 @@ const TrendingMovieCard = ({data}:any) => {
 
 
 const TrendingMovies = () => {
-    const {movies} = useContext(MoviesContext);
-    const popularMovies = [...movies].slice(0,12)
-    
+    const {popularMovies} = useContext(MoviesContext);
+    const trending = [...popularMovies].slice(0,12)
     return (
         <CardBoard>
-        {popularMovies.map((movie) => <TrendingMovieCard data={movie} key={movie.id}/>)};
+        {trending.map((movie) => <TrendingMovieCard data={movie} key={movie.id}/>)};
     </CardBoard>
     )
 }

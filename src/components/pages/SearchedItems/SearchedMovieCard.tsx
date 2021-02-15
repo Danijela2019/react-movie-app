@@ -1,6 +1,6 @@
 //@ts-nocheck
 import React,{useContext} from 'react'
-import MoviesContext from '../../../contexts/MoviesContext'
+import {MoviesContext} from '../../../contexts/MoviesContext'
 import Button from '../../Button'
 import MovieInfoContent from '../../MovieInfoContent';
 import {Image, SearchedCardBoardContainer, SearchedCardContainer, SearchedContentWrapper} from './SearchedItemsComponents'
@@ -27,10 +27,11 @@ const SearchedMovieCard = ({data}) => {
 
 
 const SearchedMovieCards = () =>{
-    const { movies } = useContext(MoviesContext);
+    const { searchedMovies } = useContext(MoviesContext);
+    console.log('here',searchedMovies)
     return (
         <SearchedCardBoardContainer>
-            {movies.map((data) => <SearchedMovieCard data={data} key={data.id} />)}
+            {searchedMovies.map((data) => <SearchedMovieCard data={data} key={data.id} />)}
         </SearchedCardBoardContainer>
     )
 }
