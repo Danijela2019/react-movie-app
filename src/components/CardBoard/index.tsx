@@ -1,7 +1,9 @@
 import React from 'react'
+
+import { ICardBoardProps } from '../../types';
 import {CardsWrapper} from './CardBoardElements'
 
-const CardBoard = (props:any) => {
+const CardBoard = (props:ICardBoardProps) => {
     return (
         <CardsWrapper>
             {props.children}

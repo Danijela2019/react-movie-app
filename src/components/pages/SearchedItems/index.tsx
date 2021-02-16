@@ -1,6 +1,5 @@
-//@ts-nocheck
 import React from 'react'
-import {SearchedContainer} from './SearchedItemsComponents'
+import {SearchedContainer} from './SearchedItemsElements'
 import SearchedMovieCards from './SearchedMovieCard';
 
 const SearchedItems = () => {

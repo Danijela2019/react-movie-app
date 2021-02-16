@@ -1,8 +1,7 @@
-//@ts-nocheck
 import styled from 'styled-components';
+import { ICardContainer } from '../../types';
 
-
-export const CardContainer = styled.div`
+export const CardContainer = styled.div<ICardContainer>`
 background-color:var(--color-background);
 margin: ${(props) => props.margin};
 border-radius:10px;

@@ -1,18 +1,20 @@
-//@ts-nocheck
+  //@ts-nocheck
 import React, {useState, useContext} from 'react'
 import { AiFillDelete} from "react-icons/ai";
 
-import Card from '../../Card';
-import CardBoard from '../../CardBoard';
-import {Img} from '../../Shared/ImageElements'
+import Card from '../../card';
+import CardBoard from '../../cardBoard';
+import {Img} from '../../shared/ImageElements'
 import {FavoritesTrashcan, MovieTitle, RemoveButton} from './FavortiesElements'
-import Icon from '../../Icon';
+import Icon from '../../icon';
 import {MoviesContext} from '../../../contexts/MoviesContext'
+import { IMovieData } from '../../../types';
 
 
 
-const FavoriteCard = ({data}) => {
+const FavoriteCard = ({data}: IMovieData) => {
     const [active, setActive] = useState(false);
+  
     const { removeFromFavorites} = useContext(MoviesContext);
     return(
         <div onMouseEnter={e => {

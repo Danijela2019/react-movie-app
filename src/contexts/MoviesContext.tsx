@@ -1,15 +1,15 @@
-// @ts-nocheck
-import React, { createContext,useState, useEffect, useContext } from 'react';
+import React, { createContext,useState, useEffect, useContext, ReactChild, ReactChildren } from 'react'; 
+import {IChildren, IMovie, IMoviesContext } from '../types'
 
 const baseUrl = "https://api.themoviedb.org/3";
 const posterBaseUrl = "https://image.tmdb.org/t/p/w300";
 const apiKey = process.env.REACT_APP_API_KEY;
 
-export const MoviesContext = createContext();
+export const MoviesContext = createContext<IMoviesContext|null>(null);
 
 const storage = localStorage.getItem('movies') ? JSON.parse(localStorage.getItem('movies') || '') : [];
 
-  const MoviesContextProvider = ({ children }: any): React.ReactElement => {
+  const MoviesContextProvider = ({ children }: IChildren): React.ReactElement => {
   const [popularMovies,setPopularMovies] = useState([]);
   const [searchedMovies, setSearchedMovies] = useState([])
   const [favoriteMovies, setFavoriteMovies] = useState(storage);
@@ -32,7 +32,7 @@ const storage = localStorage.getItem('movies') ? JSON.parse(localStorage.getItem
       .catch((_) => setPopularMovies([]));
     }, []);
 
-    const getSearchedMovies= async (searchValue:any)=> {
+    const getSearchedMovies= async (searchValue:string)=> {
       const searchApiUrl = `${baseUrl}/search/movie?query=${searchValue}&api_key=${apiKey}`
       try {
       const res = await fetch(searchApiUrl);
@@ -45,7 +45,7 @@ const storage = localStorage.getItem('movies') ? JSON.parse(localStorage.getItem
   }
     
   const mapData = (res:any) => {
-    return res.map((movie:any) => {
+    return res.map((movie:IMovie) => {
       const {
         id,
         title,
@@ -66,9 +66,9 @@ const storage = localStorage.getItem('movies') ? JSON.parse(localStorage.getItem
     });
   }
 
-  const addToFavorites = (movieId) => {
-    if(!favoriteMovies.find((item) => item.id === movieId)){
-    const movie = searchedMovies.filter((item) =>  item.id === movieId)[0]
+  const addToFavorites = (movieId:string) => {
+    if(!favoriteMovies.find((item:any) => item.id === movieId)){
+    const movie= searchedMovies.find((item:any) =>item.id === movieId)
     const copyFavoriteMovies= [...favoriteMovies];
       copyFavoriteMovies.push(movie);
       localStorage.setItem('movies', JSON.stringify(copyFavoriteMovies));
@@ -76,8 +76,8 @@ const storage = localStorage.getItem('movies') ? JSON.parse(localStorage.getItem
     }
   };
 
-  const removeFromFavorites = (movieId) => {
-    const moviesArray = favoriteMovies.filter((item) => item.id !== movieId);
+  const removeFromFavorites = (movieId:string) => {
+    const moviesArray = favoriteMovies.filter((item:any) => item.id !== movieId);
     localStorage.setItem('movies', JSON.stringify(moviesArray));
     setFavoriteMovies(moviesArray);
   };

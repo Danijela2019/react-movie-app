@@ -1,11 +1,11 @@
 import React from 'react';
-import styled from 'styled-components';
 
-const Main = styled.div`
-background:var(--color-background);
-flex:1`
+import { ILayoutProps } from '../../types';
+import { Main } from './LayoutElements';
 
-const Layout = (props: any) => {
+
+
+const Layout = (props: ILayoutProps) => {
     return (
         <React.Fragment>
             <Main>

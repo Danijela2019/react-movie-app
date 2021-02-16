@@ -1,9 +1,9 @@
 //@ts-nocheck
 import React from 'react'
 import {FormContainer,FormField,LoginContainer,FormControl,FormIcons, LoginText,LoginAnchor,LoginTextWrapper} from './LoginElements'
-import Icon from '../../Icon'
+import Icon from '../../icon'
 import { AiOutlineLock,AiOutlineUser } from "react-icons/ai";
-import Button from '../../Button'
+import Button from '../../button'
 
 
 

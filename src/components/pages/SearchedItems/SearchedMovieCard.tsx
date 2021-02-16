@@ -1,27 +1,29 @@
 //@ts-nocheck
 import React,{useContext} from 'react'
 import {MoviesContext} from '../../../contexts/MoviesContext'
-import Button from '../../Button'
-import MovieInfoContent from '../../MovieInfoContent';
-import {Image, SearchedCardBoardContainer, SearchedCardContainer, SearchedContentWrapper} from './SearchedItemsComponents'
+import MovieInfoContent from '../../movieInfoContent';
+import {Image, SearchedCardBoardContainer, SearchedCardContainer, SearchedContentWrapper,AddButton} from './SearchedItemsElements'
 
 const SearchedMovieCard = ({data}) => {
-    const {addToFavorites}= useContext(MoviesContext);
+    const {addToFavorites, favoriteMovies}= useContext(MoviesContext);
+    
+
+    const isAdded = (movieId) => {
+        return favoriteMovies.find((item) => item.id === movieId)
+    }
+
+
     return (
         <SearchedCardContainer>
             <SearchedContentWrapper>
                 <Image as='img' src={data.picture} alt={data.title}></Image>
                 <MovieInfoContent data={data}/>
-                <Button 
-                    margin='1rem 3rem'
-                    bg="var(--color-primary)"
-                    fontSize='15px'
-                    width='8rem'
-                    height='2rem'
-                    clicked ={() => addToFavorites(data.id)}
+                <AddButton 
+                    onClick ={() => addToFavorites(data.id)}
+                    disabled= {isAdded(data.id)}
                 >
-                    Add to favorites
-                </Button>
+                    {!isAdded(data.id) ? 'Add to favorites' : 'Added to favorites'}
+                </AddButton>
             </SearchedContentWrapper>
         </SearchedCardContainer>
     )

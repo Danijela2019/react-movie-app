@@ -1,11 +1,11 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-import Homepage from './Homepage';
-import Login from './Login';
-import Favorites from './Favorites';
-import SearchedItems from './SearchedItems';
-import MoviePage from './MoviePage'
+import Homepage from './homepage';
+import Login from './login';
+import Favorites from './favorites';
+import SearchedItems from './searchedItems';
+import MoviePage from './moviePage'
 
 
 const Routes = (): React.ReactElement => {

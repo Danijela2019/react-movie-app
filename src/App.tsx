@@ -3,10 +3,10 @@ import React from 'react';
 import {BrowserRouter as Router} from 'react-router-dom';
 
 import {GlobalStyle} from './GlobalStyles'
-import Navbar from './components/Navbar';
+import Navbar from './components/navbar';
 import Routes from './components/pages';
-import Footer from './components/Footer';
-import Layout from './components/Layout/Layout';
+import Footer from './components/footer';
+import Layout from './components/layout/Layout';
 import styled from 'styled-components'
 import MoviesContextProvider from './contexts/MoviesContext'
 

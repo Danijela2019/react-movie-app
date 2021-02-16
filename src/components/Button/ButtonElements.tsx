@@ -1,7 +1,7 @@
-//@ts-nocheck
 import styled from 'styled-components';
+import {IButtonWrapperProps, IStyledButtonProps} from '../../types'
 
-export const StyledButton = styled.button`
+export const StyledButton = styled.button<IStyledButtonProps>`
   background-color: ${(props) => props.bg};
   font-size: ${(props) => props.fontSize};
   width: ${(props) => props.width};
@@ -18,7 +18,7 @@ export const StyledButton = styled.button`
     font-size:25px;
   }`
 
-  export const ButtonWrapper = styled.div`
+  export const ButtonWrapper = styled.div<IButtonWrapperProps>`
   margin: ${(props) => props.margin ? props.margin : null};
   background:transparent;
   `;

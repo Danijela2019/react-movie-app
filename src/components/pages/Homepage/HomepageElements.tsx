@@ -1,6 +1,7 @@
-// @ts-nocheck
 import styled from 'styled-components';
+
 import cover from '../../../assets/it.jpg';
+import { IHeroCoverProps } from '../../../types';
 
 export const HeroTitle = styled.h1`
 background:transparent;
@@ -33,7 +34,8 @@ height:100%;
 border-radius:10px;
 `
 
-export const HeroCover = styled.div`
+
+export const HeroCover = styled.div<IHeroCoverProps>`
 background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) ),
 url(${props => props.cover ? props.cover:cover});
 height: 100%;

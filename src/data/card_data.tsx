@@ -9,7 +9,6 @@ export const cardData = [
     text:`Very user friendly and intuitive applicaiton.
     The users can search for movies they are interested in.`,
     icon: <ImFilm/>,
-
 },
 { 
     id:2,

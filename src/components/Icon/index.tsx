@@ -1,11 +1,12 @@
-// @ts-nocheck
 import React from 'react';
 import { IconContext } from 'react-icons';
+import { IIconProps } from '../../types'
 
-const Icon = ({ children, color, size }) => {
+
+const Icon = ( props : IIconProps) => {
     return (
-        <IconContext.Provider value={{ style: { fontSize: `${size}`, color: `${color}` } }}>
-            <div>{children}</div>
+        <IconContext.Provider value={{ style: { fontSize: `${props.size}`, color: `${props.color}` } }}>
+            <div>{props.children}</div>
         </IconContext.Provider>
     );
 };

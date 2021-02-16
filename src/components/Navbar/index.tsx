@@ -1,10 +1,12 @@
 import React, {useState} from 'react'
-import Icon from '../Icon'
+import { useHistory } from 'react-router-dom';
+
+import Icon from '../icon'
 import { NavImage,NavbarContainer, NavbarWrapper,NavbarLogo,NavbarToggle, RedirectToHomeButton} from './NavElements'
 import logo from '../../assets/tv.png';
 import { AiOutlineMenu } from 'react-icons/ai';
 import NavItems from './NavItems';
-import { useHistory } from 'react-router-dom';
+
 
 const Logo = (): React.ReactElement => {
 

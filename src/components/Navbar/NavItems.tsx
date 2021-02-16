@@ -1,10 +1,10 @@
 import React from 'react';
-import { AiOutlineSearch } from 'react-icons/ai';
-import Icon from '../Icon';
+
 import Search from './search'
 import { NavbarLink, NavbarLinks,NavLink, MobileNavbar} from './NavElements'
+import { INavItemProps } from '../../types';
 
-const NavItems = (props:any) => {
+const NavItems = (props:INavItemProps) => {
   const { sidebar, closeMenu } = props;
   
   const links = (
@@ -30,7 +30,10 @@ const NavItems = (props:any) => {
     </React.Fragment>
   );
 
-  return <>{sidebar ? <MobileNavbar>{links}</MobileNavbar> : <NavbarLinks>{links}</NavbarLinks>}</>;
+  return (
+    <React.Fragment>
+      {sidebar ? <MobileNavbar>{links}</MobileNavbar> : <NavbarLinks>{links}</NavbarLinks>}
+    </React.Fragment>);
 };
 
 export default NavItems;

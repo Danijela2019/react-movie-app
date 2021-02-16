@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 export const MovieInfo= styled.p`
-margin: .5rem;
+margin-right:2rem;
+margin-left:.5rem;
 `
 export const MovieDataColumn = styled.div`
 display:flex;
@@ -25,4 +26,17 @@ background-color:var(--color-background);
   flex-direction:column; 
   align-items:center;
   };
+`
+export const Resume = styled.p`
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+  max-width: 400px;
+  `
+
+export const InfoWrapper = styled.div`
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
 `

@@ -1,13 +1,11 @@
-//@ts-nocheck
-import React,{useContext, useState} from 'react'
+import React from 'react'
 
-import {Title} from '../../Shared/TextElements'
-import CardBoard from '../../CardBoard'
-import Button from '../../Button'
+import {Title} from '../../shared/TextElements'
+import CardBoard from '../../cardBoard'
+import Button from '../../button'
 import cover from '../../../assets/it.jpg'
 import InfoCardsBoard from './InfoCardsBoard'
 import TrendingMovies from './TrendingMovies'
-import Spinner from '../../Spinner'
 import { HeroTitle, HeroParagraph, HeroCoverContainer,HeroCover } from './HomepageElements'
 
 const Home = () => {

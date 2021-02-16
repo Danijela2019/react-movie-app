@@ -1,27 +1,25 @@
+//@ts-nocheck
 import React from 'react'
 
-import {CenterElements} from '../../Shared/CenterElements'
-import Card from '../../Card'
-import MovieInfoContent from '../../MovieInfoContent'
-import Button from '../../Button'
-import { MovieContentWrapper, MovieDataColumn } from './MoviepageComponents'
+import {CenterElements} from '../../shared/CenterElements'
+import Card from '../../card'
+import MovieInfoContent from '../../movieInfoContent'
+import Button from '../../button'
+import { MovieContentWrapper, MovieDataColumn } from './MoviepageElements'
 import { useHistory } from 'react-router-dom'
-import { useLocation } from 'react-router-dom';
 
-const MovieInfoCard = (props:any) => {
+const MovieInfoCard = () => {
 
     let history = useHistory();
     const redirectToHome = () => {
         history.goBack();
     }
     
-
-    
     return (
         <CenterElements>
             <Card width='100%' height='fit-content' margin='2rem 1rem'>
             <MovieContentWrapper>
-               <MovieInfoContent/> 
+              <MovieInfoContent/> 
                <MovieDataColumn>
                     <Button 
                         margin='1rem 3rem'
