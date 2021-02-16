@@ -1,20 +1,23 @@
 //@ts-nocheck
 import React, { useContext } from 'react'
 import { CenterElements } from '../../Shared/CenterElements';
-import { Title } from '../../Shared/TextElements';
-import SearchedMovieCards from '../SearchedItems/SearchedMovieCard';
+import { Title } from '../../Shared/TextElements'
 import FavoritesCardBoard from './FavoritesCardBoard';
-import { NoFavoritesBackground, FavoritesBackground, MovieTitle} from './FavortiesElements';
+import { NoFavoritesBackground, FavoritesBackground, TitleWrapper} from './FavortiesElements';
 import {MoviesContext} from '../../../contexts/MoviesContext'
 
 const Favorites = () => {
 const {favoriteMovies} = useContext(MoviesContext)
+
+
+
+
     const noFavorites = (
         <NoFavoritesBackground>
-        <CenterElements>
+        <TitleWrapper>
         <Title>You do not have any favorites yet.</Title>
         <Title>Let's add some🙂</Title>
-        </CenterElements>
+        </TitleWrapper>
         </NoFavoritesBackground>
     )
 

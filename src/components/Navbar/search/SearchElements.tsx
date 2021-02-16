@@ -18,12 +18,15 @@ export const SearchInput = styled.input`
   border-radius:5px 0 0 5px ;
   border-right: none;
   height:30px;
-  width:100%`
+  text-align:center;
+  width:100%;
+  outline:none;`
 
   export const SearchForm = styled.form`
   display:flex;
   justify-content:flex-end;
   align-items:center;
+  text-align:center;
   `
     
   
@@ -40,5 +43,6 @@ text-align: center;
   height: 30px;
  border-radius: 0 5px 5px 0 ;
   border-right: none;
+  outline:none;
   `
   

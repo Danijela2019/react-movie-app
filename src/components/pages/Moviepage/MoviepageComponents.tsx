@@ -1,6 +1,6 @@
 //@ts-nocheck
 import styled from 'styled-components';
-import cover from '../../../assets/it.png'
+import cover from '../../../assets/it.jpg'
 
 export const MovieImage = styled.div`
 position: absolute; 

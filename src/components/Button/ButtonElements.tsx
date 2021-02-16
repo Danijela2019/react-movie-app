@@ -12,7 +12,7 @@ export const StyledButton = styled.button`
   border:none;
   padding:0;
  @media (max-width: 540px) {
-    max-width: 80%;
+    width: 250px;
     height: 50px;
     margin:0.5rem;
     font-size:25px;

@@ -1,12 +1,9 @@
-
 //@ts-nocheck
 import React, {useState, useContext} from 'react'
 import { AiFillDelete} from "react-icons/ai";
-import { useHistory } from 'react-router-dom';
 
 import Card from '../../Card';
 import CardBoard from '../../CardBoard';
-import movieData from '../../../data/movies';
 import {Img} from '../../Shared/ImageElements'
 import {FavoritesTrashcan, MovieTitle, RemoveButton} from './FavortiesElements'
 import Icon from '../../Icon';
@@ -16,11 +13,7 @@ import {MoviesContext} from '../../../contexts/MoviesContext'
 
 const FavoriteCard = ({data}) => {
     const [active, setActive] = useState(false);
-
-    const RemoveCardHandler = () => {
-        console.log('I was clicked')
-    }
-
+    const { removeFromFavorites} = useContext(MoviesContext);
     return(
         <div onMouseEnter={e => {
             e.preventDefault
@@ -35,7 +28,7 @@ const FavoriteCard = ({data}) => {
                 width='15rem'
                 height='27rem'
                 >
-                <FavoritesTrashcan  isVisible={active} onClick={RemoveCardHandler} >
+                <FavoritesTrashcan  isVisible={active} onClick={()=>removeFromFavorites(data.id)}>
                         <RemoveButton>  
                             <Icon color='white' size='30px'>
                                 <AiFillDelete/>
@@ -50,10 +43,11 @@ const FavoriteCard = ({data}) => {
 }
 
 const FavoritesCardBoard = () => {
-    const { favoriteMovies } = useContext(MoviesContext);
+    const { favoriteMovies} = useContext(MoviesContext);
+
     return (
         <CardBoard>
-            {favoriteMovies.map((data) => <FavoriteCard data={data} key={data.id} />)}
+            {favoriteMovies.map((data) => <FavoriteCard data={data} key={data.id}/>)}
         </CardBoard>
     )
 }

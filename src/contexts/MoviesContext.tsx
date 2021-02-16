@@ -7,13 +7,15 @@ const apiKey = process.env.REACT_APP_API_KEY;
 
 export const MoviesContext = createContext();
 
+const storage = localStorage.getItem('movies') ? JSON.parse(localStorage.getItem('movies') || '') : [];
+
   const MoviesContextProvider = ({ children }: any): React.ReactElement => {
   const [popularMovies,setPopularMovies] = useState([]);
   const [searchedMovies, setSearchedMovies] = useState([])
-  const [favoriteMovies, setFavoriteMovies] = useState([]);
+  const [favoriteMovies, setFavoriteMovies] = useState(storage);
 
   const getPopularMovies= () => {
-    const popularUrl = `${baseUrl}/discover/movie?sort_by=popularity.desc&api_key=1`;
+    const popularUrl = `${baseUrl}/discover/movie?sort_by=popularity.desc&api_key=${apiKey}`;
     return fetch(popularUrl)
       .then((res) => res.json())
       .then((response) => mapData(response.results))
@@ -65,15 +67,22 @@ export const MoviesContext = createContext();
   }
 
   const addToFavorites = (movieId) => {
+    if(!favoriteMovies.find((item) => item.id === movieId)){
     const movie = searchedMovies.filter((item) =>  item.id === movieId)[0]
     const copyFavoriteMovies= [...favoriteMovies];
       copyFavoriteMovies.push(movie);
+      localStorage.setItem('movies', JSON.stringify(copyFavoriteMovies));
       setFavoriteMovies(copyFavoriteMovies);
-      
-    
+    }
   };
 
-return <MoviesContext.Provider value={{ popularMovies,getSearchedMovies, searchedMovies, addToFavorites ,favoriteMovies}}>
+  const removeFromFavorites = (movieId) => {
+    const moviesArray = favoriteMovies.filter((item) => item.id !== movieId);
+    localStorage.setItem('movies', JSON.stringify(moviesArray));
+    setFavoriteMovies(moviesArray);
+  };
+
+return <MoviesContext.Provider value={{ popularMovies,getSearchedMovies, searchedMovies, addToFavorites ,favoriteMovies, removeFromFavorites}}>
     {children}
     </MoviesContext.Provider>;
 };

@@ -1,6 +1,6 @@
 // @ts-nocheck
 import styled from 'styled-components';
-import cover from '../../../assets/it.png';
+import cover from '../../../assets/it.jpg';
 
 export const HeroTitle = styled.h1`
 background:transparent;
@@ -42,6 +42,7 @@ background-position: center;
   background-size: cover;
   display:flex;
   flex-direction: column;
+  box-shadow: 30px 30px 150px 100px black  inset;
 `;
 
 export const HeroCoverContainer = styled.div`
