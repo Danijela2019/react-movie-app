@@ -1,4 +1,3 @@
-//@ts-nocheck
 import styled from 'styled-components';
 
 export const SearchedContainer = styled.div`
@@ -47,3 +46,25 @@ padding:.5rem;
   padding:0;
   };
 `
+export const AddButton = styled.button`
+   margin:1rem;
+ background:var(--color-primary);
+  font-size:15px;
+  width:150px;
+  height:2rem;
+  outline:none;
+  border-radius: 10px;
+  cursor:pointer;
+  border:none;
+  padding:0;
+  &:disabled {
+  color: black;
+  background: var(--color-danger);
+}
+  
+ @media (max-width: 540px) {
+    width: 250px;
+    height: 50px;
+    margin:0.5rem;
+    font-size:25px;
+  }`

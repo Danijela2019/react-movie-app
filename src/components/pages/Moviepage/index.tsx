@@ -1,10 +1,8 @@
-//@ts-nocheck
+
 import React from 'react'
 
-import { MovieBackground, MovieImage, MovieTitleContainer,MovieDataColumn} from './MoviepageComponents'
-import {Title} from '../../Shared/TextElements'
-import Navbar from '../../Navbar'
-import Footer from '../../Footer'
+import { MovieBackground, MovieImage, MovieTitleContainer,MovieDataColumn} from './MoviepageElements'
+import {Title} from '../../shared/TextElements'
 import joker from './../../../assets/movies/joker.jpg'
 import MovieInfoCard from './MovieInfoCard';
 

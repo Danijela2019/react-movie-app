@@ -1,13 +1,14 @@
-//@ts-nocheck
 import styled from 'styled-components';
+
 import cover from '../../../assets/it.jpg'
+import { IMovieBackground } from '../../../types';
 
 export const MovieImage = styled.div`
 position: absolute; 
 bottom: 0px;
 `;
 
-export const MovieBackground = styled.div`
+export const MovieBackground = styled.div<IMovieBackground>`
 background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) ),
 url(${props => props.cover ? props.cover:cover}); ;
 height: 100vh;

@@ -1,7 +1,7 @@
 //@ts-nocheck
 import React from 'react'
 import { Ellipsis } from 'react-awesome-spinners'
-import { CenterElements } from '../Shared/CenterElements';
+import { CenterElements } from '../shared/CenterElements';
 
 const Spinner = () => {
     return (

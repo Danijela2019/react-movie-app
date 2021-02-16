@@ -1,4 +1,3 @@
-//@ts-nocheck
 import React,{useState, useContext} from 'react';
 import { SearchBox, SearchButton, SearchForm, SearchInput } from './SearchElements'
 import {MoviesContext} from '../../../contexts/MoviesContext'
@@ -6,7 +5,8 @@ import { useHistory } from 'react-router-dom';
 
 const Search = () => {
   const [searchValue, setSearchValue] = useState("");
-  const [movies, setMovies] = useState([]);
+  const [_movies,setMovies] = useState([]);
+  //@ts-ignore
   const { getSearchedMovies} = useContext(MoviesContext); 
 
   let history = useHistory();
@@ -15,6 +15,7 @@ const Search = () => {
 }
   
   const handleSearchInputChanges = (event:React.FormEvent) => {
+    //@ts-ignore
     setSearchValue(event.target.value);
   }
   

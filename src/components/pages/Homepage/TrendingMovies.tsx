@@ -2,12 +2,13 @@
 import React,{useContext} from 'react'
 import { useHistory } from 'react-router-dom';
 
-import {Img} from '../../Shared/ImageElements'
-import Card from '../../Card'
-import CardBoard from '../../CardBoard'
+import {Img} from '../../shared/ImageElements'
+import Card from '../../card'
+import CardBoard from '../../cardBoard'
 import  {MoviesContext}  from '../../../contexts/MoviesContext';
+import { IMovieData } from '../../../types';
 
-const TrendingMovieCard = ({data}:any) => {
+const TrendingMovieCard = ({data}:IMovieData) => {
     let history = useHistory();
     const redirectToMoviePage = () => {
         history.push('/movie')

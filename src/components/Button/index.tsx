@@ -1,9 +1,9 @@
-//@ts-nocheck
 import React from 'react'
+import { IButtonProps } from '../../types';
 import {StyledButton,ButtonWrapper} from './ButtonElements'
 
 
-const Button = (props:any) => {
+const Button = (props:IButtonProps) => {
   return (
     <ButtonWrapper margin={props.margin}>
       <StyledButton
@@ -20,4 +20,3 @@ const Button = (props:any) => {
 };
 export default Button;
 
-// onClick={props.clicked}

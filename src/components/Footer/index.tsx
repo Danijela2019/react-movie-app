@@ -1,12 +1,12 @@
 import React from 'react';
+
 import {FooterContainer, Anchor, FooterLine, FooterWrapper, FollowMeWrapper, LogoWrapper } from './FooterElements';
-import Icon from '../Icon'
+import Icon from '../icon'
 import tv from '../../assets/tv2.png'
-
 import {followMeData } from '../../data/anchor_data';
+import { IFollowMeData, IFollowMeDataProps } from '../../types';
 
-
-const FollowMe = ({ data }:any) => (
+const FollowMe = ({data}:IFollowMeData) => (
     <Anchor href={data.link} target="_blank" rel="noopener">
       <Icon size="50px" color="white">
         {data.icon}
@@ -14,7 +14,7 @@ const FollowMe = ({ data }:any) => (
     </Anchor>
   );
   
-  const followMeLogos = followMeData.map((data: any) => (
+  const followMeLogos = followMeData.map((data: IFollowMeDataProps) => (
     <FollowMe key={data.id} data={data} />
   ));
   

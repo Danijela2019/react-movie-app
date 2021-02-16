@@ -1,11 +1,13 @@
 import React from 'react'
-import {Title} from '../../Shared/TextElements'
+
+import {Title} from '../../shared/TextElements'
 import {HomeCardText,HomeCardContent, InfoCardContainer} from './HomepageElements'
-import Icon from '../../Icon'
-import {cardData} from '../../../data/cardData';
+import Icon from '../../icon'
+import {cardData} from '../../../data/card_data';
+import { IInfoCardProps } from '../../../types';
 
 
-const InfoCard = (props:any) => {
+const InfoCard = (props:IInfoCardProps) => {
     return (
         <InfoCardContainer>
             <HomeCardContent>
