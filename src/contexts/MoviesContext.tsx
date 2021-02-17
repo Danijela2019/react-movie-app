@@ -1,5 +1,5 @@
-import React, { createContext,useState, useEffect, useContext, ReactChild, ReactChildren } from 'react'; 
-import {IChildren, IMovie, IMoviesContext } from '../types'
+import React, { createContext,useState, useEffect} from 'react'; 
+import {IChildren, IMovie, IMoviesContext, Movie } from '../types'
 
 const baseUrl = "https://api.themoviedb.org/3";
 const posterBaseUrl = "https://image.tmdb.org/t/p/w300";
@@ -13,6 +13,7 @@ const storage = localStorage.getItem('movies') ? JSON.parse(localStorage.getItem
   const [popularMovies,setPopularMovies] = useState([]);
   const [searchedMovies, setSearchedMovies] = useState([])
   const [favoriteMovies, setFavoriteMovies] = useState(storage);
+  const [singleMovie,setSingleMovie] = useState({});
 
   const getPopularMovies= () => {
     const popularUrl = `${baseUrl}/discover/movie?sort_by=popularity.desc&api_key=${apiKey}`;
@@ -66,9 +67,9 @@ const storage = localStorage.getItem('movies') ? JSON.parse(localStorage.getItem
     });
   }
 
-  const addToFavorites = (movieId:string) => {
-    if(!favoriteMovies.find((item:any) => item.id === movieId)){
-    const movie= searchedMovies.find((item:any) =>item.id === movieId)
+  const addToFavorites = (movieId:number) => {
+    if(!favoriteMovies.find((item:Movie) => item.id === movieId)){
+    const movie= searchedMovies.find((item:Movie) =>item.id === movieId)
     const copyFavoriteMovies= [...favoriteMovies];
       copyFavoriteMovies.push(movie);
       localStorage.setItem('movies', JSON.stringify(copyFavoriteMovies));
@@ -76,13 +77,26 @@ const storage = localStorage.getItem('movies') ? JSON.parse(localStorage.getItem
     }
   };
 
-  const removeFromFavorites = (movieId:string) => {
-    const moviesArray = favoriteMovies.filter((item:any) => item.id !== movieId);
+  const addTrendingToFavorites = (movie:Movie) => {
+    const copyFavoriteMovies= [...favoriteMovies];
+      copyFavoriteMovies.push(movie);
+      localStorage.setItem('movies', JSON.stringify(copyFavoriteMovies));
+      setFavoriteMovies(copyFavoriteMovies);
+  }
+  
+
+  const removeFromFavorites = (movieId:number) => {
+    const moviesArray = favoriteMovies.filter((item:Movie) => item.id !== movieId);
     localStorage.setItem('movies', JSON.stringify(moviesArray));
     setFavoriteMovies(moviesArray);
   };
 
-return <MoviesContext.Provider value={{ popularMovies,getSearchedMovies, searchedMovies, addToFavorites ,favoriteMovies, removeFromFavorites}}>
+  const getSingleMovieData = (movieData: Movie)=> {
+    setSingleMovie(movieData)
+  }
+
+
+return <MoviesContext.Provider value={{ popularMovies,getSearchedMovies, searchedMovies, addToFavorites ,favoriteMovies, removeFromFavorites, getSingleMovieData, singleMovie,addTrendingToFavorites}}>
     {children}
     </MoviesContext.Provider>;
 };

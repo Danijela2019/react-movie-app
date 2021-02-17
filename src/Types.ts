@@ -30,9 +30,12 @@ export interface IMovie {
     popularMovies: Movie[],
     searchedMovies: Movie[],
     favoriteMovies: Movie[],
+    singleMovie: Movie|{},
     getSearchedMovies: Function,
     addToFavorites: Function,
-    removeFromFavorites:Function
+    removeFromFavorites:Function,
+    getSingleMovieData:Function,
+    addTrendingToFavorites: Function
   }
 
   export interface IChildren {

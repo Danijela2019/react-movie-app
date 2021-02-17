@@ -59,7 +59,7 @@ export const AddButton = styled.button`
   padding:0;
   &:disabled {
   color: black;
-  background: var(--color-danger);
+  background: var(--color-disabled);
 }
   
  @media (max-width: 540px) {
