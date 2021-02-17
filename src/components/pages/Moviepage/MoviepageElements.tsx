@@ -5,7 +5,8 @@ import { IMovieBackground } from '../../../types';
 
 export const MovieImage = styled.div`
 position: absolute; 
-bottom: 0px;
+bottom: 55px;
+left:10px;
 `;
 
 export const MovieBackground = styled.div<IMovieBackground>`
@@ -18,6 +19,7 @@ background-size: cover;
 box-shadow: 40px 40px 210px 130px black  inset;
 position: relative; 
 `;
+
 
 export const MovieTitleContainer = styled.div`
 background:transparent;
@@ -52,5 +54,4 @@ padding:1rem;
  width:100%;
  margin:1rem .2rem;
 };`
-
 

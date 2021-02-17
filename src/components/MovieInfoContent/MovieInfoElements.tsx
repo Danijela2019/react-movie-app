@@ -33,6 +33,7 @@ export const Resume = styled.p`
   -webkit-box-orient: vertical;  
   overflow: hidden;
   max-width: 400px;
+  text-align: justify;
   `
 
 export const InfoWrapper = styled.div`

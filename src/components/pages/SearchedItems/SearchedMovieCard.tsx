@@ -6,6 +6,7 @@ import {Image, SearchedCardBoardContainer, SearchedCardContainer, SearchedConten
 
 const SearchedMovieCard = ({data}) => {
     const {addToFavorites, favoriteMovies}= useContext(MoviesContext);
+
     
     const isAdded = (movieId) => {
         return favoriteMovies.find((item) => item.id === movieId)

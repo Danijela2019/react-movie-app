@@ -9,10 +9,14 @@ import  {MoviesContext}  from '../../../contexts/MoviesContext';
 import { IMovieData } from '../../../types';
 
 const TrendingMovieCard = ({data}:IMovieData) => {
+    const {getSingleMovieData} = useContext(MoviesContext);
     let history = useHistory();
     const redirectToMoviePage = () => {
+        getSingleMovieData(data)
         history.push('/movie')
     }
+
+
     return (
         <div onClick={redirectToMoviePage}>
             <Card  width='auto' height='16rem' margin='1rem 0.5rem'>

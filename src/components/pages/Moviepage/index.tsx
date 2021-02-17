@@ -1,19 +1,24 @@
+//@ts-nocheck
+import React, { useContext } from 'react'
 
-import React from 'react'
-
-import { MovieBackground, MovieImage, MovieTitleContainer,MovieDataColumn} from './MoviepageElements'
+import { MovieBackground, MovieImage, MovieTitleContainer} from './MoviepageElements'
 import {Title} from '../../shared/TextElements'
-import joker from './../../../assets/movies/joker.jpg'
 import MovieInfoCard from './MovieInfoCard';
+import {MoviesContext} from '../../../contexts/MoviesContext';
 
 
 const MoviePage = () => {
+    //@ts-ignore
+    const {singleMovie} = useContext(MoviesContext)
+
+   
+
     return (
         <React.Fragment>
-            <MovieBackground cover={joker}>
-                <MovieImage as='img' src={joker} width="200px" height="auto" alt="Joker"/>
+            <MovieBackground cover={singleMovie.picture}>
+                <MovieImage as='img' src={singleMovie.picture} width="200px" height="auto" alt="Joker"/>
                 <MovieTitleContainer>
-                    <Title>Joker</Title>
+                    <Title>{singleMovie.title}</Title>
                 </MovieTitleContainer>
             </MovieBackground>
             <MovieInfoCard/>

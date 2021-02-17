@@ -1,3 +1,4 @@
+//@ts-nocheck
 import React from 'react'
 import { SiImdb } from 'react-icons/si';
 
@@ -21,6 +22,4 @@ const MovieInfoContent = ({data}:IMovieData) => {
     </MovieContentWrapper>
     )
 }
-
-
 export default MovieInfoContent;
