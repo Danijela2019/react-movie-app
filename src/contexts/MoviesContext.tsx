@@ -1,5 +1,5 @@
 import React, { createContext,useState, useEffect} from 'react'; 
-import {IChildren, IMovie, IMoviesContext, Movie } from '../types'
+import {IChildren, IMovie, IMoviesContext, Movie } from '../frontEndTypes'
 
 const baseUrl = "https://api.themoviedb.org/3";
 const posterBaseUrl = "https://image.tmdb.org/t/p/w300";
@@ -7,13 +7,16 @@ const apiKey = process.env.REACT_APP_API_KEY;
 
 export const MoviesContext = createContext<IMoviesContext|null>(null);
 
-const storage = localStorage.getItem('movies') ? JSON.parse(localStorage.getItem('movies') || '') : [];
+const favoriteMoviesStorage = localStorage.getItem('movies') ? JSON.parse(localStorage.getItem('movies') || '') : [];
+//@ts-ignore
+const singleMovieStorage = JSON.parse(localStorage.getItem('movie'));
+const searchedMoviesStorage = localStorage.getItem('searchedMovies') ? JSON.parse(localStorage.getItem('searchedMovies') || '') : [];
 
   const MoviesContextProvider = ({ children }: IChildren): React.ReactElement => {
   const [popularMovies,setPopularMovies] = useState([]);
-  const [searchedMovies, setSearchedMovies] = useState([])
-  const [favoriteMovies, setFavoriteMovies] = useState(storage);
-  const [singleMovie,setSingleMovie] = useState({});
+  const [searchedMovies, setSearchedMovies] = useState(searchedMoviesStorage)
+  const [favoriteMovies, setFavoriteMovies] = useState(favoriteMoviesStorage);
+  const [singleMovie,setSingleMovie] = useState(singleMovieStorage);
 
   const getPopularMovies= () => {
     const popularUrl = `${baseUrl}/discover/movie?sort_by=popularity.desc&api_key=${apiKey}`;
@@ -39,6 +42,7 @@ const storage = localStorage.getItem('movies') ? JSON.parse(localStorage.getItem
       const res = await fetch(searchApiUrl);
       const response = await res.json();
       const newData= mapData(response.results);
+      localStorage.setItem('searchedMovies', JSON.stringify(newData));
       setSearchedMovies(newData)
     } catch (_) {
       return [];
@@ -92,6 +96,7 @@ const storage = localStorage.getItem('movies') ? JSON.parse(localStorage.getItem
   };
 
   const getSingleMovieData = (movieData: Movie)=> {
+    localStorage.setItem('movie', JSON.stringify(movieData));
     setSingleMovie(movieData)
   }
 

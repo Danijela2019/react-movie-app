@@ -2,7 +2,7 @@ import React from 'react';
 
 import Search from './search'
 import { NavbarLink, NavbarLinks,NavLink, MobileNavbar} from './NavElements'
-import { INavItemProps } from '../../types';
+import { INavItemProps } from '../../frontEndTypes';
 
 const NavItems = (props:INavItemProps) => {
   const { sidebar, closeMenu } = props;

@@ -1,17 +1,19 @@
 //@ts-nocheck
-import React, { useContext } from 'react'
+import React, { useContext,useEffect} from 'react'
+import { useLocation } from "react-router-dom";
 
 import { MovieBackground, MovieImage, MovieTitleContainer} from './MoviepageElements'
 import {Title} from '../../shared/TextElements'
 import MovieInfoCard from './MovieInfoCard';
 import {MoviesContext} from '../../../contexts/MoviesContext';
 
-
 const MoviePage = () => {
-    //@ts-ignore
     const {singleMovie} = useContext(MoviesContext)
+    const location = useLocation();
 
-   
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, [location]); 
 
     return (
         <React.Fragment>

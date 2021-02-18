@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { ICardBoardProps } from '../../types';
+import { ICardBoardProps } from '../../frontEndTypes';
 import {CardsWrapper} from './CardBoardElements'
 
 const CardBoard = (props:ICardBoardProps) => {

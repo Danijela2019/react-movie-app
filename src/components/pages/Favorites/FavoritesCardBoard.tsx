@@ -5,10 +5,11 @@ import { AiFillDelete} from "react-icons/ai";
 import Card from '../../card';
 import CardBoard from '../../cardBoard';
 import {Img} from '../../shared/ImageElements'
-import {FavoritesTrashcan, MovieTitle, RemoveButton} from './FavortiesElements'
+import {FavoritesTrashcan, MovieTitle, RemoveButton, FavoriteCardContainer,CardF} from './FavortiesElements'
 import Icon from '../../icon';
 import {MoviesContext} from '../../../contexts/MoviesContext'
-import { IMovieData } from '../../../types';
+import { IMovieData } from '../../../frontEndTypes';
+import Button from '../../button'
 
 
 
@@ -17,7 +18,7 @@ const FavoriteCard = ({data}: IMovieData) => {
   
     const { removeFromFavorites} = useContext(MoviesContext);
     return(
-        <div onMouseEnter={e => {
+        <FavoriteCardContainer onMouseEnter={e => {
             e.preventDefault
             setActive(true);
             }}
@@ -25,11 +26,7 @@ const FavoriteCard = ({data}: IMovieData) => {
                 e.preventDefault
             setActive(false)
             }}>
-            <Card
-                margin='2rem 1rem'  
-                width='15rem'
-                height='27rem'
-                >
+            <CardF>
                 <FavoritesTrashcan  isVisible={active} onClick={()=>removeFromFavorites(data.id)}>
                         <RemoveButton>  
                             <Icon color='white' size='30px'>
@@ -39,8 +36,8 @@ const FavoriteCard = ({data}: IMovieData) => {
                 </FavoritesTrashcan>
                 <Img as='img' src={data.picture} alt={data.title}></Img>
                 <MovieTitle>{data.title}</MovieTitle>
-            </Card>
-        </div>
+            </CardF>
+        </FavoriteCardContainer>
     )
 }
 
@@ -53,7 +50,6 @@ const FavoritesCardBoard = () => {
         </CardBoard>
     )
 }
-
 
 export default FavoritesCardBoard;
 

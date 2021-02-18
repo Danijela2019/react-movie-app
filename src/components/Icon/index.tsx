@@ -1,6 +1,6 @@
 import React from 'react';
 import { IconContext } from 'react-icons';
-import { IIconProps } from '../../types'
+import { IIconProps } from '../../frontEndTypes'
 
 
 const Icon = ( props : IIconProps) => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ICardProps } from '../../types';
+import { ICardProps } from '../../frontEndTypes';
 import { CardContainer } from './CardElements';
 
 
