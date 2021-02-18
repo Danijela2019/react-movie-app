@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import cover from '../../../assets/it.jpg'
-import { IMovieBackground } from '../../../types';
+import { IMovieBackground } from '../../../frontEndTypes';
 
 export const MovieImage = styled.div`
 position: absolute; 

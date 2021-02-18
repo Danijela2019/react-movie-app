@@ -4,9 +4,10 @@ import { useHistory } from 'react-router-dom';
 
 import {Img} from '../../shared/ImageElements'
 import Card from '../../card'
-import CardBoard from '../../cardBoard'
 import  {MoviesContext}  from '../../../contexts/MoviesContext';
-import { IMovieData } from '../../../types';
+import { IMovieData } from '../../../frontEndTypes';
+import {TrendingWrapper} from './HomepageElements'
+
 
 const TrendingMovieCard = ({data}:IMovieData) => {
     const {getSingleMovieData} = useContext(MoviesContext);
@@ -19,7 +20,7 @@ const TrendingMovieCard = ({data}:IMovieData) => {
 
     return (
         <div onClick={redirectToMoviePage}>
-            <Card  width='auto' height='16rem' margin='1rem 0.5rem'>
+            <Card  width='12rem' hight='16rem' margin='1rem 0.5rem'>
                 <Img as='img' src={data.picture} alt={data.title}></Img>
             </Card>
         </div>
@@ -29,11 +30,11 @@ const TrendingMovieCard = ({data}:IMovieData) => {
 
 const TrendingMovies = () => {
     const {popularMovies} = useContext(MoviesContext);
-    const trending = [...popularMovies].slice(0,12)
+    const trending = [...popularMovies].slice(0,20)
     return (
-        <CardBoard>
+        <TrendingWrapper>
         {trending.map((movie) => <TrendingMovieCard data={movie} key={movie.id}/>)};
-    </CardBoard>
+    </TrendingWrapper>
     )
 }
 

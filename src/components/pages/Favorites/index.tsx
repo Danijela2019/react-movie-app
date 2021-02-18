@@ -12,7 +12,7 @@ const {favoriteMovies} = useContext(MoviesContext)
 const noFavorites = (
         <NoFavoritesBackground>
         <TitleWrapper>
-        <Title>You do not have any favorites yet.</Title>
+        <Title>You do not have any favorites.</Title>
         <Title>Let's add some🙂</Title>
         </TitleWrapper>
         </NoFavoritesBackground>

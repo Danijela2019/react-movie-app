@@ -2,6 +2,7 @@
 import styled from 'styled-components';
 import background from '../../../assets/doctor-strange.jpg'
 
+
 export const NoFavoritesBackground = styled.div`
 background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) ),
 url(${background});
@@ -34,8 +35,10 @@ export const FavoritesTrashcan = styled.span`
 position:absolute;
 right:20px;
 top:20px;
-display: ${props => props.isVisible ? 'block' : 'none'}
-`;
+display: ${props => props.isVisible ? 'block' : 'none'};
+@media (max-width: 760px) {
+  display:block;
+}`;
 
 export const RemoveButton = styled.button`
 background:transparent;
@@ -51,6 +54,29 @@ text-align:center;
 margin-top:20px;
 `
 
+export const FavoriteCardContainer = styled.div`
+display:flex;
+flex-direction:row;
+align-items:center;
+justify-content:center;
+`
+
+export const CardF = styled.div`
+ margin:2rem 1rem;  
+  width:15rem;
+  height:27rem;
+  box-shadow: 0px 0px 10px 10px  #1f1d1d;
+  position:relative;
+  background:black;
+&:hover {
+    background: #7a7878;
+    box-shadow: -1px 1px 10px 1px #e4e0e0, 1px -1px 10px 1px #828282;
+}
+@media (max-width: 376px) {
+width:100%;
+height:fit-content;
+}
+`
 
 
 

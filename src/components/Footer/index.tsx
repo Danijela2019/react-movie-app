@@ -4,7 +4,7 @@ import {FooterContainer, Anchor, FooterLine, FooterWrapper, FollowMeWrapper, Log
 import Icon from '../icon'
 import tv from '../../assets/tv2.png'
 import {followMeData } from '../../data/anchor_data';
-import { IFollowMeData, IFollowMeDataProps } from '../../types';
+import { IFollowMeData, IFollowMeDataProps } from '../../frontEndTypes';
 
 const FollowMe = ({data}:IFollowMeData) => (
     <Anchor href={data.link} target="_blank" rel="noopener">

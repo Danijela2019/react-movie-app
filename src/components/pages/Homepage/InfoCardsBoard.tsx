@@ -4,7 +4,7 @@ import {Title} from '../../shared/TextElements'
 import {HomeCardText,HomeCardContent, InfoCardContainer} from './HomepageElements'
 import Icon from '../../icon'
 import {cardData} from '../../../data/card_data';
-import { IInfoCardProps } from '../../../types';
+import { IInfoCardProps } from '../../../frontEndTypes';
 
 
 const InfoCard = (props:IInfoCardProps) => {

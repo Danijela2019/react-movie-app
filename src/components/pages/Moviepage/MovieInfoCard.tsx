@@ -33,7 +33,7 @@ const MovieInfoCard = () => {
                         margin='1rem 3rem'
                         bg="#13b300"
                         fontSize='15px'
-                        width='130px'
+                        width='150px'
                         height='2rem'
                         onClick={() => addTrendingToFavorites(singleMovie)}
                         disabled= {isAdded(singleMovie.id)}
@@ -44,7 +44,7 @@ const MovieInfoCard = () => {
                         margin='1rem 3rem'
                         bg="var(--color-danger)"
                         fontSize='15px'
-                        width='130px'
+                        width='150px'
                         height='2rem'
                         clicked={redirectToHome}
                         >

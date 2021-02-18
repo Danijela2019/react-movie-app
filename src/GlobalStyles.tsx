@@ -16,3 +16,5 @@ export const GlobalStyle = createGlobalStyle`
     --medium: 200px;
 }`
 
+
+

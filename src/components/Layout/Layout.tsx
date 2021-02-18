@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ILayoutProps } from '../../types';
+import { ILayoutProps } from '../../frontEndTypes';
 import { Main } from './LayoutElements';
 
 

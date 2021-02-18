@@ -1,5 +1,5 @@
 import React from 'react'
-import { IButtonProps } from '../../types';
+import { IButtonProps } from '../../frontEndTypes';
 import {StyledButton,ButtonWrapper} from './ButtonElements'
 
 
