@@ -17,7 +17,6 @@ const TrendingMovieCard = ({data}:IMovieData) => {
         history.push('/movie')
     }
 
-
     return (
         <div onClick={redirectToMoviePage}>
             <Card  width='12rem' hight='16rem' margin='1rem 0.5rem'>
@@ -30,10 +29,9 @@ const TrendingMovieCard = ({data}:IMovieData) => {
 
 const TrendingMovies = () => {
     const {popularMovies} = useContext(MoviesContext);
-    const trending = [...popularMovies].slice(0,20)
     return (
         <TrendingWrapper>
-        {trending.map((movie) => <TrendingMovieCard data={movie} key={movie.id}/>)};
+        {popularMovies.map((movie) => <TrendingMovieCard data={movie} key={movie.id}/>)};
     </TrendingWrapper>
     )
 }
