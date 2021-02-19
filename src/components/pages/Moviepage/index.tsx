@@ -6,6 +6,7 @@ import { MovieBackground, MovieImage, MovieTitleContainer} from './MoviepageElem
 import {Title} from '../../shared/TextElements'
 import MovieInfoCard from './MovieInfoCard';
 import {MoviesContext} from '../../../contexts/MoviesContext';
+import SimilarMovies from './SimilarMovies';
 
 const MoviePage = () => {
     const {singleMovie} = useContext(MoviesContext)
@@ -24,6 +25,7 @@ const MoviePage = () => {
                 </MovieTitleContainer>
             </MovieBackground>
             <MovieInfoCard/>
+            <SimilarMovies/>
         </React.Fragment>
     )
 }

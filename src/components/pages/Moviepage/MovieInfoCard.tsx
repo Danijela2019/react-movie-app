@@ -12,9 +12,9 @@ import {MoviesContext} from '../../../contexts/MoviesContext'
 
 const MovieInfoCard = () => {
     const {singleMovie,addTrendingToFavorites,favoriteMovies} = useContext(MoviesContext)
+    
 
     let history = useHistory();
-
     const redirectToHome = () => {
         history.goBack();
     }
