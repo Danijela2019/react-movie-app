@@ -1,16 +1,5 @@
 //@ts-nocheck
 import styled from 'styled-components';
-import background from '../../../assets/doctor-strange.jpg'
-
-
-export const NoFavoritesBackground = styled.div`
-background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) ),
-url(${background});
-background-position: center;
-background-repeat: no-repeat;
-background-size: cover;
-box-shadow: 40px 40px 210px 130px black inset;
-min-height:100vh`
 
 export const FavoritesBackground = styled.div`
 min-height: 100vh;
@@ -45,14 +34,7 @@ background:transparent;
 border:none;
 outline:none;
 `
-export const TitleWrapper = styled.div`
-display:flex;
-align-items:center;
-flex-direction: column;
-justify-content:center;
-text-align:center;
-margin-top:20px;
-`
+
 
 export const FavoriteCardContainer = styled.div`
 display:flex;

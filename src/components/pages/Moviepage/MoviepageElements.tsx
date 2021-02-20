@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import cover from '../../../assets/it.jpg'
+import cover from '../../../assets/default.jpg'
 import { IMovieBackground } from '../../../frontEndTypes';
 
 export const MovieImage = styled.div`
