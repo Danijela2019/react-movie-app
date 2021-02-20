@@ -1,6 +1,8 @@
 import React from 'react'
+
 import {SearchedContainer} from './SearchedItemsElements'
 import SearchedMovieCards from './SearchedMovieCard';
+
 
 const SearchedItems = () => {
     return (

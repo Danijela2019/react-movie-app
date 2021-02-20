@@ -5,15 +5,16 @@ import {Img} from '../../shared/ImageElements'
 import Card from '../../card'
 import  {MoviesContext}  from '../../../contexts/MoviesContext';
 import { IMovieData } from '../../../frontEndTypes';
-import {TrendingWrapper} from '../homepage/HomepageElements'
+import {ScrollHorizontally} from '../../shared/ScrollHorizontally'
 import {Title} from '../../shared/TextElements'
+import imgPlaceholder from '../../../assets/default.jpg'
 
 const SimilarMovieCard = ({data}:IMovieData) => {
     const {getSingleMovieData} = useContext(MoviesContext);
     return (
         <div onClick={() =>{getSingleMovieData(data)}}>
             <Card  width='12rem' hight='16rem' margin='1rem 0.5rem'>
-                <Img as='img' src={data.picture} alt={data.title}></Img>
+                <Img as='img' src={data.picture || imgPlaceholder} alt={data.title}></Img>
             </Card>
         </div>
     )
@@ -62,9 +63,9 @@ const SimilarMovies = () => {
     return (
       <React.Fragment>
         {similarMovies.length > 0 && <Title>You might also like</Title>}
-          <TrendingWrapper>
+          <ScrollHorizontally>
             {similarMovies.map((movie) => <SimilarMovieCard data={movie} key={movie.id}/>)};
-          </TrendingWrapper>
+          </ScrollHorizontally>
       </React.Fragment>
     )
 }

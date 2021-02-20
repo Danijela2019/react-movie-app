@@ -59,14 +59,6 @@ width: 19rem;
 height: 25rem;
 box-shadow: 0px 0px 10px 10px  #1f1d1d;`
 
-export const TrendingWrapper = styled.div`
-background:transparent;
-display:flex;
-flex-direction:row;
-overflow-x: auto;
-	flex-wrap: nowrap;
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none; 
-  &::-webkit-scrollbar {
-    display: none;
-  }`
+
+
+  
