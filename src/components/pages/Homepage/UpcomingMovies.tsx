@@ -8,23 +8,19 @@ import  {MoviesContext}  from '../../../contexts/MoviesContext';
 import { IMovieData } from '../../../frontEndTypes';
 import {ScrollHorizontally} from '../../shared/ScrollHorizontally'
 import imgPlaceholder from '../../../assets/default.jpg'
-import { PopularNumber, PopularSpan } from './HomepageElements';
 
 
-const TrendingMovieCard = ({data}:any) => {
+const UpcomingMovieCard = ({data}:IMovieData) => {
     const {getSingleMovieData} = useContext(MoviesContext);
     let history = useHistory();
     const redirectToMoviePage = () => {
         getSingleMovieData(data)
         history.push('/movie')
     }
-    
+
     return (
         <div onClick={redirectToMoviePage}>
-            <Card  width='8rem' hight='10rem' margin='1rem 0.5rem'>
-                <PopularSpan>
-                <PopularNumber>{data.number}</PopularNumber>
-                </PopularSpan>
+            <Card  width='12rem' hight='16rem' margin='1rem 0.5rem'>
                 <Img as='img' src={data.picture  || imgPlaceholder} alt={data.title}></Img>
             </Card>
         </div>
@@ -32,15 +28,13 @@ const TrendingMovieCard = ({data}:any) => {
 }
 
 
-const TrendingMovies = () => {
-    const {popularMovies} = useContext(MoviesContext);
-     const copyPopularMovies= popularMovies.slice()
-    copyPopularMovies.map((item,index)=> item.number= index+1)
+const UpcomingMovies = () => {
+    const {upcomingMovies} = useContext(MoviesContext);
     return (
         <ScrollHorizontally>
-        {copyPopularMovies.map((movie) => <TrendingMovieCard data={movie} key={movie.id} />)};
+        {upcomingMovies.map((movie) => <UpcomingMovieCard data={movie} key={movie.id}/>)};
     </ScrollHorizontally>
     )
 }
 
-export default TrendingMovies;
+export default UpcomingMovies;

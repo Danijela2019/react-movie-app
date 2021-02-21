@@ -1,7 +1,7 @@
 import React from 'react'
 
 import {SearchedContainer} from './SearchedItemsElements'
-import SearchedMovieCards from './SearchedMovieCard';
+import SearchedMovieCards from './SearchedMovieCards';
 
 
 const SearchedItems = () => {

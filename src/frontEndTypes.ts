@@ -30,6 +30,7 @@ export interface IMovie {
     popularMovies: Movie[],
     searchedMovies: Movie[],
     favoriteMovies: Movie[],
+    upcomingMovies: Movie[],
     singleMovie: Movie|{},
     getSearchedMovies: Function,
     addToFavorites: Function,
