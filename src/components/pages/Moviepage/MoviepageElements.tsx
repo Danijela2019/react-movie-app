@@ -11,7 +11,7 @@ left:10px;
 
 export const MovieBackground = styled.div<IMovieBackground>`
 background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) ),
-url(${props => props.cover ? props.cover:cover}); ;
+url(${props => props.cover ? props.cover:cover}); 
 height: 100vh;
 background-position: center;
 background-repeat: no-repeat;

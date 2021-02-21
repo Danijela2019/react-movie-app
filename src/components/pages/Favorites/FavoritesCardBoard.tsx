@@ -5,13 +5,10 @@ import { AiFillDelete} from "react-icons/ai";
 import Card from '../../card';
 import CardBoard from '../../cardBoard';
 import {Img} from '../../shared/ImageElements'
-import {FavoritesTrashcan, MovieTitle, RemoveButton, FavoriteCardContainer,CardF} from './FavortiesElements'
+import {FavoritesTrashcan, MovieTitle, RemoveButton, FavoriteCardContainer,FavoritesCard} from './FavortiesElements'
 import Icon from '../../icon';
 import {MoviesContext} from '../../../contexts/MoviesContext'
 import { IMovieData } from '../../../frontEndTypes';
-import Button from '../../button'
-
-
 
 const FavoriteCard = ({data}: IMovieData) => {
     const [active, setActive] = useState(false);
@@ -26,7 +23,7 @@ const FavoriteCard = ({data}: IMovieData) => {
                 e.preventDefault
             setActive(false)
             }}>
-            <CardF>
+            <FavoritesCard>
                 <FavoritesTrashcan  isVisible={active} onClick={()=>removeFromFavorites(data.id)}>
                         <RemoveButton>  
                             <Icon color='white' size='30px'>
@@ -36,7 +33,7 @@ const FavoriteCard = ({data}: IMovieData) => {
                 </FavoritesTrashcan>
                 <Img as='img' src={data.picture} alt={data.title}></Img>
                 <MovieTitle>{data.title}</MovieTitle>
-            </CardF>
+            </FavoritesCard>
         </FavoriteCardContainer>
     )
 }

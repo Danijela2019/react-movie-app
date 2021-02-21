@@ -38,14 +38,15 @@ border-radius:10px;
 export const HeroCover = styled.div<IHeroCoverProps>`
 background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) ),
 url(${props => props.cover ? props.cover:cover});
-height: 100%;
+height: 55vh;
 background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   display:flex;
   flex-direction: column;
   box-shadow: 30px 30px 150px 100px black  inset;
-`;
+ 
+`
 
 export const HeroCoverContainer = styled.div`
 height:100vh;
@@ -59,6 +60,19 @@ width: 19rem;
 height: 25rem;
 box-shadow: 0px 0px 10px 10px  #1f1d1d;`
 
-
-
-  
+export const PopularNumber = styled.h1`
+color:white;
+`
+export const PopularSpan = styled.span`
+background:black;
+border-radius:50%;
+position:absolute;
+display: inline-block;
+height: 40px;
+width: 40px;
+top:5px;
+left:5px;
+display:flex;
+align-items:center;
+justify-content:center;
+`

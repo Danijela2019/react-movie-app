@@ -3,7 +3,8 @@ import styled from 'styled-components';
 
 export const FavoritesBackground = styled.div`
 min-height: 100vh;
-background-color:#bcbcc0;
+background: linear-gradient(45deg, #080e11, #282930, #0b0f26);
+box-shadow: 30px 5px 210px 130px black inset;
 `
 
 export const MovieTitle = styled.h3` 
@@ -43,7 +44,7 @@ align-items:center;
 justify-content:center;
 `
 
-export const CardF = styled.div`
+export const FavoritesCard = styled.div`
  margin:2rem 1rem;  
   width:15rem;
   height:27rem;

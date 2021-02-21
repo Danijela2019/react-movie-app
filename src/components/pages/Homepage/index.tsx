@@ -6,6 +6,7 @@ import Button from '../../button'
 import cover from '../../../assets/it.jpg'
 import InfoCardsBoard from './InfoCardsBoard'
 import TrendingMovies from './TrendingMovies'
+import UpcomingMovies from './UpcomingMovies'
 import { HeroTitle, HeroParagraph, HeroCoverContainer,HeroCover } from './HomepageElements'
 
 const Home = () => {
@@ -15,23 +16,15 @@ const Home = () => {
             <HeroCover cover={cover}>
             <HeroTitle>The movie app </HeroTitle>
             <HeroParagraph>For all the movie lovers to enjoy</HeroParagraph>
-            <Button 
-                margin='auto 1rem auto 2rem'
-                bg= 'var(--color-primary)'
-                fontSize='20px'
-                width='200px'
-                height='3rem'
-                >
-                Trending
-            </Button>
-            </HeroCover>
+         </HeroCover>
+        <TrendingMovies/>
         </HeroCoverContainer>
-            <CardBoard>
+        <CardBoard>
             <InfoCardsBoard/>
         </CardBoard>
-        <Title>TRENDING</Title>
-
-        <TrendingMovies/> 
+       
+        <Title>IN THEATERS SOON</Title>
+        <UpcomingMovies/> 
     </React.Fragment>)
 }
 export default Home;

@@ -4,7 +4,7 @@ import React, {useContext} from 'react'
 import {CenterElements} from '../../shared/CenterElements'
 import Card from '../../card'
 import MovieInfoContent from '../../movieInfoContent'
-import {AddButton} from '../searchedItems/SearchedItemsElements'
+import {SearchedAddButton} from '../searchedItems/SearchedItemsElements'
 import Button from '../../button'
 import { MovieContentWrapper, MovieDataColumn } from './MoviepageElements'
 import { useHistory } from 'react-router-dom'
@@ -29,7 +29,7 @@ const MovieInfoCard = () => {
             <MovieContentWrapper>
               <MovieInfoContent data={singleMovie} /> 
                <MovieDataColumn>
-                    <AddButton 
+                    <SearchedAddButton 
                         margin='1rem 3rem'
                         bg="#13b300"
                         fontSize='15px'
@@ -39,7 +39,7 @@ const MovieInfoCard = () => {
                         disabled= {isAdded(singleMovie.id)}
                         >
                           {!isAdded(singleMovie.id) ? 'Add to favorites' : 'Added to favorites'}
-                    </AddButton>
+                    </SearchedAddButton>
                     <Button
                         margin='1rem 3rem'
                         bg="var(--color-danger)"

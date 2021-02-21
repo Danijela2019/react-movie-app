@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import background from '../../../assets/doctor-strange.jpg'
+import background from '../../assets/doctor-strange.jpg'
 
 
 export const NoResultsBackground = styled.div`

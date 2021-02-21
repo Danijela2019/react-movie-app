@@ -8,6 +8,7 @@ border-radius:5px;
 width: ${(props) => props.width};
 height: ${(props) => props.height};
 box-shadow: 0px 0px 10px 10px  #1f1d1d;
+position:relative;
 &:hover {
   background-color:white;
 }  
