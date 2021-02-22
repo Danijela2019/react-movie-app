@@ -62,6 +62,7 @@ box-shadow: 0px 0px 10px 10px  #1f1d1d;`
 
 export const PopularNumber = styled.h1`
 color:white;
+text-shadow: 0 0 3px #95adbe, 0 0 3px #95adbe, 0 0 3px #95adbe, 0 0 3px #95adbe; 
 `
 export const PopularSpan = styled.span`
 background:black;
