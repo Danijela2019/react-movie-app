@@ -2,6 +2,8 @@ import React,{useState, useContext} from 'react';
 import { SearchBox, SearchButton, SearchForm, SearchInput } from './SearchElements'
 import {MoviesContext} from '../../../contexts/MoviesContext'
 import { useHistory } from 'react-router-dom';
+import Icon from '../../icon';
+import { AiOutlineSearch } from 'react-icons/ai';
 
 const Search = () => {
   const [searchValue, setSearchValue] = useState("");
@@ -42,7 +44,12 @@ const Search = () => {
               value={searchValue}
               onChange={handleSearchInputChanges}
           />
-            <SearchButton  onClick={callSearchFunction}>GO</SearchButton>
+            <SearchButton  onClick={callSearchFunction}>
+            <Icon color='black' size='18px'>
+                <AiOutlineSearch/>
+              </Icon>
+              
+            </SearchButton>
         </SearchForm>
       </SearchBox> 
     </React.Fragment>
