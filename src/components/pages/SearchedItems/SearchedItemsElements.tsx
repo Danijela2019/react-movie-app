@@ -3,8 +3,8 @@ import styled from 'styled-components';
 
 export const SearchedContainer = styled.div`
 background: linear-gradient(45%, #080e11,#2f3033, #0b0f26);
-box-shadow: 30px 5px 210px 130px black inset;
-`
+box-shadow: 30px 5px 210px 130px black inset; 
+` 
 export const SearchedCardContainer= styled.div`
 width:85%;
 margin:1rem auto;
@@ -15,7 +15,7 @@ box-shadow: 0 70px 63px -60px #000000;
   padding:0; 
   background-color:var(--color-background); 
   width:100%    
-};
+}; 
 `
 export const SearchedCardBoardContainer = styled.div`
 background: linear-gradient(45deg,#080e11,#1c1e2c,#060707);
@@ -63,18 +63,13 @@ export const SearchedAddButton = styled.button`
   &:disabled {
   color: black;
   background: var(--color-disabled);
-  position:absolute;
-  left:10px;
-  bottom:10px;
 }
-  
- @media (max-width: 540px) {
+@media (max-width: 540px) {
     width: 250px;
     height: 50px;
-    margin:0.5rem;
+    margin:1rem auto;
     font-size:25px;
   }`
-////////////
 
 export const SearchedMovieCardContainer = styled.div`
  position: relative;
@@ -108,8 +103,6 @@ export const SearchedInfoSection = styled.div`
   }
 `
 
-
-
 export const SearchedMovieHeader = styled.div`
  position: relative;
   padding: 25px;
@@ -118,7 +111,6 @@ export const SearchedMovieHeader = styled.div`
   width: 100%;
   }
 `
-
 export const SearchedHeader= styled.h1`
 color: #fff;
   font-weight: 400;
@@ -137,7 +129,8 @@ export const SearchedImage = styled.img`
 `
 
 export const SearchedMovieDesc = styled.div`
- padding: 25px;
+ padding: 25px 25px 0 25px;
+ min-height:140px;
  @media screen and (max-width: 768px) {
  width: 100%;
   }

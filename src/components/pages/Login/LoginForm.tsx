@@ -1,13 +1,39 @@
 //@ts-nocheck
-import React from 'react'
+import React, {useState} from 'react'
 import {FormContainer,FormField,LoginContainer,FormControl,FormIcons, LoginText,LoginAnchor,LoginTextWrapper} from './LoginElements'
 import Icon from '../../icon'
 import { AiOutlineLock,AiOutlineUser } from "react-icons/ai";
 import Button from '../../button'
 
 
-
 export const LoginForm = () => {
+    const [state,setState] = useState({
+        email : "",
+        password : ""
+    });
+
+    const handleSubmit = (event) => {
+        event.preventDefault()
+        if(state.email.length > 0 && state.password.length > 0) {
+            console.log('I got submited')
+            setState({
+                email : "",
+            password : ""
+            })
+        } else {
+            console.log('Both fileds are required to submit')
+        }
+
+    }
+    
+    const handleChange = (e) => {
+        const {id , value} = e.target   
+        setState(prevState => ({
+            ...prevState,
+            [id] : value
+        }))
+    }
+    
     return (
         <LoginContainer>
             <FormContainer>
@@ -17,12 +43,15 @@ export const LoginForm = () => {
                             <AiOutlineUser/>
                         </Icon>
                     </FormIcons>
-                    <FormControl
-                        className="loginInput"
-                        type="e-mail"
+                    <FormControl as='input'
+                        type="email"
                         name="name-input"
-                        id="fEmail"
+                        id="email"
                         placeholder='Email'
+                        value={state.email}
+                        required
+                        aria-describedby="emailHelp"
+                        onChange={handleChange}
                     />
                 </FormField>
                 <FormField>
@@ -31,12 +60,14 @@ export const LoginForm = () => {
                             <AiOutlineLock/>
                         </Icon>
                     </FormIcons>
-                    <FormControl
-                        className="loginPassword"
+                    <FormControl as='input'
                         type="password"
                         name="password-input"
-                        id="fPassword"
+                        id="password"
                         placeholder='Password'
+                        value={state.password}
+                        required
+                        onChange={handleChange}
                     />
                 </FormField>
                 <Button
@@ -44,7 +75,10 @@ export const LoginForm = () => {
                 bg='var(--color-primary)'
                 fontSize='16px'
                 width='100%'
-                height='50px'> LOG IN </Button>
+                height='50px'
+
+                clicked={handleSubmit}
+                > LOG IN </Button>
                 <LoginTextWrapper>
                 <LoginText>Dont have an account?</LoginText>
                 <LoginAnchor>Sign up</LoginAnchor> 
