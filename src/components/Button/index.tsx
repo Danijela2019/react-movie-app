@@ -12,6 +12,7 @@ const Button = (props:IButtonProps) => {
         width={props.width}
         height={props.height}
         onClick={props.clicked}
+        disabled={props.disabled}
       >
         {props.children}
       </StyledButton>

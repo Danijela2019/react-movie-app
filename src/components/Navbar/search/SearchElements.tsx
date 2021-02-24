@@ -31,7 +31,6 @@ export const SearchInput = styled.input`
     
   
 export const SearchButton = styled.button`
-
 text-align: center;
  cursor: pointer;
   margin-top: 0.5rem;
@@ -42,7 +41,6 @@ text-align: center;
   width:30px;
   height: 30px;
  border-radius: 0 5px 5px 0 ;
-  border-right: none;
   outline:none;
   `
   

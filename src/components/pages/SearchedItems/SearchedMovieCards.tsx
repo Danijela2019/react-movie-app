@@ -1,10 +1,8 @@
 //@ts-nocheck
 import React,{useContext} from 'react'
 import {MoviesContext} from '../../../contexts/MoviesContext'
-import MovieInfoContent from '../../movieInfoContent';
-import {Image, SearchedCardBoardContainer, SearchedMovieCardContainer,SearchedBlurBlack,SearchedH4,SearchedHeader,SearchedImage,
-    SearchedInfoSection,SearchedMovieDesc,SearchedMovieText,SearchedMovieHeader
-    ,SearchedAddButton} from './SearchedItemsElements'
+import {SearchedMovieCardContainer, SearchedCardBoardContainer,SearchedBlurBlack,SearchedH4,SearchedHeader,SearchedImage,SearchedInfoSection,SearchedMovieDesc,SearchedMovieText,
+SearchedMovieHeader,SearchedAddButton} from './SearchedItemsElements'
 import imgPlaceholder from '../../../assets/default.jpg'
 import { Title } from '../../shared/TextElements';
 import NoResults from '../../noResults';

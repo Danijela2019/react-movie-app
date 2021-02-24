@@ -11,6 +11,10 @@ export const StyledButton = styled.button<IStyledButtonProps>`
   cursor:pointer;
   border:none;
   padding:0;
+  &:disabled {
+    color: black;
+  background: var(--color-disabled);
+  }
  @media (max-width: 540px) {
     width: 250px;
     height: 50px;

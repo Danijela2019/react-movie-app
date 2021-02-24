@@ -55,6 +55,7 @@ export interface IMovie {
   }
 
   export interface IButtonProps {
+    disabled?: boolean | undefined;
     clicked?:() => void|undefined;
     bg: string,
     fontSize: string,
