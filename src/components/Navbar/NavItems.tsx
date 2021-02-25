@@ -14,10 +14,16 @@ const NavItems = (props:INavItemProps) => {
           HOME
         </NavLink>
       </NavbarLink>
-      <NavbarLink onClick={closeMenu}>
+     <NavbarLink onClick={closeMenu}>
         <NavLink  to="/login">
           {' '}
           LOGIN{' '}
+        </NavLink>
+        </NavbarLink>
+        <NavbarLink onClick={closeMenu}>
+        <NavLink  to="/register">
+          {' '}
+          REGISTER{' '}
         </NavLink>
       </NavbarLink>
       <NavbarLink onClick={closeMenu}>
@@ -26,7 +32,7 @@ const NavItems = (props:INavItemProps) => {
           FAVORITES{' '}
         </NavLink>
       </NavbarLink>
-     <Search/>
+    <Search/>
     </React.Fragment>
   );
 

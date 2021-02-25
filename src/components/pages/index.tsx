@@ -6,6 +6,7 @@ import Login from './login';
 import Favorites from './favorites';
 import SearchedItems from './searchedItems';
 import MoviePage from './moviePage'
+import Register from './register'
 
 
 const Routes = (): React.ReactElement => {
@@ -13,6 +14,7 @@ const Routes = (): React.ReactElement => {
     <Switch>
       <Route exact path="/" component={Homepage} />
       <Route path="/login" component={Login} />
+      <Route path="/register" component={Register} />
       <Route path="/favorites" component={Favorites}/>
       <Route path="/movie" component={MoviePage} />
       <Route path= "/searched-items" component={SearchedItems}/>

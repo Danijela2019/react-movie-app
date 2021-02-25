@@ -9,23 +9,17 @@ import FormIconWrapper from'../../form/FormIconWpapper'
 import {FormTextWrapper,FormControl,FormAnchor,FormText,ErrorMsg} from '../../form/FormElements'
 
 
-
-export const LoginForm = () => {
+export const RegisterForm = () => {
     const [state,setState] = useState({
         email : "",
         password : "",
+        confirmPassword: ""
     });
     const [errors, setErrors] = useState({})
 
-    const isEmpty = (email, pass) => {
-        return email.length > 0 && pass.length > 0 
+    const isEmpty = (email, pass, confirmPass) => {
+        return email.length > 0 && pass.length > 0 && confirmPass.length > 0
     }
-
-    /*const isValidEmail = (value) => {
-        const regex=/^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/i;
-        return regex.test(value.toLowerCase());
-
-    } */
 
 
     const inputValidation = () => {
@@ -51,7 +45,8 @@ export const LoginForm = () => {
         } else {
             setState({
                 email : "",
-                password : ""
+                password : "",
+                confirmPassword: ""
             })
             console.log('I was subbmited')
         }
@@ -63,9 +58,8 @@ export const LoginForm = () => {
     const redirectToHome = () => {
         history.push('/home');
     }
-    // for new users
-    const redirectToRegister = () => {
-        history.push('/register'); 
+    const redirectToLogin = () => {
+        history.push('/login'); 
     }
     
     const handleChange = (e) => {
@@ -82,17 +76,17 @@ export const LoginForm = () => {
                 <FormIconWrapper>
                     <AiOutlineUser/>
                 </FormIconWrapper>
-                <FormControl as='input'
+                 <FormControl as='input'
                     type="email"
                     name="name-input"
                     id="email"
                     placeholder='Email'
                     value={state.email}
                     required
+                    autofokus
                     aria-describedby="emailHelp"
                     onChange={handleChange}
                     autoComplete='off'
-                    autofokus
                 />
                 <ErrorMsg>{errors.invalidEmail}</ErrorMsg>
             </FormField>
@@ -109,8 +103,22 @@ export const LoginForm = () => {
                     required
                     onChange={handleChange}
                     autoComplete='off'
+                /> 
+            </FormField>
+            <FormField>
+                <FormIconWrapper>
+                    <AiOutlineLock/>
+                </FormIconWrapper>
+                <FormControl as='input'
+                    type="password"
+                    name="password-input"
+                    id="password"
+                    placeholder='Password'
+                    value={state.confirmPassword}
+                    required
+                    onChange={handleChange}
+                    autoComplete='off'
                 />
-                    <ErrorMsg error={errors.hasOwnProperty('invalidPassword')}>I have an error</ErrorMsg>
             </FormField>
             <Button
                 margin='1rem 0 0 0'
@@ -118,15 +126,15 @@ export const LoginForm = () => {
                 fontSize='16px'
                 width='100%'
                 height='50px'
-                disabled={!isEmpty(state.email, state.password)}
+                disabled={!isEmpty(state.email, state.password, state.confirmPassword)}
                 clicked={handleSubmit}
-            > LOG IN </Button>
+            > REGISTER </Button>
             <FormTextWrapper>
-                <FormText>Dont have an account?</FormText>
-                <FormAnchor onClick={() => redirectToRegister()}>Sign up</FormAnchor> 
+                <FormText>Already have an account?</FormText>
+                <FormAnchor onClick={() => redirectToLogin()}>Sign in</FormAnchor> 
             </FormTextWrapper>
         </FormWrapper>
     )
 }
 
-export default LoginForm;
+export default RegisterForm;

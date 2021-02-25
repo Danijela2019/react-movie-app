@@ -1,12 +1,14 @@
+//@ts-nocheck
 import React from 'react';
-import {LoginBackground} from './LoginElements';
 import LoginForm from './LoginForm';
+import loginBackground from '../../../assets/blade_runner.jpg'
+import { Background } from '../../shared/Background';
 
 const Login = () => {
     return (
-        <LoginBackground>
+        <Background background={loginBackground}>
             <LoginForm/>
-        </LoginBackground>
+        </Background>
     )
 }
 
