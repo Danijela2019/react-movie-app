@@ -7,6 +7,7 @@ import FormWrapper from '../../form/FormWrapper';
 import FormField from '../../form/FormFiled';
 import FormIconWrapper from'../../form/FormIconWpapper'
 import {FormTextWrapper,FormControl,FormAnchor,FormText,ErrorMsg} from '../../form/FormElements'
+import {isValidEmail} from '../../../util/inputValidation'
 
 
 export const RegisterForm = () => {
@@ -14,45 +15,29 @@ export const RegisterForm = () => {
         email : "",
         password : "",
         confirmPassword: ""
-    });
-    const [errors, setErrors] = useState({})
+    })
+    const [error, setError] = useState({})
+    const[invalidEmail ,setInvalidEmail] = useState(false);
+    const[invalidPass ,setInvalidPass] = useState(false);
 
-    const isEmpty = (email, pass,confirmPass) => {
-        return email.length > 0 && pass.length > 0 && confirmPass.length > 0
-    }
-
-
-    const inputValidation = () => {
-        let errors = {};
-        let isValid = true;
-        if (typeof state.email !== "undefined") {
-            const regex=/^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/i;
-             if (regex.test(state.email.toLowerCase())) {
-                isValid = false;
-                errors.invalidEmail = "Please enter valid email address.";
-                console.log(errors.invalidEmail)
-        
-            }
-        }
-        setErrors(errors);
-        return isValid;
-    }
-
+    
     const handleSubmit = (event) => {
         event.preventDefault()
-        if(!inputValidation){
-            console.log('I was not validated')
-        } else {
+        if(!isValidEmail(state.email)){
+            error.invalidEmail = "Please enter valid email address.";
+            setError(error);
+            setInvalidEmail(true)}
+            else{
             setState({
                 email : "",
                 password : "",
                 confirmPassword: ""
             })
-            console.log('I was subbmited')
-        }
-            
-    } 
-
+            setInvalidEmail(false)
+        console.log('I was submited-register')
+            }
+    }
+       
     let history = useHistory();
     // once we are logged in successfully
     const redirectToHome = () => {
@@ -68,6 +53,10 @@ export const RegisterForm = () => {
             ...prevState,
             [id] : value
         }))
+    } 
+
+    const isEmpty = (email, pass,confirmPass) => {
+         return email.length > 0 && pass.length > 0 && confirmPass.length > 0
     }
     
     return (
@@ -88,7 +77,7 @@ export const RegisterForm = () => {
                     onChange={handleChange}
                     autoComplete='off'
                 />
-                <ErrorMsg>{errors.invalidEmail}</ErrorMsg>
+                <ErrorMsg error={invalidEmail}>{error.invalidEmail}</ErrorMsg>
             </FormField>
             <FormField>
                 <FormIconWrapper>

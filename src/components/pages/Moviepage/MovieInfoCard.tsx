@@ -11,7 +11,7 @@ import { useHistory } from 'react-router-dom'
 import {MoviesContext} from '../../../contexts/MoviesContext'
 
 const MovieInfoCard = () => {
-    const {singleMovie,addTrendingToFavorites,favoriteMovies} = useContext(MoviesContext)
+    const {singleMovie,addToFavorites,favoriteMovies} = useContext(MoviesContext)
     
 
     let history = useHistory();
@@ -19,9 +19,9 @@ const MovieInfoCard = () => {
         history.goBack();
     }
 
-    const isAdded = (movieId) => {
-        return favoriteMovies.find((item) => item.id === movieId)
-    }
+    const isAdded = (id) => {
+        return favoriteMovies.find((item) => item.id === id)
+    } 
     
     return (
         <CenterElements>
@@ -35,10 +35,10 @@ const MovieInfoCard = () => {
                         fontSize='15px'
                         width='150px'
                         height='2rem'
-                        onClick={() => addTrendingToFavorites(singleMovie)}
+                        onClick={() => addToFavorites(singleMovie.id)}
                         disabled= {isAdded(singleMovie.id)}
                         >
-                          {!isAdded(singleMovie.id) ? 'Add to favorites' : 'Added to favorites'}
+                       {!isAdded(singleMovie.id) ? 'Add to favorites' : 'Added to favorites'}   
                     </SearchedAddButton>
                     <Button
                         margin='1rem 3rem'

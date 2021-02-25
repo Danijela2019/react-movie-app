@@ -7,6 +7,7 @@ import FormWrapper from '../../form/FormWrapper';
 import FormField from '../../form/FormFiled';
 import FormIconWrapper from'../../form/FormIconWpapper'
 import {FormTextWrapper,FormControl,FormAnchor,FormText,ErrorMsg} from '../../form/FormElements'
+import {isValidEmail} from '../../../util/inputValidation'
 
 export const LoginForm = () => {
     const [state,setState] = useState({
@@ -15,22 +16,11 @@ export const LoginForm = () => {
     });
     const [error, setError] = useState({})
     const[invalidEmail ,setInvalidEmail] = useState(false);
-    const[validPass ,setValidPass] = useState(false);
-    
-
-    const isEmpty = (email, pass) => {
-        return email.length > 0 && pass.length > 0 
-    }
-
-    const isValidEmail = () => {
-        const regex=/^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/i;
-        if (regex.test(state.email.toLowerCase())) return true;
-        return false;
-    }
+    const[invalidPass ,setInvalidPass] = useState(false);
     
     const handleSubmit = (event) => {
         event.preventDefault()
-        if(!isValidEmail()){
+        if(!isValidEmail(state.email)){
             error.invalidEmail = "Please enter valid email address.";
             setError(error);
             setInvalidEmail(true)
@@ -54,7 +44,7 @@ export const LoginForm = () => {
     const redirectToRegister = () => {
         history.push('/register'); 
     }
-    
+
     const handleChange = (e) => {
         const {id , value} = e.target   
         setState(prevState => ({
@@ -62,6 +52,9 @@ export const LoginForm = () => {
             [id] : value
         }))
     }
+    const isEmpty = (email, pass) => {
+        return email.length > 0 && pass.length > 0 
+   }
     
     return (
         <FormWrapper>
@@ -98,7 +91,7 @@ export const LoginForm = () => {
                     onChange={handleChange}
                     autoComplete='off'
                 />
-                    <ErrorMsg error={validPass}> The user name and password do not match</ErrorMsg>
+                    <ErrorMsg error={invalidPass}> The user name and password do not match</ErrorMsg>
             </FormField>
             <Button
                 margin='1rem 0 0 0' 

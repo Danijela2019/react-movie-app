@@ -20,7 +20,7 @@ export const FormControl =  styled.input`
 
 export const FormContainer = styled.section`
  border-radius: 8px;
-height: 400px;
+height: 450px;
  background: #3a3535;
 position: absolute;
     top: 50%;
