@@ -1,6 +1,5 @@
 //@ts-nocheck
 import React, { useContext,useEffect} from 'react'
-import { useLocation } from "react-router-dom";
 
 import { MovieBackground, MovieImage, MovieTitleContainer} from './MoviepageElements'
 import {Title} from '../../shared/TextElements'
@@ -11,7 +10,7 @@ import imgPlaceholder from '../../../assets/default.jpg'
 
 const MoviePage = () => {
     const {singleMovie} = useContext(MoviesContext)
-    const location = useLocation();
+    
 
     useEffect(() => {
         window.scrollTo(0, 0);
