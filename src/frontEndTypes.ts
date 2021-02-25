@@ -35,8 +35,7 @@ export interface IMovie {
     getSearchedMovies: Function,
     addToFavorites: Function,
     removeFromFavorites:Function,
-    getSingleMovieData:Function,
-    addTrendingToFavorites: Function
+    getSingleMovieData:Function
   }
 
   export interface IChildren {
