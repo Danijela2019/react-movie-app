@@ -28,6 +28,7 @@ const SimilarMovies = () => {
     const posterBaseUrl = "https://image.tmdb.org/t/p/w300";
     const apiKey = process.env.REACT_APP_API_KEY;
     
+    
     useEffect(() => {
         const similarUrl = `${baseUrl}/movie/${singleMovie.id}/recommendations?api_key=${apiKey}&language=en-US&page=1`;
             return fetch(similarUrl)

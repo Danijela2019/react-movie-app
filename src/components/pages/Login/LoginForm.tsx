@@ -8,51 +8,38 @@ import FormField from '../../form/FormFiled';
 import FormIconWrapper from'../../form/FormIconWpapper'
 import {FormTextWrapper,FormControl,FormAnchor,FormText,ErrorMsg} from '../../form/FormElements'
 
-
-
 export const LoginForm = () => {
     const [state,setState] = useState({
         email : "",
         password : "",
     });
-    const [errors, setErrors] = useState({})
+    const [error, setError] = useState({})
+    const[invalidEmail ,setInvalidEmail] = useState(false);
+    const[validPass ,setValidPass] = useState(false);
+    
 
     const isEmpty = (email, pass) => {
         return email.length > 0 && pass.length > 0 
     }
 
-    /*const isValidEmail = (value) => {
+    const isValidEmail = () => {
         const regex=/^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/i;
-        return regex.test(value.toLowerCase());
-
-    } */
-
-
-    const inputValidation = () => {
-        let errors = {};
-        let isValid = true;
-        if (typeof state.email !== "undefined") {
-            const regex=/^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/i;
-             if (regex.test(state.email.toLowerCase())) {
-                isValid = false;
-                errors.invalidEmail = "Please enter valid email address.";
-                console.log(errors.invalidEmail)
-        
-            }
-        }
-        setErrors(errors);
-        return isValid;
+        if (regex.test(state.email.toLowerCase())) return true;
+        return false;
     }
-
+    
     const handleSubmit = (event) => {
         event.preventDefault()
-        if(!inputValidation){
-            console.log('I was not validated')
+        if(!isValidEmail()){
+            error.invalidEmail = "Please enter valid email address.";
+            setError(error);
+            setInvalidEmail(true)
         } else {
             setState({
                 email : "",
                 password : ""
             })
+            setInvalidEmail(false)
             console.log('I was subbmited')
         }
             
@@ -93,8 +80,9 @@ export const LoginForm = () => {
                     onChange={handleChange}
                     autoComplete='off'
                     autofokus
+                    error={invalidEmail}
                 />
-                <ErrorMsg>{errors.invalidEmail}</ErrorMsg>
+                <ErrorMsg error={invalidEmail}> {error.invalidEmail}</ErrorMsg>
             </FormField>
             <FormField>
                 <FormIconWrapper>
@@ -110,10 +98,10 @@ export const LoginForm = () => {
                     onChange={handleChange}
                     autoComplete='off'
                 />
-                    <ErrorMsg error={errors.hasOwnProperty('invalidPassword')}>I have an error</ErrorMsg>
+                    <ErrorMsg error={validPass}> The user name and password do not match</ErrorMsg>
             </FormField>
             <Button
-                margin='1rem 0 0 0'
+                margin='1rem 0 0 0' 
                 bg='var(--color-primary)'
                 fontSize='16px'
                 width='100%'

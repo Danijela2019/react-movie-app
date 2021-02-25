@@ -5,7 +5,6 @@ import { useHistory } from 'react-router-dom';
 import {Img} from '../../shared/ImageElements'
 import Card from '../../card'
 import  {MoviesContext}  from '../../../contexts/MoviesContext';
-import { IMovieData } from '../../../frontEndTypes';
 import {ScrollHorizontally} from '../../shared/ScrollHorizontally'
 import imgPlaceholder from '../../../assets/default.jpg'
 import { PopularNumber, PopularSpan } from './HomepageElements';

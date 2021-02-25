@@ -6,10 +6,10 @@ export const FormControl =  styled.input`
     height:50px;
     border:none;
     padding:5px 7px 5px 15px;
-    background:var(--color-text);
     color:#585353;
     font-size:15px;
     border:2px solidvar(--color-text);
+    background:${props => props.error ? '#f0958c':'var(--color-text)'};
     &:focus {
         border-color:var(--color-primary);
         color:var(--color-background)}
@@ -75,6 +75,9 @@ margin:auto;`
 
 export const ErrorMsg = styled.p`
 display:${props => props.error ? 'block':'none'}; 
+color:var(--color-danger);
+background: var(--color-text);
+margin:.5rem 0;
 `
 export const FormText = styled.p`
 color:var(--color-text);
