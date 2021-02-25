@@ -2,7 +2,7 @@
 
 A movie application created in React and TypeScript using the [TMDB API](https://www.themoviedb.org/). The application is styled with [Styled Components](https://styled-components.com/). The data persist using local storage. At this point only the frontend of the app is almost completed. The user can search, add and remove movies from his own movie list.
 
-![Hero page](readme.png)
+![Hero page](readmeImage.png)
 
 ## To do
 
