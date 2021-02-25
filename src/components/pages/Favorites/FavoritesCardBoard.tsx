@@ -1,8 +1,8 @@
   //@ts-nocheck
 import React, {useState, useContext} from 'react'
 import { AiFillDelete} from "react-icons/ai";
+import imgPlaceholder from '../../../assets/default.jpg'
 
-import Card from '../../card';
 import CardBoard from '../../cardBoard';
 import {Img} from '../../shared/ImageElements'
 import {FavoritesTrashcan, MovieTitle, RemoveButton, FavoriteCardContainer,FavoritesCard} from './FavortiesElements'
@@ -31,7 +31,7 @@ const FavoriteCard = ({data}: IMovieData) => {
                             </Icon>
                         </RemoveButton>
                 </FavoritesTrashcan>
-                <Img as='img' src={data.picture} alt={data.title}></Img>
+                <Img as='img' src={data.picture || imgPlaceholder} alt={data.title}></Img>
                 <MovieTitle>{data.title}</MovieTitle>
             </FavoritesCard>
         </FavoriteCardContainer>

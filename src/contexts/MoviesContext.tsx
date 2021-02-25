@@ -5,6 +5,7 @@ const baseUrl = "https://api.themoviedb.org/3";
 const posterBaseUrl = "https://image.tmdb.org/t/p/w300";
 const apiKey = process.env.REACT_APP_API_KEY;
 
+
 export const MoviesContext = createContext<IMoviesContext|null>(null);
 
 const favoriteMoviesStorage = localStorage.getItem('movies') ? JSON.parse(localStorage.getItem('movies') || '') : [];

@@ -1,5 +1,6 @@
 //@ts-nocheck
 import styled from 'styled-components';
+import imgPlaceholder from '../../../assets/default.jpg'
 
 export const SearchedContainer = styled.div`
 background: linear-gradient(45%, #080e11,#2f3033, #0b0f26);
@@ -34,7 +35,6 @@ width:auto;
   width:100%;
   height:auto;   
 };` 
-
 
 export const SearchedContentWrapper = styled.div`
 display:flex;
@@ -154,7 +154,7 @@ export const SearchedBlurBlack = styled.div`
   border-radius: 11px;
   width: 100%;
   background-position: -140% 25% !important;
-  background:url(${props => props.cover ? props.cover:cover});
+  background:url(${props => props.cover ? props.cover:imgPlaceholder});
   box-shadow: 20px 20px 100px 10px #252523  inset;
   @media screen and (max-width: 768px) {
     width: 100%;

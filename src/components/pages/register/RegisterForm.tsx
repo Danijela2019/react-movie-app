@@ -17,7 +17,7 @@ export const RegisterForm = () => {
     });
     const [errors, setErrors] = useState({})
 
-    const isEmpty = (email, pass, confirmPass) => {
+    const isEmpty = (email, pass,confirmPass) => {
         return email.length > 0 && pass.length > 0 && confirmPass.length > 0
     }
 
@@ -112,7 +112,7 @@ export const RegisterForm = () => {
                 <FormControl as='input'
                     type="password"
                     name="password-input"
-                    id="password"
+                    id="confirmPassword"
                     placeholder='Password'
                     value={state.confirmPassword}
                     required

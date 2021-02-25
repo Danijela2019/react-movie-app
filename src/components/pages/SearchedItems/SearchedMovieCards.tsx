@@ -31,7 +31,7 @@ const SearchedMovieCard = ({data}:any) => {
                     {!isAdded(data.id) ? 'Add to favorites' : 'Added to favorites'}
                 </SearchedAddButton>
             </SearchedInfoSection>
-            <SearchedBlurBlack cover = {data.picture}></SearchedBlurBlack>
+            <SearchedBlurBlack cover={data.picture}></SearchedBlurBlack>
         </SearchedMovieCardContainer> 
     )
 }
