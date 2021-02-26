@@ -25,9 +25,9 @@ const SimilarMovies = () => {
     const {singleMovie} = useContext(MoviesContext)
     const [similarMovies, setSimilarMovies] = useState([])
 
-  useEffect(async() => {
-        const results = await getSimilarMovies(singleMovie.id)
-        setSimilarMovies(results)
+  useEffect(() => {
+        getSimilarMovies(singleMovie.id)
+        .then((results)=> setSimilarMovies(results))
         }, [singleMovie.id]);
 
   return (

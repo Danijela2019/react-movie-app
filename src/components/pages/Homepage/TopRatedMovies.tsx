@@ -8,6 +8,7 @@ import  {MoviesContext}  from '../../../contexts/MoviesContext';
 import { IMovieData } from '../../../frontEndTypes';
 import {ScrollHorizontally} from '../../shared/ScrollHorizontally'
 import imgPlaceholder from '../../../assets/default.jpg'
+import {Title} from '../../shared/TextElements'
 
 
 const TopRatedMovieCard = ({data}:IMovieData) => {
@@ -27,14 +28,17 @@ const TopRatedMovieCard = ({data}:IMovieData) => {
     )
 }
 
-
 const TopRatedMovies = () => {
     const {topRatedMovies} = useContext(MoviesContext);
     return (
-        <ScrollHorizontally>
-        {topRatedMovies.map((movie) => <TopRatedMovieCard data={movie} key={movie.id}/>)};
-    </ScrollHorizontally>
+        <React.Fragment>
+        {topRatedMovies.length > 0 && <Title>TOP RATED</Title>}
+          <ScrollHorizontally>
+            {topRatedMovies.map((movie) => <TopRatedMovieCard data={movie} key={movie.id}/>)};
+          </ScrollHorizontally>
+      </React.Fragment>
     )
 }
 
 export default TopRatedMovies;
+

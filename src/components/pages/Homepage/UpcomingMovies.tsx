@@ -8,6 +8,7 @@ import  {MoviesContext}  from '../../../contexts/MoviesContext';
 import { IMovieData } from '../../../frontEndTypes';
 import {ScrollHorizontally} from '../../shared/ScrollHorizontally'
 import imgPlaceholder from '../../../assets/default.jpg'
+import {Title} from '../../shared/TextElements'
 
 
 const UpcomingMovieCard = ({data}:IMovieData) => {
@@ -31,9 +32,12 @@ const UpcomingMovieCard = ({data}:IMovieData) => {
 const UpcomingMovies = () => {
     const {upcomingMovies} = useContext(MoviesContext);
     return (
-        <ScrollHorizontally>
-        {upcomingMovies.map((movie) => <UpcomingMovieCard data={movie} key={movie.id}/>)};
-    </ScrollHorizontally>
+        <React.Fragment>
+        {upcomingMovies.length > 0 && <Title>IN THEATERS SOON</Title>}
+          <ScrollHorizontally>
+            {upcomingMovies.map((movie) => <UpcomingMovieCard data={movie} key={movie.id}/>)};
+          </ScrollHorizontally>
+        </React.Fragment>
     )
 }
 

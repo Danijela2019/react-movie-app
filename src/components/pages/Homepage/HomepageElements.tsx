@@ -1,6 +1,7 @@
+//@ts-nocheck
 import styled from 'styled-components';
 
-import cover from '../../../assets/it.jpg';
+import cover from '../../../assets/backgroundImages/it.jpg';
 import { IHeroCoverProps } from '../../../frontEndTypes';
 
 export const HeroTitle = styled.h1`
@@ -33,21 +34,6 @@ border:solid 2px var(--color-primary);
 height:100%;
 border-radius:10px;
 `
-
-
-export const HeroCover = styled.div<IHeroCoverProps>`
-background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) ),
-url(${props => props.cover ? props.cover:cover});
-height: 55vh;
-background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  display:flex;
-  flex-direction: column;
-  box-shadow: 30px 30px 150px 100px black  inset;
- 
-`
-
 export const HeroCoverContainer = styled.div`
 height:100vh;
 `;

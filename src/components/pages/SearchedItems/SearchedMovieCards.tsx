@@ -6,6 +6,7 @@ SearchedMovieHeader,SearchedAddButton} from './SearchedItemsElements'
 import imgPlaceholder from '../../../assets/default.jpg'
 import { Title } from '../../shared/TextElements';
 import NoResults from '../../noResults';
+import cover  from '../../../assets/backgroundImages/shrek.jpg'
 
 const SearchedMovieCard = ({data}:any) => {
     const {addToFavorites, favoriteMovies}= useContext(MoviesContext);
@@ -37,8 +38,8 @@ const SearchedMovieCard = ({data}:any) => {
 }
 
 const noSearchResults = (
-    <NoResults>
-        <Title>🙁Sorry we do not have any results for you.</Title>
+    <NoResults cover= {cover}>
+        <Title>🙁Sorry we don't have any results for you.</Title>
         <Title>Let's try with another keyword.</Title>
     </NoResults>
 )

@@ -1,30 +1,29 @@
+//@ts-nocheck
 import React from 'react'
 
-import {Title} from '../../shared/TextElements'
 import CardBoard from '../../cardBoard'
-import cover from '../../../assets/it.jpg'
+import cover from '../../../assets/backgroundImages/it.jpg'
 import InfoCardsBoard from './InfoCardsBoard'
 import TrendingMovies from './TrendingMovies'
 import UpcomingMovies from './UpcomingMovies'
-import { HeroTitle, HeroParagraph, HeroCoverContainer,HeroCover } from './HomepageElements'
+import { HeroTitle, HeroParagraph, HeroCoverContainer} from './HomepageElements'
 import TopRatedMovies from './TopRatedMovies'
+import { Background } from '../../shared/Background'
 
 const Home = () => {
     return (
         <React.Fragment>
         <HeroCoverContainer>
-            <HeroCover cover={cover}>
+            <Background background={cover} height='55vh' light='30px 30px 150px 100px black  inset'>
             <HeroTitle>The movie app </HeroTitle>
             <HeroParagraph>For all the movie lovers to enjoy</HeroParagraph>
-         </HeroCover>
+         </Background>
         <TrendingMovies/>
         </HeroCoverContainer>
         <CardBoard>
             <InfoCardsBoard/>
         </CardBoard>
-       <Title>IN THEATERS SOON</Title>
         <UpcomingMovies/> 
-        <Title>MOST POPULAR </Title>
         <TopRatedMovies/>
     </React.Fragment>)
 }
