@@ -62,7 +62,11 @@ useEffect( () => {
   }
 
 
-return <MoviesContext.Provider value={{ popularMovies,upcomingMovies,getSearchedMovies, searchedMovies, addToFavorites ,favoriteMovies, removeFromFavorites, getSingleMovieData, singleMovie,topRatedMovies}}>
+return <MoviesContext.Provider value={{ popularMovies,
+upcomingMovies,getSearchedMovies,
+ searchedMovies, addToFavorites ,favoriteMovies,
+  removeFromFavorites, getSingleMovieData, 
+  singleMovie,topRatedMovies}}>
     {children}
     </MoviesContext.Provider>;
 };

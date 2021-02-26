@@ -2,7 +2,7 @@ import React from 'react';
 
 import {FooterContainer, Anchor, FooterLine, FooterWrapper, FollowMeWrapper, LogoWrapper } from './FooterElements';
 import Icon from '../icon'
-import tv from '../../assets/tv2.png'
+import tv from '../../assets/logos/tv2.png'
 import {followMeData } from '../../data/anchor_data';
 import { IFollowMeData, IFollowMeDataProps } from '../../frontEndTypes';
 

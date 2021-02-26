@@ -5,13 +5,14 @@ import FavoritesCardBoard from './FavoritesCardBoard';
 import { FavoritesBackground}  from './FavortiesElements';
 import {MoviesContext} from '../../../contexts/MoviesContext'
 import NoResults from '../../noResults';
+import cover  from '../../../assets/backgroundImages/doctor_strange.jpg'
 
 const Favorites = () => {
     //@ts-ignore
 const {favoriteMovies} = useContext(MoviesContext)
 
 const noFavorites = (
-        <NoResults>
+        <NoResults cover={cover}>
             <Title>You do not have any favorites.</Title>
             <Title>Let's add some🙂</Title>
         </NoResults>
