@@ -20,7 +20,7 @@ const TopRatedMovieCard = ({ data }: IMovieData): React.ReactElement => {
 
   return (
     <div onClick={redirectToMoviePage}>
-      <Card width="8rem" height="auto" margin="1rem 0.5rem">
+      <Card width="12rem" height="auto" margin="1rem 0.5rem">
         <Img as="img" src={data.picture || imgPlaceholder} alt={data.title} />
       </Card>
     </div>
