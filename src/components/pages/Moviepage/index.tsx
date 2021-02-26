@@ -1,33 +1,38 @@
-//@ts-nocheck
-import React, { useContext,useEffect} from 'react'
+// @ts-nocheck
+import React, { useContext, useEffect } from 'react';
 
-import { MovieBackground, MovieImage, MovieTitleContainer} from './MoviepageElements'
-import {Title} from '../../shared/TextElements'
+import { MovieBackground, MovieImage, MovieTitleContainer } from './MoviepageElements';
+import { Title } from '../../shared/TextElements';
 import MovieInfoCard from './MovieInfoCard';
-import {MoviesContext} from '../../../contexts/MoviesContext';
+import { MoviesContext } from '../../../contexts/MoviesContext';
 import SimilarMovies from './SimilarMovies';
-import imgPlaceholder from '../../../assets/default.jpg'
+import imgPlaceholder from '../../../assets/default.jpg';
 
-const MoviePage = () => {
-    const {singleMovie} = useContext(MoviesContext)
-    
+const MoviePage = (): React.ReactElement => {
+  const { singleMovie } = useContext(MoviesContext);
 
-    useEffect(() => {
-        window.scrollTo(0, 0);
-      }, [singleMovie]); 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [singleMovie]);
 
-    return (
-        <React.Fragment>
-            <MovieBackground cover={singleMovie.picture}>
-                <MovieImage as='img' src={singleMovie.picture || imgPlaceholder} width="200px" height="auto" alt="Joker"/>
-                <MovieTitleContainer>
-                    <Title>{singleMovie.title}</Title>
-                </MovieTitleContainer>
-            </MovieBackground>
-            <MovieInfoCard/>
-            <SimilarMovies/>
-        </React.Fragment>
-    )
-}
+  return (
+    <>
+      <MovieBackground cover={singleMovie.picture}>
+        <MovieImage
+          as="img"
+          src={singleMovie.picture || imgPlaceholder}
+          width="200px"
+          height="auto"
+          alt="Joker"
+        />
+        <MovieTitleContainer>
+          <Title>{singleMovie.title}</Title>
+        </MovieTitleContainer>
+      </MovieBackground>
+      <MovieInfoCard />
+      <SimilarMovies />
+    </>
+  );
+};
 
 export default MoviePage;

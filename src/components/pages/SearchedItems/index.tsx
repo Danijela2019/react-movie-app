@@ -1,15 +1,14 @@
-import React from 'react'
+import React from 'react';
 
-import {SearchedContainer} from './SearchedItemsElements'
+import { SearchedContainer } from './SearchedItemsElements';
 import SearchedMovieCards from './SearchedMovieCards';
 
-
-const SearchedItems = () => {
-    return (
-        <SearchedContainer>
-            <SearchedMovieCards/>
-        </SearchedContainer>
-    )
-}
+const SearchedItems = (): React.ReactElement => {
+  return (
+    <SearchedContainer>
+      <SearchedMovieCards />
+    </SearchedContainer>
+  );
+};
 
 export default SearchedItems;

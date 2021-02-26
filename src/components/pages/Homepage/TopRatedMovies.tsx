@@ -1,45 +1,46 @@
-import React,{useContext} from 'react'
+import React, { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import {Img} from '../../shared/ImageElements'
-import Card from '../../card'
-import  {MoviesContext}  from '../../../contexts/MoviesContext';
+import { Img } from '../../shared/ImageElements';
+import Card from '../../card';
+import { MoviesContext } from '../../../contexts/MoviesContext';
 import { IMovieData, Movie } from '../../../frontEndTypes';
-import {ScrollHorizontally} from '../../shared/ScrollHorizontally'
-import imgPlaceholder from '../../../assets/default.jpg'
-import {Title} from '../../shared/TextElements'
+import { ScrollHorizontally } from '../../shared/ScrollHorizontally';
+import imgPlaceholder from '../../../assets/default.jpg';
+import { Title } from '../../shared/TextElements';
 
+const TopRatedMovieCard = ({ data }: IMovieData): React.ReactElement => {
+  // @ts-ignore
+  const { getSingleMovieData } = useContext(MoviesContext);
+  const history = useHistory();
+  const redirectToMoviePage = () => {
+    getSingleMovieData(data);
+    history.push('/movie');
+  };
 
-const TopRatedMovieCard = ({data}:IMovieData) => {
-    //@ts-ignore
-    const {getSingleMovieData} = useContext(MoviesContext);
-    let history = useHistory();
-    const redirectToMoviePage = () => {
-        getSingleMovieData(data)
-        history.push('/movie')
-    }
+  return (
+    <div onClick={redirectToMoviePage}>
+      <Card width="8rem" height="auto" margin="1rem 0.5rem">
+        <Img as="img" src={data.picture || imgPlaceholder} alt={data.title} />
+      </Card>
+    </div>
+  );
+};
 
-    return (
-        <div onClick={redirectToMoviePage}>
-            <Card  width='12rem' height='auto' margin='1rem 0.5rem'>
-                <Img as='img' src={data.picture  || imgPlaceholder} alt={data.title}></Img>
-            </Card>
-        </div>
-    )
-}
-
-const TopRatedMovies = () => {
-    //@ts-ignore
-    const {topRatedMovies} = useContext(MoviesContext);
-    return (
-        <React.Fragment>
-        {topRatedMovies.length > 0 && <Title>TOP RATED</Title>}
-          <ScrollHorizontally>
-            {topRatedMovies.map((movie:Movie) => <TopRatedMovieCard data={movie} key={movie.id}/>)};
-          </ScrollHorizontally>
-      </React.Fragment>
-    )
-}
+const TopRatedMovies = (): React.ReactElement => {
+  // @ts-ignore
+  const { topRatedMovies } = useContext(MoviesContext);
+  return (
+    <>
+      {topRatedMovies.length > 0 && <Title>TOP RATED</Title>}
+      <ScrollHorizontally>
+        {topRatedMovies.map((movie: Movie) => (
+          <TopRatedMovieCard data={movie} key={movie.id} />
+        ))}
+        ;
+      </ScrollHorizontally>
+    </>
+  );
+};
 
 export default TopRatedMovies;
-

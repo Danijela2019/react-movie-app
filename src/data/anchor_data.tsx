@@ -4,19 +4,19 @@ export const followMeData = [
   {
     id: 1,
     text: 'Facebook',
-    icon:  <AiFillFacebook />,
-    link:'https://www.facebook.com/deni83',
+    icon: <AiFillFacebook />,
+    link: 'https://www.facebook.com/deni83',
   },
   {
     id: 2,
     text: 'Github',
     icon: <AiOutlineGithub />,
-    link:'https://github.com/Danijela2019',
+    link: 'https://github.com/Danijela2019',
   },
   {
     id: 3,
     text: 'Linkedin',
     icon: <AiFillLinkedin />,
-    link:'https://www.linkedin.com/in/danijela-milenkovic-926b0a57/',
+    link: 'https://www.linkedin.com/in/danijela-milenkovic-926b0a57/',
   },
 ];
