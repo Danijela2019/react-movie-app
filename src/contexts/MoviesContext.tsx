@@ -1,8 +1,6 @@
-import React, { createContext,useState, useEffect} from 'react'; 
+import React, {createContext, useState, useEffect} from 'react'; 
 import {IChildren, IMoviesContext, Movie } from '../frontEndTypes'
-import {getPopularMovies,getUpcomingMovies, fetchSearchedMovies } from '../util/contextFunctions'
-
-
+import {fetchSearchedMovies, getHomePageMovies } from '../util/contextFunctions'
 
 export const MoviesContext = createContext<IMoviesContext|null>(null);
 
@@ -11,29 +9,24 @@ const favoriteMoviesStorage = localStorage.getItem('movies') ? JSON.parse(localS
 const singleMovieStorage = JSON.parse(localStorage.getItem('movie'));
 const searchedMoviesStorage = localStorage.getItem('searchedMovies') ? JSON.parse(localStorage.getItem('searchedMovies') || '') : [];
 
+
   const MoviesContextProvider = ({ children }: IChildren): React.ReactElement => {
   const [popularMovies,setPopularMovies] = useState([]);
   const [upcomingMovies, setUpcomingMovies] = useState([]);
   const [searchedMovies, setSearchedMovies] = useState(searchedMoviesStorage)
   const [favoriteMovies, setFavoriteMovies] = useState(favoriteMoviesStorage);
   const [singleMovie,setSingleMovie] = useState(singleMovieStorage);
+  const [topRatedMovies, setTopRatedMovies] = useState([]);
 
 
-  useEffect(() => {
-    getPopularMovies()
-      .then(data => {
-        setPopularMovies(data)
-      })
-      .catch((_) => setPopularMovies([]));
-  }, []);
-
-  useEffect(() => {
-      getUpcomingMovies()
-        .then(data => {
-          setUpcomingMovies(data)
-        })
-        .catch((_) => setUpcomingMovies([]));
-  }, []);
+useEffect( () => {
+    getHomePageMovies()
+    .then((results) =>{
+      setUpcomingMovies(results[0])
+      setPopularMovies(results[1])
+      setTopRatedMovies(results[2])
+    })
+}, []); 
 
   const getSearchedMovies= async(searchValue:string)=> {
       const hits = await fetchSearchedMovies(searchValue)
@@ -69,7 +62,7 @@ const searchedMoviesStorage = localStorage.getItem('searchedMovies') ? JSON.pars
   }
 
 
-return <MoviesContext.Provider value={{ popularMovies,upcomingMovies,getSearchedMovies, searchedMovies, addToFavorites ,favoriteMovies, removeFromFavorites, getSingleMovieData, singleMovie}}>
+return <MoviesContext.Provider value={{ popularMovies,upcomingMovies,getSearchedMovies, searchedMovies, addToFavorites ,favoriteMovies, removeFromFavorites, getSingleMovieData, singleMovie,topRatedMovies}}>
     {children}
     </MoviesContext.Provider>;
 };

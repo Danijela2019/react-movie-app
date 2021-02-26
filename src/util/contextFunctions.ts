@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { IMovie } from "../frontEndTypes";
 
 const baseUrl = "https://api.themoviedb.org/3";
@@ -27,27 +28,22 @@ const mapData = (res:any) => {
     });
   }
   
-export const getPopularMovies= async () => {
-    const popularUrl = `${baseUrl}/discover/movie?sort_by=popularity.desc&api_key=${apiKey}`;
-    try {
-        const res = await fetch(popularUrl);
-        const response = await res.json();
-        return mapData(response.results);
-    } catch (_) {
-        return [];
-    }
-  }
 
-export const getUpcomingMovies= async () => {
-    const upcomingUrl = `${baseUrl}/movie/upcoming?api_key=${apiKey}&language=en-US&page=1`;
-    try {
-        const res = await fetch(upcomingUrl);
-        const response = await res.json();
-        return mapData(response.results);
-    } catch (_) {
-        return [];
-    }
-  }
+export const getHomePageMovies = async  () => {
+  const topRatedUrl= fetch(`${baseUrl}/movie/top_rated?api_key=${apiKey}&language=en-US&page=1`)
+    const popularMoviesUrl = fetch(`${baseUrl}/discover/movie?sort_by=popularity.desc&api_key=${apiKey}`);
+    const upcomingMoviesUrl = fetch(`${baseUrl}/movie/upcoming?api_key=${apiKey}&language=en-US&page=1`);
+    const res = await Promise.all([popularMoviesUrl, upcomingMoviesUrl, topRatedUrl])
+    const popular = await res[0].json()
+    const upcoming = await res[1].json()
+    const topRated= await res[2].json()
+    return[mapData(popular.results),mapData(upcoming.results),mapData(topRated.results)]
+};
+  
+
+
+
+
 
 export const fetchSearchedMovies= async (searchValue:string)=> {
     const searchApiUrl = `${baseUrl}/search/movie?query=${searchValue}&api_key=${apiKey}`
