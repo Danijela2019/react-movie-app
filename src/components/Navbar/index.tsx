@@ -1,34 +1,37 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
-import Icon from '../icon'
-import { NavImage,NavbarContainer, NavbarWrapper,NavbarLogo,NavbarToggle, RedirectToHomeButton} from './NavElements'
-import logo from '../../assets/logos/tv.png';
 import { AiOutlineMenu } from 'react-icons/ai';
+import Icon from '../icon';
+import {
+  NavImage,
+  NavbarContainer,
+  NavbarWrapper,
+  NavbarLogo,
+  NavbarToggle,
+  RedirectToHomeButton,
+} from './NavElements';
+import logo from '../../assets/logos/tv.png';
 import NavItems from './NavItems';
 
-
 const Logo = (): React.ReactElement => {
-
-    let history = useHistory();
-    const returnHome = () => { 
-        history.push('/')
-  }
+  const history = useHistory();
+  const returnHome = () => {
+    history.push('/');
+  };
 
   return (
     <RedirectToHomeButton onClick={returnHome}>
-      <NavImage as='img' src={logo} alt="A text and logo of the company"/>;
-      </RedirectToHomeButton>
-    )
-  };
-
+      <NavImage as="img" src={logo} alt="A text and logo of the company" />;
+    </RedirectToHomeButton>
+  );
+};
 
 const Navbar = (): React.ReactElement => {
-
   const [sidebar, setSidebar] = useState(false);
   const handleClick = () => setSidebar(!sidebar);
   const closeMobileMenu = () => setSidebar(false);
-  
+
   return (
     <NavbarContainer>
       <NavbarWrapper>
@@ -47,4 +50,3 @@ const Navbar = (): React.ReactElement => {
 };
 
 export default Navbar;
-

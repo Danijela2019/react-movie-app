@@ -1,9 +1,8 @@
-import React from 'react'
+import React from 'react';
 import { IButtonProps } from '../../frontEndTypes';
-import {StyledButton,ButtonWrapper} from './ButtonElements'
+import { StyledButton, ButtonWrapper } from './ButtonElements';
 
-
-const Button = (props:IButtonProps) => {
+const Button = (props: IButtonProps): React.ReactElement => {
   return (
     <ButtonWrapper margin={props.margin}>
       <StyledButton
@@ -20,4 +19,3 @@ const Button = (props:IButtonProps) => {
   );
 };
 export default Button;
-

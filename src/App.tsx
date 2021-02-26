@@ -1,13 +1,13 @@
 import React from 'react';
-import {BrowserRouter as Router} from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 
-import {GlobalStyle} from './GlobalStyles'
+import styled from 'styled-components';
+import { GlobalStyle } from './GlobalStyles';
 import Navbar from './components/navbar';
 import Routes from './components/pages';
 import Footer from './components/footer';
 import Layout from './components/layout/Layout';
-import styled from 'styled-components'
-import MoviesContextProvider from './contexts/MoviesContext'
+import MoviesContextProvider from './contexts/MoviesContext';
 
 const PageContainer = styled.main`
   display: flex;
@@ -15,22 +15,21 @@ const PageContainer = styled.main`
   min-height: 100vh;
 `;
 
-const App = () => {
+const App = (): React.ReactElement => {
   return (
-      <MoviesContextProvider >
+    <MoviesContextProvider>
       <GlobalStyle />
       <PageContainer>
         <Layout>
-            <Router>
+          <Router>
             <Navbar />
             <Routes />
           </Router>
         </Layout>
-        <Footer/>
+        <Footer />
       </PageContainer>
-      </MoviesContextProvider>
+    </MoviesContextProvider>
   );
-}
+};
 
 export default App;
-

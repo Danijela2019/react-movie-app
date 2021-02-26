@@ -1,36 +1,38 @@
-import styled from 'styled-components'
-import {NavLink as Link} from 'react-router-dom';
+import styled from 'styled-components';
+import { NavLink as Link } from 'react-router-dom';
 
 export const NavLink = styled(Link)`
-font-size: 1.5rem;
-display:flex;
-background:transparent;
-text-decoration:none;
-align-items:center;
-cursor:pointer;
-color:var(--color-text);
-&:hover,
-&:active {
-  border-bottom: 3px solid  var(--color-primary);
-  color: var(--color-primary);
-}`
-   
+  font-size: 1.5rem;
+  display: flex;
+  background: transparent;
+  text-decoration: none;
+  align-items: center;
+  cursor: pointer;
+  color: var(--color-text);
+  &:hover,
+  &:active {
+    border-bottom: 3px solid var(--color-primary);
+    color: var(--color-primary);
+  }
+`;
+
 export const NavImage = styled.img`
- height: 100%;
-`
+  height: 100%;
+`;
 export const NavbarContainer = styled.nav`
   height: 50px;
   width: 100%;
   display: flex;
-  background:transparent;
+  background: transparent;
   justify-content: space-between;
   align-items: stretch;
-  
+
   @media (max-width: 767px) {
     flex-direction: column;
     height: auto;
     padding: 0.5rem;
-  }`;
+  }
+`;
 
 export const NavbarWrapper = styled.div`
   display: flex;
@@ -64,7 +66,7 @@ export const NavbarLink = styled.li`
 `;
 
 export const NavbarLinks = styled.ul`
-background:transparent;
+  background: transparent;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -83,7 +85,7 @@ export const MobileNavbar = styled.ul`
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  background:var(--color-background);
+  background: var(--color-background);
   list-style-type: none;
   text-transform: uppercase;
   transition: 0.2s;
@@ -91,8 +93,8 @@ export const MobileNavbar = styled.ul`
 `;
 
 export const RedirectToHomeButton = styled.button`
-height: 90%;
-background: transparent;
-outline:none;
-border:none;
+  height: 90%;
+  background: transparent;
+  outline: none;
+  border: none;
 `;

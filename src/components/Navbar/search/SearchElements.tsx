@@ -1,45 +1,44 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const SearchBox = styled.div`
-width: 30%;
-background:transparent;
-@media (max-width: 767px) {
-    width:80%;
+  width: 30%;
+  background: transparent;
+  @media (max-width: 767px) {
+    width: 80%;
   }
-`
+`;
 export const SearchInput = styled.input`
-  margin-top: .5rem;
+  margin-top: 0.5rem;
   font-size: 17px;
   border: none;
-  color:black;
-  background:whitesmoke;
-  cursor:pointer;
-  border-radius:5px 0 0 5px ;
+  color: black;
+  background: whitesmoke;
+  cursor: pointer;
+  border-radius: 5px 0 0 5px;
   border-right: none;
-  height:30px;
-  text-align:center;
-  width:100%;
-  outline:none;`
+  height: 30px;
+  text-align: center;
+  width: 100%;
+  outline: none;
+`;
 
-  export const SearchForm = styled.form`
-  display:flex;
-  justify-content:flex-end;
-  align-items:center;
-  text-align:center;
-  `
-    
-  
+export const SearchForm = styled.form`
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: center;
+`;
+
 export const SearchButton = styled.button`
-text-align: center;
- cursor: pointer;
+  text-align: center;
+  cursor: pointer;
   margin-top: 0.5rem;
   margin-right: 16px;
   background: var(--color-primary);
   border: none;
   cursor: pointer;
-  width:30px;
+  width: 30px;
   height: 30px;
- border-radius: 0 5px 5px 0 ;
-  outline:none;
-  `
-  
+  border-radius: 0 5px 5px 0;
+  outline: none;
+`;

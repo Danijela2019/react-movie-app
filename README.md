@@ -6,11 +6,12 @@ A movie application created in React and TypeScript using the [TMDB API](https:/
 
 ## To do
 
-- **Fetch the movie data from the backend using axios**
-- **Connect with MongoDB Atlas data base to store user data**
+- **Create a separate repo for backend and fetch the movie data from the backend using axios**
+- **Send data to the server from the login/register page**
+- **Connect with MongoDB Atlas data base to store user data and favorites movie list**
 - **User authentication**
-- **Error handling on the backend and the frontend**
-- **Deploy the app**
+- **make some CSS adjustments for the mobile version**
+- **Add some missing types**
 
 ## Would you like to try it out
 
