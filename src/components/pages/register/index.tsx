@@ -1,4 +1,3 @@
-//@ts-nocheck
 import React from 'react';
 import RegisterForm from './RegisterForm';
 import regBackground from '../../../assets/backgroundImages/alita.jpg'

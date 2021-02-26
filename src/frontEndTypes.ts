@@ -13,9 +13,23 @@ export interface Movie {
     resume: string;
     picture?: string;
   }
+
+  export interface Item {
+    id: number;
+    date: string;
+    title: string;
+    rating: number;
+    resume: string;
+    picture?: string;
+    number:number;
+  }
 export interface IMovieData {
   data:Movie;
 }
+export interface IMovieItem {
+  data:Item;
+}
+
 
 export interface IMovie {
     id: string,
@@ -40,7 +54,7 @@ export interface IMovie {
   }
 
   export interface IChildren {
-    children: ReactChild | ReactChildren;
+    children: React.ReactNode;
   }
   
   export interface IStyledButtonProps {
@@ -54,9 +68,13 @@ export interface IMovie {
     margin:string;
   }
 
+  export interface IErrorProp {
+    error:boolean;
+  }
+
   export interface IButtonProps {
     disabled?: boolean | undefined;
-    clicked?:() => void|undefined;
+    clicked?:(e?:any) => void|undefined;
     bg: string,
     fontSize: string,
     width: string,
@@ -75,7 +93,7 @@ export interface ICardProps {
   width:string,
   height:string,
   margin:string,
-  children: ReactChildren|ReactChild
+  children: React.ReactNode
 }
 
 export interface ICardBoardProps {
@@ -107,18 +125,34 @@ export interface INavItemProps {
   closeMenu: () => void;
 }
 
-export interface IHeroCoverProps {
-  cover: string
-  }
+
 
 export  interface IInfoCardProps {
-    data:{id:number,
-    title: string,
-    text: string,
-    icon: React.ReactElement
+    data:{
+      id:number,
+      title: string,
+      text: string,
+      icon: React.ReactElement
     }
 }
 export interface IMovieBackground {
   cover:string
   }
   
+  export interface IBackgroundProps {
+    background: string,
+    height?: string,
+    light?: string
+    }
+
+    export interface INoResultsProps {
+      cover: string;
+      children?: React.ReactNode;
+  }
+
+  export interface IFavoritesTrashcanProps {
+    isVisible: boolean 
+  }
+  export  interface ISearchedBlurBlack {
+    cover:string
+  }

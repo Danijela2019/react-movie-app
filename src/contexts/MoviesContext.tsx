@@ -1,16 +1,14 @@
 import React, {createContext, useState, useEffect} from 'react'; 
 import {IChildren, IMoviesContext, Movie } from '../frontEndTypes'
-import {fetchSearchedMovies, getHomePageMovies } from '../util/contextFunctions'
+import {fetchSearchedMovies, getHomePageMovies} from '../util/contextFunctions'
 
 export const MoviesContext = createContext<IMoviesContext|null>(null);
 
 const favoriteMoviesStorage = localStorage.getItem('movies') ? JSON.parse(localStorage.getItem('movies') || '') : [];
-//@ts-ignore
-const singleMovieStorage = JSON.parse(localStorage.getItem('movie'));
+const singleMovieStorage = JSON.parse(localStorage.getItem('movie')|| '');
 const searchedMoviesStorage = localStorage.getItem('searchedMovies') ? JSON.parse(localStorage.getItem('searchedMovies') || '') : [];
 
-
-  const MoviesContextProvider = ({ children }: IChildren): React.ReactElement => {
+const MoviesContextProvider = ({ children }: IChildren): React.ReactElement => {
   const [popularMovies,setPopularMovies] = useState([]);
   const [upcomingMovies, setUpcomingMovies] = useState([]);
   const [searchedMovies, setSearchedMovies] = useState(searchedMoviesStorage)
@@ -33,30 +31,31 @@ useEffect( () => {
       localStorage.setItem('searchedMovies', JSON.stringify(hits));
       setSearchedMovies(hits)
     }
+
+    const addedToFavorites = (movieId:number) => {
+      return favoriteMovies.find((item:Movie) => item.id === movieId)
+    }
+    
+    const findMovieinArray = (movieId:number) => {
+      return searchedMovies.find((item:Movie) =>item.id === movieId)
+    }
   
   const addToFavorites = (movieId:number) => {
     const copyFavoriteMovies= [...favoriteMovies];
-    if(!favoriteMovies.find((item:Movie) => item.id === movieId)){
-      if(!searchedMovies.find((item:Movie) =>item.id === movieId)){
-        copyFavoriteMovies.push(singleMovie);
-        localStorage.setItem('movies', JSON.stringify(copyFavoriteMovies));
-        setFavoriteMovies(copyFavoriteMovies);
-      } else {
-      const movie= searchedMovies.find((item:Movie) =>item.id === movieId)
-      copyFavoriteMovies.push(movie);
-      localStorage.setItem('movies', JSON.stringify(copyFavoriteMovies));
-      setFavoriteMovies(copyFavoriteMovies);
-      }
-    }
-  };
-
+    if(addedToFavorites(movieId)) return
+    else if(!findMovieinArray(movieId))copyFavoriteMovies.push(singleMovie);
+    else copyFavoriteMovies.push(findMovieinArray(movieId));
+    localStorage.setItem('movies', JSON.stringify(copyFavoriteMovies));
+    setFavoriteMovies(copyFavoriteMovies);
+  }
+    
   const removeFromFavorites = (movieId:number) => {
     const moviesArray = favoriteMovies.filter((item:Movie) => item.id !== movieId);
     localStorage.setItem('movies', JSON.stringify(moviesArray));
     setFavoriteMovies(moviesArray);
   };
 
-  const getSingleMovieData = (movieData: Movie)=> {
+const getSingleMovieData = (movieData: Movie)=> {
     localStorage.setItem('movie', JSON.stringify(movieData));
     setSingleMovie(movieData)
   }

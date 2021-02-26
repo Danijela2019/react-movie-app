@@ -6,7 +6,7 @@ display:flex;
 flex-direction:row;
 overflow-x: auto;
 	flex-wrap: nowrap;
-  -ms-overflow-style: none;  /* IE and Edge */
+  -ms-overflow-style: none; 
   scrollbar-width: none; 
   &::-webkit-scrollbar {
     display: none;

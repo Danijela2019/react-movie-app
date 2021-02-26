@@ -1,9 +1,8 @@
-//@ts-nocheck
 import styled from 'styled-components';
 import placeholder from '../../assets/backgroundImages/it.jpg'
+import {IBackgroundProps} from '../../frontEndTypes'
 
-
-export const Background = styled.div`
+export const Background = styled.div<IBackgroundProps>`
 background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) ),
 url( ${(props) => props.background? props.background : placeholder}); 
 height: ${props => props.height ? props.height:'100vh'};

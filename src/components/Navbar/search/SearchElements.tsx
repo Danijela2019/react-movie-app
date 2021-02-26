@@ -7,7 +7,6 @@ background:transparent;
     width:80%;
   }
 `
-
 export const SearchInput = styled.input`
   margin-top: .5rem;
   font-size: 17px;
