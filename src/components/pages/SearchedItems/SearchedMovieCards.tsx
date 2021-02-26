@@ -7,12 +7,13 @@ import imgPlaceholder from '../../../assets/default.jpg'
 import { Title } from '../../shared/TextElements';
 import NoResults from '../../noResults';
 import cover  from '../../../assets/backgroundImages/shrek.jpg'
+import { Movie } from '../../../frontEndTypes';
 
 const SearchedMovieCard = ({data}:any) => {
     const {addToFavorites, favoriteMovies}= useContext(MoviesContext);
 
-    const isAdded = (movieId) => {
-        return favoriteMovies.find((item) => item.id === movieId)
+    const isAdded = (movieId:number) => {
+        return favoriteMovies.find((item:Movie) => item.id === movieId)
     }
     return (
         <SearchedMovieCardContainer>
@@ -50,7 +51,7 @@ const SearchedMovieCards = () => {
     return (
         <React.Fragment>
         {searchedMovies.length > 0 ? (<SearchedCardBoardContainer>
-            {searchedMovies.map((data) => <SearchedMovieCard data={data} key={data.id} />)}
+            {searchedMovies.map((data:Movie) => <SearchedMovieCard data={data} key={data.id} />)}
         </SearchedCardBoardContainer>)
          : noSearchResults
         }

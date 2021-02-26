@@ -1,8 +1,5 @@
-//@ts-nocheck
 import styled from 'styled-components';
 
-import cover from '../../../assets/backgroundImages/it.jpg';
-import { IHeroCoverProps } from '../../../frontEndTypes';
 
 export const HeroTitle = styled.h1`
 background:transparent;

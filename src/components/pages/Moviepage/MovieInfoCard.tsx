@@ -9,6 +9,7 @@ import Button from '../../button'
 import { MovieContentWrapper, MovieDataColumn } from './MoviepageElements'
 import { useHistory } from 'react-router-dom'
 import {MoviesContext} from '../../../contexts/MoviesContext'
+import { Movie } from '../../../frontEndTypes'
 
 const MovieInfoCard = () => {
     const {singleMovie,addToFavorites,favoriteMovies} = useContext(MoviesContext)
@@ -19,8 +20,8 @@ const MovieInfoCard = () => {
         history.goBack();
     }
 
-    const isAdded = (id) => {
-        return favoriteMovies.find((item) => item.id === id)
+    const isAdded = (id:number) => {
+        return favoriteMovies.find((item:Movie) => item.id === id)
     } 
     
     return (
@@ -30,11 +31,6 @@ const MovieInfoCard = () => {
               <MovieInfoContent data={singleMovie} /> 
                <MovieDataColumn>
                     <SearchedAddButton 
-                        margin='1rem 3rem'
-                        bg="#13b300"
-                        fontSize='15px'
-                        width='150px'
-                        height='2rem'
                         onClick={() => addToFavorites(singleMovie.id)}
                         disabled= {isAdded(singleMovie.id)}
                         >

@@ -1,13 +1,15 @@
-//@ts-nocheck
 import React from 'react'
 import {TitleWrapper } from './NoResultsElements';
 import { Background } from '../shared/Background';
+import {INoResultsProps} from '../../frontEndTypes'
 
-const NoResults = (props:any) => {
+
+const NoResults = (props: INoResultsProps) => {
+    const {children, cover} = props
     return (
-        <Background background={props.cover}>
+        <Background background={cover}>
             <TitleWrapper>
-           {props.children}
+           {children}
             </TitleWrapper>
         </Background>
     )

@@ -1,10 +1,8 @@
-//@ts-nocheck
 import { IMovie } from "../frontEndTypes";
 
 const baseUrl = "https://api.themoviedb.org/3";
 const posterBaseUrl = "https://image.tmdb.org/t/p/w300";
 const apiKey = process.env.REACT_APP_API_KEY;
-
 
 const mapData = (res:any) => {
     return res.map((movie:IMovie) => {
@@ -28,7 +26,6 @@ const mapData = (res:any) => {
     });
   }
   
-
 export const getHomePageMovies = async  () => {
     const topRatedUrl= fetch(`${baseUrl}/movie/top_rated?api_key=${apiKey}&language=en-US&page=1`)
     const popularMoviesUrl = fetch(`${baseUrl}/discover/movie?sort_by=popularity.desc&api_key=${apiKey}`);
@@ -57,13 +54,14 @@ export const fetchSearchedMovies= async (searchValue:string)=> {
 export const getSimilarMovies = async (movieId:any) =>{
   const similarUrl = `${baseUrl}/movie/${movieId}/recommendations?api_key=${apiKey}&language=en-US&page=1`;
   try {
-      const res = await fetch(similarUrl);
-  const response = await res.json();
-  return mapData(response.results);
+    const res = await fetch(similarUrl);
+    const response = await res.json();
+    return mapData(response.results);
   } catch (_) {
     return [];
   }
 }
   
+
 
   

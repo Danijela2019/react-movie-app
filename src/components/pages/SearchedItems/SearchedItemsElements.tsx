@@ -1,6 +1,6 @@
-//@ts-nocheck
 import styled from 'styled-components';
 import imgPlaceholder from '../../../assets/default.jpg'
+import { ISearchedBlurBlack } from '../../../frontEndTypes'
 
 export const SearchedContainer = styled.div`
 background: linear-gradient(45%, #080e11,#2f3033, #0b0f26);
@@ -144,7 +144,10 @@ export const SearchedMovieText = styled.p`
   max-width: 465px;
   text-align: justify;
 `
-export const SearchedBlurBlack = styled.div`
+
+
+
+export const SearchedBlurBlack = styled.div<ISearchedBlurBlack>`
  position: absolute;
   top: 0;
   z-index: 1;

@@ -1,7 +1,7 @@
-//@ts-nocheck
 import styled from 'styled-components'
+import {IErrorProp} from '../../frontEndTypes'
 
-export const FormControl =  styled.input`
+export const FormControl =  styled.input<IErrorProp>`
     width:100%;
     height:50px;
     border:none;
@@ -9,7 +9,7 @@ export const FormControl =  styled.input`
     color:#585353;
     font-size:15px;
     border:2px solidvar(--color-text);
-    background:${props => props.error ? '#f0958c':'var(--color-text)'};
+    background:${(props) => props.error ? '#f0958c':'var(--color-text)'};
     &:focus {
         border-color:var(--color-primary);
         color:var(--color-background)}
@@ -73,7 +73,7 @@ align-items:baseline;
 margin:auto;`
 
 
-export const ErrorMsg = styled.p`
+export const ErrorMsg = styled.p<IErrorProp>`
 display:${props => props.error ? 'block':'none'}; 
 color:var(--color-danger);
 background: var(--color-text);

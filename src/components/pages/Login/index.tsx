@@ -1,4 +1,3 @@
-//@ts-nocheck
 import React from 'react';
 import LoginForm from './LoginForm';
 import loginBackground from '../../../assets/backgroundImages/blade_runner.jpg'

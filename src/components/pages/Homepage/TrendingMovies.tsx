@@ -1,4 +1,3 @@
-//@ts-nocheck
 import React,{useContext} from 'react'
 import { useHistory } from 'react-router-dom';
 
@@ -8,9 +7,11 @@ import  {MoviesContext}  from '../../../contexts/MoviesContext';
 import {ScrollHorizontally} from '../../shared/ScrollHorizontally'
 import imgPlaceholder from '../../../assets/default.jpg'
 import { PopularNumber, PopularSpan } from './HomepageElements';
+import { IMovieItem, Item, Movie } from '../../../frontEndTypes';
 
 
-const TrendingMovieCard = ({data}:any) => {
+const TrendingMovieCard = ({data}:IMovieItem) => {
+    //@ts-ignore
     const {getSingleMovieData} = useContext(MoviesContext);
     let history = useHistory();
     const redirectToMoviePage = () => {
@@ -20,7 +21,7 @@ const TrendingMovieCard = ({data}:any) => {
     
     return (
         <div onClick={redirectToMoviePage}>
-            <Card  width='8rem' hight='10rem' margin='1rem 0.5rem'>
+            <Card  width='8rem' height='auto' margin='1rem 0.5rem'>
                 <PopularSpan>
                 <PopularNumber>{data.number}</PopularNumber>
                 </PopularSpan>
@@ -32,12 +33,13 @@ const TrendingMovieCard = ({data}:any) => {
 
 
 const TrendingMovies = () => {
+    //@ts-ignore
     const {popularMovies} = useContext(MoviesContext);
-     const copyPopularMovies= popularMovies.slice()
-    copyPopularMovies.map((item,index)=> item.number= index+1)
+    const copyPopularMovies= popularMovies.slice()
+    copyPopularMovies.map((item:Item,index:number)=> item.number= index+1)
     return (
         <ScrollHorizontally>
-        {copyPopularMovies.map((movie) => <TrendingMovieCard data={movie} key={movie.id} />)};
+        {copyPopularMovies.map((movie:Item) => <TrendingMovieCard data={movie} key={movie.id} />)};
     </ScrollHorizontally>
     )
 }

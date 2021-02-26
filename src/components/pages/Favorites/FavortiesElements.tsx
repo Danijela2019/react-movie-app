@@ -1,5 +1,5 @@
-//@ts-nocheck
 import styled from 'styled-components';
+import { IFavoritesTrashcanProps } from '../../../frontEndTypes'
 
 export const FavoritesBackground = styled.div`
 min-height: 100vh;
@@ -21,7 +21,8 @@ width:auto;
   height:auto;   
 };` 
 
-export const FavoritesTrashcan = styled.span`
+
+export const FavoritesTrashcan = styled.span<IFavoritesTrashcanProps>`
 position:absolute;
 right:20px;
 top:20px;

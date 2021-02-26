@@ -1,4 +1,3 @@
-  //@ts-nocheck
 import React, {useState, useContext} from 'react'
 import { AiFillDelete} from "react-icons/ai";
 import imgPlaceholder from '../../../assets/default.jpg'
@@ -8,11 +7,11 @@ import {Img} from '../../shared/ImageElements'
 import {FavoritesTrashcan, MovieTitle, RemoveButton, FavoriteCardContainer,FavoritesCard} from './FavortiesElements'
 import Icon from '../../icon';
 import {MoviesContext} from '../../../contexts/MoviesContext'
-import { IMovieData } from '../../../frontEndTypes';
+import { IMovieData, Movie } from '../../../frontEndTypes';
 
 const FavoriteCard = ({data}: IMovieData) => {
     const [active, setActive] = useState(false);
-  
+    //@ts-ignore
     const { removeFromFavorites} = useContext(MoviesContext);
     return(
         <FavoriteCardContainer onMouseEnter={e => {
@@ -39,11 +38,12 @@ const FavoriteCard = ({data}: IMovieData) => {
 }
 
 const FavoritesCardBoard = () => {
+    //@ts-ignore
     const { favoriteMovies} = useContext(MoviesContext);
 
     return (
         <CardBoard>
-            {favoriteMovies.map((data) => <FavoriteCard data={data} key={data.id}/>)}
+            {favoriteMovies.map((data:Movie) => <FavoriteCard data={data} key={data.id}/>)}
         </CardBoard>
     )
 }

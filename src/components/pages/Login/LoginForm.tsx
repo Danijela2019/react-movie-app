@@ -18,7 +18,7 @@ export const LoginForm = () => {
     const[invalidEmail ,setInvalidEmail] = useState(false);
     const[invalidPass ,setInvalidPass] = useState(false);
     
-    const handleSubmit = (event) => {
+    const handleSubmit = (event: React.FormEvent) => {
         event.preventDefault()
         if(!isValidEmail(state.email)){
             error.invalidEmail = "Please enter valid email address.";
@@ -45,14 +45,14 @@ export const LoginForm = () => {
         history.push('/register'); 
     }
 
-    const handleChange = (e) => {
-        const {id , value} = e.target   
+    const handleChange = (event:React.FormEvent<HTMLInputElement>) => {
+        const {id , value} = event.target   
         setState(prevState => ({
             ...prevState,
             [id] : value
         }))
     }
-    const isEmpty = (email, pass) => {
+    const isEmpty = (email:string, pass:string) => {
         return email.length > 0 && pass.length > 0 
    }
     
