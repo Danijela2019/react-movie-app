@@ -4,6 +4,8 @@ A movie application created in React and TypeScript using the [TMDB API](https:/
 
 ![Hero page](readmeImage.png)
 
+## Proview of the app is available [here](https://react-movie-app2021.netlify.app/)
+
 ## To do
 
 - **Create a separate repo for backend and fetch the movie data from the backend using axios**
@@ -12,6 +14,7 @@ A movie application created in React and TypeScript using the [TMDB API](https:/
 - **User authentication**
 - **make some CSS adjustments for the mobile version**
 - **Add some missing types**
+
 
 ## Would you like to try it out
 
