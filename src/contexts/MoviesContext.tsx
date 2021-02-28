@@ -9,7 +9,9 @@ export const MoviesContext = createContext<IMoviesContext | null>(null);
 const favoriteMoviesStorage = localStorage.getItem('movies')
   ? JSON.parse(localStorage.getItem('movies') || '')
   : [];
-const singleMovieStorage = JSON.parse(localStorage.getItem('movie') || '');
+const singleMovieStorage = localStorage.getItem('movie')
+  ? JSON.parse(localStorage.getItem('movie') || '')
+  : {};
 const searchedMoviesStorage = localStorage.getItem('searchedMovies')
   ? JSON.parse(localStorage.getItem('searchedMovies') || '')
   : [];
