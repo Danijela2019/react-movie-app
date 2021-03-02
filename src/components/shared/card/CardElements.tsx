@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { ICardContainer } from '../../frontEndTypes';
+import { ICardContainer } from '../../../frontEndTypes';
 
 export const CardContainer = styled.div<ICardContainer>`
   background-color: var(--color-background);

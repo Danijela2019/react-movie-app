@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { AiOutlineMenu } from 'react-icons/ai';
-import Icon from '../icon';
+import Icon from '../shared/icon';
 import {
   NavImage,
   NavbarContainer,

@@ -16,7 +16,7 @@ import {
 } from './SearchedItemsElements';
 import imgPlaceholder from '../../../assets/default.jpg';
 import { Title } from '../../shared/TextElements';
-import NoResults from '../../noResults';
+import NoResults from '../../shared/noResults';
 import cover from '../../../assets/backgroundImages/shrek.jpg';
 import { IMoviesContext, Movie } from '../../../frontEndTypes';
 

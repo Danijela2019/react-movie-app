@@ -33,6 +33,7 @@ export const HomeCardContent = styled.div`
 `;
 export const HeroCoverContainer = styled.div`
   height: 100vh;
+  margin-bottom: -8rem;
 `;
 
 export const InfoCardContainer = styled.div`

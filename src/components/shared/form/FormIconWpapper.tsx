@@ -1,5 +1,5 @@
 import React from 'react';
-import { IFormIconProp } from '../../frontEndTypes';
+import { IFormIconProp } from '../../../frontEndTypes';
 import Icon from '../icon';
 import { FormIcon } from './FormElements';
 

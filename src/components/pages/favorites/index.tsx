@@ -4,7 +4,7 @@ import { Title } from '../../shared/TextElements';
 import FavoritesCardBoard from './FavoritesCardBoard';
 import { FavoritesBackground } from './FavortiesElements';
 import { MoviesContext } from '../../../contexts/MoviesContext';
-import NoResults from '../../noResults';
+import NoResults from '../../shared/noResults';
 import cover from '../../../assets/backgroundImages/doctor_strange.jpg';
 import { IMoviesContext } from '../../../frontEndTypes';
 

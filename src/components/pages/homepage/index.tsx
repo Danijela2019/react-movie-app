@@ -1,6 +1,6 @@
 import React from 'react';
 
-import CardBoard from '../../cardBoard';
+import CardBoard from '../../shared/cardBoard';
 import cover from '../../../assets/backgroundImages/it.jpg';
 import InfoCardsBoard from './InfoCardsBoard';
 import TrendingMovies from './TrendingMovies';

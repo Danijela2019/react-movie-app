@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react';
 
 import { Img } from '../../shared/ImageElements';
-import Card from '../../card';
+import Card from '../../shared/card';
 import { MoviesContext } from '../../../contexts/MoviesContext';
 import { IMovieData, IMoviesContext, Movie } from '../../../frontEndTypes';
 import { ScrollHorizontally } from '../../shared/ScrollHorizontally';

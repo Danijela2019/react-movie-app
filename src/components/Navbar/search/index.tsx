@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { SearchBox, SearchButton, SearchForm, SearchInput } from './SearchElements';
 import { MoviesContext } from '../../../contexts/MoviesContext';
-import Icon from '../../icon';
+import Icon from '../../shared/icon';
 import { IMoviesContext, Movie } from '../../../frontEndTypes';
 
 const Search = (): React.ReactElement => {

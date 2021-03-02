@@ -2,17 +2,17 @@
 import React, { useState } from 'react';
 import { AiOutlineLock, AiOutlineUser } from 'react-icons/ai';
 import { useHistory } from 'react-router-dom';
-import Button from '../../button';
-import FormWrapper from '../../form/FormWrapper';
-import FormField from '../../form/FormField';
-import FormIconWrapper from '../../form/FormIconWpapper';
+import Button from '../../shared/button';
+import FormWrapper from '../../shared/form/FormWrapper';
+import FormField from '../../shared/form/FormField';
+import FormIconWrapper from '../../shared/form/FormIconWpapper';
 import {
   FormTextWrapper,
   FormControl,
   FormAnchor,
   FormText,
   ErrorMsg,
-} from '../../form/FormElements';
+} from '../../shared/form/FormElements';
 import { isValidEmail } from '../../../util/inputValidation';
 
 const RegisterForm = (): React.ReactElement => {

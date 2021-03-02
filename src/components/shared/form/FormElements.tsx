@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { IErrorProp } from '../../frontEndTypes';
+import { IErrorProp } from '../../../frontEndTypes';
 
 export const FormControl = styled.input<IErrorProp>`
   width: 100%;
