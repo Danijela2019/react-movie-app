@@ -13,12 +13,11 @@ import {
 } from './FavortiesElements';
 import Icon from '../../icon';
 import { MoviesContext } from '../../../contexts/MoviesContext';
-import { IMovieData, Movie } from '../../../frontEndTypes';
+import { IMovieData, IMoviesContext, Movie } from '../../../frontEndTypes';
 
 const FavoriteCard = ({ data }: IMovieData) => {
   const [active, setActive] = useState(false);
-  // @ts-ignore
-  const { removeFromFavorites } = useContext(MoviesContext);
+  const { removeFromFavorites } = useContext(MoviesContext) as IMoviesContext;
   return (
     <FavoriteCardContainer
       onMouseEnter={(e) => {
@@ -46,8 +45,7 @@ const FavoriteCard = ({ data }: IMovieData) => {
 };
 
 const FavoritesCardBoard = (): React.ReactElement => {
-  // @ts-ignore
-  const { favoriteMovies } = useContext(MoviesContext);
+  const { favoriteMovies } = useContext(MoviesContext) as IMoviesContext;
 
   return (
     <CardBoard>

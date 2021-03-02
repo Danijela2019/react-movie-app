@@ -1,17 +1,16 @@
-// @ts-nocheck
 import React, { useContext, useState, useEffect } from 'react';
 
 import { Img } from '../../shared/ImageElements';
 import Card from '../../card';
 import { MoviesContext } from '../../../contexts/MoviesContext';
-import { IMovieData, Movie } from '../../../frontEndTypes';
+import { IMovieData, IMoviesContext, Movie } from '../../../frontEndTypes';
 import { ScrollHorizontally } from '../../shared/ScrollHorizontally';
 import { Title } from '../../shared/TextElements';
 import imgPlaceholder from '../../../assets/default.jpg';
 import { getSimilarMovies } from '../../../util/contextFunctions';
 
 const SimilarMovieCard = ({ data }: IMovieData) => {
-  const { getSingleMovieData } = useContext(MoviesContext);
+  const { getSingleMovieData } = useContext(MoviesContext) as IMoviesContext;
   return (
     <div
       onClick={() => {
@@ -26,8 +25,8 @@ const SimilarMovieCard = ({ data }: IMovieData) => {
 };
 
 const SimilarMovies = (): React.ReactElement => {
-  const { singleMovie } = useContext(MoviesContext);
-  const [similarMovies, setSimilarMovies] = useState([]);
+  const { singleMovie } = useContext(MoviesContext) as IMoviesContext;
+  const [similarMovies, setSimilarMovies] = useState<Movie[]>([]);
 
   useEffect(() => {
     getSimilarMovies(singleMovie.id).then((results) => setSimilarMovies(results));

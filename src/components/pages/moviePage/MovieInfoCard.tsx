@@ -9,10 +9,12 @@ import { SearchedAddButton } from '../searchedItems/SearchedItemsElements';
 import Button from '../../button';
 import { MovieContentWrapper, MovieDataColumn } from './MoviepageElements';
 import { MoviesContext } from '../../../contexts/MoviesContext';
-import { Movie } from '../../../frontEndTypes';
+import { IMoviesContext, Movie } from '../../../frontEndTypes';
 
 const MovieInfoCard = (): React.ReactElement => {
-  const { singleMovie, addToFavorites, favoriteMovies } = useContext(MoviesContext);
+  const { singleMovie, addToFavorites, favoriteMovies } = useContext(
+    MoviesContext
+  ) as IMoviesContext;
 
   const history = useHistory();
   const redirectToHome = () => {
