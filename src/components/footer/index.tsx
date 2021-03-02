@@ -8,7 +8,7 @@ import {
   FollowMeWrapper,
   LogoWrapper,
 } from './FooterElements';
-import Icon from '../icon';
+import Icon from '../shared/icon';
 import tv from '../../assets/logos/tv2.png';
 import { followMeData } from '../../data/anchor_data';
 import { IFollowMeData, IFollowMeDataProps } from '../../frontEndTypes';

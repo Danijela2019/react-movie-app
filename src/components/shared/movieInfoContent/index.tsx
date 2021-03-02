@@ -1,7 +1,7 @@
 import React from 'react';
 import { SiImdb } from 'react-icons/si';
 
-import { IMovieData } from '../../frontEndTypes';
+import { IMovieData } from '../../../frontEndTypes';
 import Icon from '../icon';
 import {
   MovieContentWrapper,

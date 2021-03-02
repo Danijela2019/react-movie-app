@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { IButtonWrapperProps, IStyledButtonProps } from '../../frontEndTypes';
+import { IButtonWrapperProps, IStyledButtonProps } from '../../../frontEndTypes';
 
 export const StyledButton = styled.button<IStyledButtonProps>`
   background-color: ${(props) => props.bg};

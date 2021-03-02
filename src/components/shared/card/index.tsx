@@ -1,5 +1,5 @@
 import React from 'react';
-import { ICardProps } from '../../frontEndTypes';
+import { ICardProps } from '../../../frontEndTypes';
 import { CardContainer } from './CardElements';
 
 const Card = ({ children, width, height, margin }: ICardProps): React.ReactElement => {

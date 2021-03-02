@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import { AiFillDelete } from 'react-icons/ai';
 import imgPlaceholder from '../../../assets/default.jpg';
 
-import CardBoard from '../../cardBoard';
+import CardBoard from '../../shared/cardBoard';
 import { Img } from '../../shared/ImageElements';
 import {
   FavoritesTrashcan,
@@ -11,7 +11,7 @@ import {
   FavoriteCardContainer,
   FavoritesCard,
 } from './FavortiesElements';
-import Icon from '../../icon';
+import Icon from '../../shared/icon';
 import { MoviesContext } from '../../../contexts/MoviesContext';
 import { IMovieData, IMoviesContext, Movie } from '../../../frontEndTypes';
 

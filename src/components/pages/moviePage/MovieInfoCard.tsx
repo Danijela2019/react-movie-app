@@ -3,10 +3,10 @@ import React, { useContext } from 'react';
 
 import { useHistory } from 'react-router-dom';
 import { CenterElements } from '../../shared/CenterElements';
-import Card from '../../card';
-import MovieInfoContent from '../../movieInfoContent';
+import Card from '../../shared/card';
+import MovieInfoContent from '../../shared/movieInfoContent';
 import { SearchedAddButton } from '../searchedItems/SearchedItemsElements';
-import Button from '../../button';
+import Button from '../../shared/button';
 import { MovieContentWrapper, MovieDataColumn } from './MoviepageElements';
 import { MoviesContext } from '../../../contexts/MoviesContext';
 import { IMoviesContext, Movie } from '../../../frontEndTypes';
