@@ -1,4 +1,4 @@
-import { ReactChildren, ReactElement, ReactChild } from 'react';
+import { ReactChildren, ReactElement, ReactChild, ReactNode } from 'react';
 
 export interface IPropsChildren {
   children: React.ReactNode;
@@ -20,7 +20,7 @@ export interface Item {
   rating: number;
   resume: string;
   picture?: string;
-  number: number;
+  number?: number;
 }
 export interface IMovieData {
   data: Movie;
@@ -44,7 +44,7 @@ export interface IMoviesContext {
   favoriteMovies: Movie[];
   upcomingMovies: Movie[];
   topRatedMovies: Movie[];
-  singleMovie: Movie | unknown;
+  singleMovie: Movie;
   getSearchedMovies: (searchValue: string) => void;
   addToFavorites: (movieId: number) => void;
   removeFromFavorites: (movieId: number) => void;
@@ -95,7 +95,7 @@ export interface ICardProps {
 }
 
 export interface ICardBoardProps {
-  children: ReactChild | ReactChildren;
+  children: ReactNode;
 }
 
 export interface IFollowMeDataProps {
@@ -132,7 +132,7 @@ export interface IInfoCardProps {
   };
 }
 export interface IMovieBackground {
-  cover: string;
+  cover: any;
 }
 
 export interface IBackgroundProps {

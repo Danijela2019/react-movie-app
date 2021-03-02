@@ -1,5 +1,4 @@
 // @ts-nocheck
-
 import React, { createContext, useState, useEffect } from 'react';
 import { IChildren, IMoviesContext, Movie } from '../frontEndTypes';
 import { fetchSearchedMovies, getHomePageMovies } from '../util/contextFunctions';

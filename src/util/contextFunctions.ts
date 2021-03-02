@@ -7,7 +7,6 @@ const apiKey = process.env.REACT_APP_API_KEY;
 const mapData = (res: any) => {
   return res.map((movie: IMovie) => {
     const { id, title, vote_average, overview, poster_path, release_date } = movie;
-
     return {
       id,
       title,

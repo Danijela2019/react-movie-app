@@ -7,11 +7,10 @@ import { MoviesContext } from '../../../contexts/MoviesContext';
 import { ScrollHorizontally } from '../../shared/ScrollHorizontally';
 import imgPlaceholder from '../../../assets/default.jpg';
 import { PopularNumber, PopularSpan } from './HomepageElements';
-import { IMovieItem, Item } from '../../../frontEndTypes';
+import { IMovieItem, IMoviesContext, Item } from '../../../frontEndTypes';
 
 const TrendingMovieCard = ({ data }: IMovieItem) => {
-  // @ts-ignore
-  const { getSingleMovieData } = useContext(MoviesContext);
+  const { getSingleMovieData } = useContext(MoviesContext) as IMoviesContext;
   const history = useHistory();
   const redirectToMoviePage = () => {
     getSingleMovieData(data);
@@ -31,8 +30,7 @@ const TrendingMovieCard = ({ data }: IMovieItem) => {
 };
 
 const TrendingMovies = (): React.ReactElement => {
-  // @ts-ignore
-  const { popularMovies } = useContext(MoviesContext);
+  const { popularMovies } = useContext(MoviesContext) as IMoviesContext;
   const copyPopularMovies = popularMovies.slice();
   copyPopularMovies.map((item: Item, index: number) => (item.number = index + 1));
   return (

@@ -18,10 +18,10 @@ import imgPlaceholder from '../../../assets/default.jpg';
 import { Title } from '../../shared/TextElements';
 import NoResults from '../../noResults';
 import cover from '../../../assets/backgroundImages/shrek.jpg';
-import { Movie } from '../../../frontEndTypes';
+import { IMoviesContext, Movie } from '../../../frontEndTypes';
 
 const SearchedMovieCard = ({ data }: any) => {
-  const { addToFavorites, favoriteMovies } = useContext(MoviesContext);
+  const { addToFavorites, favoriteMovies } = useContext(MoviesContext) as IMoviesContext;
 
   const isAdded = (movieId: number) => {
     return favoriteMovies.find((item: Movie) => item.id === movieId);
@@ -56,7 +56,7 @@ const noSearchResults = (
 );
 
 const SearchedMovieCards = (): React.ReactElement => {
-  const { searchedMovies } = useContext(MoviesContext);
+  const { searchedMovies } = useContext(MoviesContext) as IMoviesContext;
 
   return (
     <>

@@ -6,10 +6,10 @@ import { FavoritesBackground } from './FavortiesElements';
 import { MoviesContext } from '../../../contexts/MoviesContext';
 import NoResults from '../../noResults';
 import cover from '../../../assets/backgroundImages/doctor_strange.jpg';
+import { IMoviesContext } from '../../../frontEndTypes';
 
 const Favorites = (): React.ReactElement => {
-  // @ts-ignore
-  const { favoriteMovies } = useContext(MoviesContext);
+  const { favoriteMovies } = useContext(MoviesContext) as IMoviesContext;
 
   const noFavorites = (
     <NoResults cover={cover}>

@@ -1,15 +1,16 @@
+// @ts-nocheck
 import React, { useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { SearchBox, SearchButton, SearchForm, SearchInput } from './SearchElements';
 import { MoviesContext } from '../../../contexts/MoviesContext';
 import Icon from '../../icon';
+import { IMoviesContext, Movie } from '../../../frontEndTypes';
 
 const Search = (): React.ReactElement => {
   const [searchValue, setSearchValue] = useState('');
-  const [_movies, setMovies] = useState([]);
-  // @ts-ignore
-  const { getSearchedMovies } = useContext(MoviesContext);
+  const [_movies, setMovies] = useState<Movie[] | void>([]);
+  const { getSearchedMovies } = useContext(MoviesContext) as IMoviesContext;
 
   const history = useHistory();
   const redirectToSearchedItems = () => {
@@ -17,7 +18,6 @@ const Search = (): React.ReactElement => {
   };
 
   const handleSearchInputChanges = (event: React.FormEvent) => {
-    // @ts-ignore
     setSearchValue(event.target.value);
   };
 

@@ -4,14 +4,13 @@ import { useHistory } from 'react-router-dom';
 import { Img } from '../../shared/ImageElements';
 import Card from '../../card';
 import { MoviesContext } from '../../../contexts/MoviesContext';
-import { IMovieData, Movie } from '../../../frontEndTypes';
+import { IMovieData, IMoviesContext, Movie } from '../../../frontEndTypes';
 import { ScrollHorizontally } from '../../shared/ScrollHorizontally';
 import imgPlaceholder from '../../../assets/default.jpg';
 import { Title } from '../../shared/TextElements';
 
 const TopRatedMovieCard = ({ data }: IMovieData): React.ReactElement => {
-  // @ts-ignore
-  const { getSingleMovieData } = useContext(MoviesContext);
+  const { getSingleMovieData } = useContext(MoviesContext) as IMoviesContext;
   const history = useHistory();
   const redirectToMoviePage = () => {
     getSingleMovieData(data);
@@ -28,8 +27,7 @@ const TopRatedMovieCard = ({ data }: IMovieData): React.ReactElement => {
 };
 
 const TopRatedMovies = (): React.ReactElement => {
-  // @ts-ignore
-  const { topRatedMovies } = useContext(MoviesContext);
+  const { topRatedMovies } = useContext(MoviesContext) as IMoviesContext;
   return (
     <>
       {topRatedMovies.length > 0 && <Title>TOP RATED</Title>}

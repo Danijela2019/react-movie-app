@@ -1,4 +1,3 @@
-// @ts-nocheck
 import React, { useContext, useEffect } from 'react';
 
 import { MovieBackground, MovieImage, MovieTitleContainer } from './MoviepageElements';
@@ -7,9 +6,10 @@ import MovieInfoCard from './MovieInfoCard';
 import { MoviesContext } from '../../../contexts/MoviesContext';
 import SimilarMovies from './SimilarMovies';
 import imgPlaceholder from '../../../assets/default.jpg';
+import { IMoviesContext } from '../../../frontEndTypes';
 
 const MoviePage = (): React.ReactElement => {
-  const { singleMovie } = useContext(MoviesContext);
+  const { singleMovie } = useContext(MoviesContext) as IMoviesContext;
 
   useEffect(() => {
     window.scrollTo(0, 0);
