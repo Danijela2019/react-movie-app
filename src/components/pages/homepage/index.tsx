@@ -13,7 +13,7 @@ const Home = (): React.ReactElement => {
   return (
     <>
       <HeroCoverContainer>
-        <Background background={cover} height="45vh" light="10px 10px 100px 80px black  inset">
+        <Background background={cover} height="50vh" light="10px 10px 90px 80px black  inset">
           <HeroTitle>The movie app </HeroTitle>
           <HeroParagraph>For all the movie lovers to enjoy</HeroParagraph>
         </Background>

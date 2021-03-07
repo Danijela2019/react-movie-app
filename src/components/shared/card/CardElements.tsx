@@ -13,7 +13,6 @@ export const CardContainer = styled.div<ICardContainer>`
     background-color: #faf6f6;
   }
   @media (max-width: 376px) {
-    width: 6rem;
     max-width: 18rem;
     height: fit-content;
   }

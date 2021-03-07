@@ -10,5 +10,10 @@ export const Background = styled.div<IBackgroundProps>`
   background-repeat: no-repeat;
   background-size: cover;
   box-shadow: ${(props) =>
-    props.light ? props.light : '40px 40px 210px 130px var(--color-background) inset'}; ;
+    props.light ? props.light : '30px 30px 210px 130px var(--color-background) inset'};
+  @media (max-width: 768px) {
+    box-shadow: none;
+    filter: brightness(0.3);
+    height: 65vh;
+  }
 `;
