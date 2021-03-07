@@ -25,9 +25,8 @@ export const MovieTitleContainer = styled.div`
   position: absolute;
   bottom: 120px;
   left: 250px;
-  @media (max-width: 370px) {
-    bottom: -80px;
-    left: 100px;
+  @media (max-width: 540px) {
+    display: none;
   } ;
 `;
 

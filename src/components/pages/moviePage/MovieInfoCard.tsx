@@ -27,7 +27,7 @@ const MovieInfoCard = (): React.ReactElement => {
 
   return (
     <CenterElements>
-      <Card width="100%" height="fit-content" margin="1rem">
+      <Card width="100%" height="auto" margin="1rem">
         <MovieContentWrapper>
           <MovieInfoContent data={singleMovie} />
           <MovieDataColumn>
