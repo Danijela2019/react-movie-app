@@ -14,6 +14,6 @@ export const Background = styled.div<IBackgroundProps>`
   @media (max-width: 768px) {
     box-shadow: none;
     filter: brightness(0.3);
-    height: 65vh;
+    height: 55vh;
   }
 `;
