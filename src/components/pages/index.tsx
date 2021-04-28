@@ -7,6 +7,7 @@ import Favorites from './favorites';
 import SearchedItems from './searchedItems';
 import MoviePage from './moviePage';
 import Register from './register';
+import NotFound from './notFoundPage';
 
 const Routes = (): React.ReactElement => {
   return (
@@ -17,6 +18,7 @@ const Routes = (): React.ReactElement => {
       <Route path="/favorites" component={Favorites} />
       <Route path="/movie" component={MoviePage} />
       <Route path="/searched-items" component={SearchedItems} />
+      <Route component={NotFound} />
     </Switch>
   );
 };

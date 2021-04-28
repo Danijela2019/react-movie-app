@@ -18,6 +18,13 @@ module.exports = {
       "jsx-a11y/click-events-have-key-events" :0,
       "no-param-reassign": [2, { "props": false }],
       "import/prefer-default-export":0,
+
+      "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      },
+    ],
     
 
       "@typescript-eslint/no-explicit-any": 0,
