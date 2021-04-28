@@ -13,7 +13,6 @@ export const Background = styled.div<IBackgroundProps>`
     props.light ? props.light : '30px 30px 210px 130px var(--color-background) inset'};
   @media (max-width: 768px) {
     box-shadow: none;
-    filter: brightness(0.3);
     height: 55vh;
   }
 `;
